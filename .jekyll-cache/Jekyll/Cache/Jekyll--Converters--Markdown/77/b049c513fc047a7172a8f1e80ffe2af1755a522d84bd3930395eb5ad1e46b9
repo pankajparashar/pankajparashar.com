@@ -1,0 +1,168 @@
+I"C<p>In this article, we’ll build an extremely simple app using Facebook’s <a href="http://facebook.github.io/react/">react.js</a>. If you are
+unfamiliar with this library, then I would strongly recommend reading the complete tutorial on building a <a href="http://facebook.github.io/react/docs/tutorial.html">Comment system</a> using React.</p>
+
+<blockquote>
+  <p>This article has been updated several times in the past few months, to prevent it
+from becoming outdated in lieu with the rapid changes in the react.js library</p>
+</blockquote>
+
+<h4 id="thinking-in-components">Thinking in components</h4>
+
+<p>The fundamental way of building a React.js app is to break down your app into bunch of useful components and then work your
+way backwards to build them separately. Once the individual components are ready, we can wire them up to exchange data
+between the components. For instance, our Todo app can be decomposed into the following components and hierarchies,</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>TODO APP
+	TODO BANNER
+	TODO LIST
+		TODO LIST ITEM #1
+		TODO LIST ITEM #2
+		...
+		TODO LIST ITEM #N
+	TODO FORM
+</code></pre></div></div>
+
+<h4 id="wiring-dependencies">Wiring dependencies</h4>
+
+<p>React ofcourse needs the <code class="highlighter-rouge">react.js</code> library and the JSX Transformer for sugar syntax. Before, we proceed we’ll add these dependencies
+into the <code class="highlighter-rouge">head</code> of our document.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;head&gt;
+&lt;script src="https://fb.me/react-0.12.2.min.js"&gt;&lt;/script&gt;
+&lt;script src="https://fb.me/JSXTransformer-0.12.2.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;script type="text/jsx"&gt;
+-- This is where your code will live -
+&lt;/script&gt;
+&lt;/body&gt;
+</code></pre></div></div>
+
+<h4 id="basic-skeleton">Basic Skeleton</h4>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/* \[TODO APP\] */
+var TodoApp = React.createClass({ ... });
+
+    /* [TODO BANNER] &amp;&amp; [TODO LIST] */
+    var TodoBanner = React.createClass({ ... });
+    var TodoList = React.createClass({ ... });
+    
+    	/* [TODO LIST ITEM] */
+    	var TodoListItem = React.createClass({ ... });
+    
+    /* [TODO FORM] */
+    var TodoForm = React.createClass({ ... });
+
+React.render(&lt;TodoApp/&gt;, document.body);
+</code></pre></div></div>
+
+<h4 id="component-1---todoapp">Component 1 - TodoApp</h4>
+
+<p>This component will hold a list of todo items that will be shared by its child components in various forms. The initial state
+of <code class="highlighter-rouge">items</code> will be a blank list. The list will be updated as soon as a new item is added via the <code class="highlighter-rouge">TodoForm</code> component.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/* \[TODO APP\] */
+var TodoApp = React.createClass({
+getInitialState: function(){
+return {items: \[\]};
+},
+updateItems: function(newItem){
+var allItems = this.state.items.concat(\[newItem\]);
+this.setState({items: allItems});
+},
+render: function(){
+return (
+&lt;div&gt;
+&lt;TodoBanner/&gt;
+&lt;TodoList items={this.state.items}/&gt;
+&lt;TodoForm onFormSubmit={this.updateItems}/&gt;
+&lt;/div&gt;
+);
+}
+});
+
+</code></pre></div></div>
+
+<h4 id="component-2---todobanner">Component 2 - TodoBanner</h4>
+
+<p>It simply contains a heading tag. Nothing fancy here!</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/* \[TODO BANNER\] */
+var TodoBanner = React.createClass({
+render: function(){
+return (
+&lt;h3&gt;TODO&lt;/h3&gt;
+);
+}
+});
+</code></pre></div></div>
+
+<h4 id="component-3---todolist">Component 3 - TodoList</h4>
+
+<p>It accepts a list of items and wraps each item around a <code class="highlighter-rouge">TodoListItem</code> component. The final result is then wrapped with <code class="highlighter-rouge">&lt;ul&gt;</code> tag.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/* \[TODO LIST\] */
+var TodoList = React.createClass({
+render: function() {
+var createItem = function(itemText) {
+return (
+&lt;TodoListItem&gt;{itemText}&lt;/TodoListItem&gt;
+);
+};
+return &lt;ul&gt;{this.props.items.map(createItem)}&lt;/ul&gt;;
+}
+});
+</code></pre></div></div>
+
+<h4 id="component-4---todolistitem">Component 4 - TodoListItem</h4>
+
+<p>It wraps list elements with <code class="highlighter-rouge">&lt;li&gt;</code> so that it renders as a list block in the final HTML. <code class="highlighter-rouge">this.props.children</code> predictably contains
+all the descendents passed to the <code class="highlighter-rouge">TodoListItem</code> tag from its parent component.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/* \[TODO LISTITEM\] */
+var TodoListItem = React.createClass({
+render: function(){
+return (
+&lt;li&gt;{this.props.children}&lt;/li&gt;
+);
+}
+});
+</code></pre></div></div>
+
+<h4 id="component-5---todoform">Component 5 - TodoForm</h4>
+
+<p>It contains a text field followed by a button to trigger the addition of item in the Todo list. This component will hold the
+current <code class="highlighter-rouge">item</code> entered in the textfield and both of them are kept in sync using the <code class="highlighter-rouge">onChange</code> event. As soon as the submit
+button is pressed, the <code class="highlighter-rouge">item</code> is passed to its parent component and the focus is returned back to the textfield.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/* \[TODO FORM\] */
+var TodoForm = React.createClass({
+getInitialState: function() {
+return {item: ''};
+},
+handleSubmit: function(e){
+e.preventDefault();
+this.props.onFormSubmit(this.state.item);
+this.setState({item: ''});
+React.findDOMNode(this.refs.item).focus();
+return;
+},
+onChange: function(e){
+this.setState({
+item: e.target.value
+});
+},
+render: function(){
+return (
+&lt;form onSubmit={this.handleSubmit}&gt;
+&lt;input type='text' ref='item' onChange={this.onChange} value={this.state.item}/&gt;
+&lt;input type='submit' value='Add'/&gt;
+&lt;/form&gt;
+);
+}
+});
+</code></pre></div></div>
+
+<p>The complete working demo can be found <a href="http://codepen.io/pankajparashar/full/MYzgyW/">here</a> on Codepen. Ofcourse there’s lot
+to improve but the code is modular enough to handle any kind of enhancement.</p>
+:ET

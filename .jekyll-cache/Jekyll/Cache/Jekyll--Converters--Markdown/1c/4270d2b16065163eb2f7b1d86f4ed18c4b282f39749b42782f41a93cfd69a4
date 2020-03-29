@@ -1,0 +1,55 @@
+I"ú<p>If you are unfamiliar with <a href="https://atomize-io.herokuapp.com/">Atomize IO</a>, then make sure you checkout the web app
+and run it against your website. I have been massively impressed with the idea behind <a href="http://acss.io/">Atomic CSS</a>
+and always wanted to build something to find out, how much duplicate CSS declarations
+live inside the CSS codebase of popular websites and by how much they can benefit by adopting the Atomic CSS methodology.</p>
+
+<p>Atomize IO answers both the questions and represents the results with bunch of numbers.
+In the next section, I will outline the principle and algorithm developed to calculate these numbers.</p>
+
+<h3 id="principle">Principle</h3>
+
+<p>Since, Atomic CSS relies on single purpose classes, it manages to avoid duplicate
+declarations in the CSS codebase. However, a typical CSS codebase is flooded with
+duplicate declarations scattered across various classes, much thanks to the semantic
+classes we are used to writing. This leads to redundancy, bloat and maintenance overhead.</p>
+
+<p>Hence, it becomes imperative to identify all the unique property-value pairs,
+construct a ruleset containing each pair with a unique class selector to identify the ruleset.</p>
+
+<h3 id="algorithm">Algorithm</h3>
+
+<ol>
+  <li>Grab the input URL.</li>
+  <li>Make a request to the URL and get the HTML in response.</li>
+  <li>Grab all the CSS files that are linked in the HTML.</li>
+  <li>Extract only those CSS styles that are used in the HTML.</li>
+  <li>Run through each ruleset and identify all the unique property-value pairs.</li>
+  <li>Construct a CSS file with each declaration in a new ruleset accompanied by a unique selector.</li>
+  <li>Now you can count the no. of declarations, selectors, rulesets found in CSS files
+generated at <strong>Step 4</strong> (Before) and <strong>Step 6</strong> (After).</li>
+</ol>
+
+<blockquote>
+  <p><strong>Note -</strong> Step 4 is only used to generate numbers for Single Page CSS view. Combined
+CSS view uses the complete CSS at Step 3.</p>
+</blockquote>
+
+<h3 id="caveats">Caveats</h3>
+
+<p>There are few caveats in the above algorithm, that you should keep in mind while
+interpreting these numbers.</p>
+
+<ol>
+  <li>The approach doesnâ€™t take into account inline styles.</li>
+  <li>Media queries are not handled separately. This means <code class="highlighter-rouge">div { color: red; }</code> and <code class="highlighter-rouge">@media screen { div { color: red; } }</code> will be counted as one.</li>
+  <li>Each vendor prefixed property will have a separate class. This is not the really case when using Atomic CSS styles.</li>
+  <li>Styling via JavaScript is not taken into the account.</li>
+  <li>Currently the selectors are named as <code class="highlighter-rouge">.styles+{counter}</code> to guarantee uniqueness. I am almost sure that an Atomic classname will be much shorter than this naming scheme.</li>
+</ol>
+
+<p>As it stands, the approach is not completely perfect but still does a darn good
+job of showcasing the benefits by simply adopting Atomic CSS methodology.
+Need proof? check the stats of <a href="https://atomize-io.herokuapp.com/twitter.com">twitter.com</a> here,</p>
+
+<p>!(http://res.cloudinary.com/dw9fem4ki/image/upload/c_scale,w_800/v1458987639/Screen_Shot_2016-03-26_at_3.48.46_PM_afogfs.png)[]</p>
+:ET

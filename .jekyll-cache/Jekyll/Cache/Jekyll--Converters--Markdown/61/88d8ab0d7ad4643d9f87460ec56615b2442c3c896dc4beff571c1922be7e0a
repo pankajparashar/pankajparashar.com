@@ -1,0 +1,193 @@
+I"H8<h3 id="string-operations">String operations</h3>
+
+<p>If you come from Python background, then these new additions to the String
+library should easily make sense. For example,</p>
+
+<ol>
+  <li>Check if one string is part of another string
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> var str1 = 'foobar';
+ var str2 = 'foo';
+ console.log(str1.includes(str2)); //true
+</code></pre></div>    </div>
+  </li>
+  <li>String repetition
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> var str = 'foo';
+ console.log(str.repeat(2)); //foofoo
+</code></pre></div>    </div>
+  </li>
+  <li>String templates
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> &gt; var str1 = 'Foo';
+ &gt; var str2 = 'Bar';
+
+ &gt; console.log(`My name is ${str1} ${str2}.`);
+ &gt; My name is Foo Bar
+ &gt;
+</code></pre></div>    </div>
+  </li>
+  <li>Multiline strings
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> &gt; var str = (`Hello World`);
+
+ &gt; console.log(str);
+ &gt; Hello
+ &gt; World
+ &gt;
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<h3 id="destructuring">Destructuring</h3>
+
+<p>Destructuring allows us to extract values from arrays and objects (even deeply nested)
+and store them in variables with a more convenient syntax.</p>
+
+<ol>
+  <li>Destructuring arrays</li>
+</ol>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="o">&gt;</span> <span class="kd">var</span> <span class="err">\</span><span class="p">[</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">,</span> <span class="nx">c</span><span class="p">,</span> <span class="nx">d</span><span class="err">\</span><span class="p">]</span> <span class="o">=</span> <span class="err">\</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="err">\</span><span class="p">];</span>
+<span class="o">&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">);</span>
+<span class="o">&gt;</span> <span class="mi">1</span>
+<span class="o">&gt;</span> </code></pre></figure>
+
+<ol>
+  <li>Destructuring objects</li>
+</ol>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="o">&gt;</span> <span class="kd">var</span> <span class="p">{</span><span class="nx">foo</span><span class="p">,</span> <span class="nx">bar</span><span class="p">}</span> <span class="o">=</span> <span class="p">{</span><span class="dl">'</span><span class="s1">foo</span><span class="dl">'</span><span class="p">:</span> <span class="mi">1</span><span class="p">;</span> <span class="dl">'</span><span class="s1">bar</span><span class="dl">'</span><span class="p">:</span> <span class="mi">2</span><span class="p">};</span>
+<span class="o">&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">foo</span><span class="p">);</span>
+<span class="o">&gt;</span> <span class="mi">1</span>
+<span class="o">&gt;</span> </code></pre></figure>
+
+<h3 id="modules">Modules</h3>
+
+<p>Yes, you read it right, JavaScript finally allows you split your code in modules and then
+you selectively export and import them. Some of the common techniques are described below,</p>
+
+<ol>
+  <li>Exporting a variable, function etc.,</li>
+</ol>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="cm">/* Exporting a variable */</span>
+<span class="k">export</span> <span class="kd">var</span> <span class="nx">name</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">foo</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="cm">/* Exporting multiple functions at once */</span>
+<span class="kd">function</span> <span class="nx">add</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">){</span>
+<span class="k">return</span> <span class="nx">a</span> <span class="o">+</span> <span class="nx">b</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="kd">function</span> <span class="nx">sub</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">){</span>
+<span class="k">return</span> <span class="nx">a</span> <span class="o">-</span> <span class="nx">b</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="k">export</span> <span class="p">{</span><span class="nx">add</span><span class="p">,</span> <span class="nx">sub</span><span class="p">};</span>
+
+<span class="cm">/* Export functions separately */</span>
+<span class="k">export</span> <span class="kd">function</span> <span class="nx">add</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
+<span class="k">return</span> <span class="nx">a</span> <span class="o">+</span> <span class="nx">b</span><span class="p">;</span>
+<span class="p">}</span></code></pre></figure>
+
+<ol>
+  <li>Import</li>
+</ol>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="c1">// We can import an entire module using,</span>
+<span class="k">import</span> <span class="dl">'</span><span class="s1">module-1</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="c1">// To import a specific function or a variable using named imports,</span>
+<span class="k">import</span> <span class="p">{</span><span class="nx">add</span><span class="p">,</span> <span class="nx">sub</span><span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">module-1</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="c1">// Use alias while importing,</span>
+<span class="k">import</span> <span class="p">{</span><span class="nx">add</span> <span class="k">as</span> <span class="nx">a</span><span class="p">,</span> <span class="nx">sub</span> <span class="k">as</span> <span class="nx">s</span><span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">module-1</span><span class="dl">'</span><span class="p">;</span></code></pre></figure>
+
+<h3 id="arguments">Arguments</h3>
+
+<p>Once again, these set of new features seem to be massively inspired from the
+Python language like,</p>
+
+<ol>
+  <li>Default Arguments</li>
+</ol>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">function</span> <span class="nx">add</span><span class="p">(</span><span class="nx">a</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="nx">b</span><span class="o">=</span><span class="mi">0</span><span class="p">){</span>
+<span class="k">return</span> <span class="nx">a</span> <span class="o">+</span> <span class="nx">b</span><span class="p">;</span>
+<span class="p">}</span></code></pre></figure>
+
+<ol>
+  <li>Indefinite Arguments</li>
+</ol>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">function</span> <span class="nx">f1</span><span class="p">(...</span><span class="nx">args</span><span class="p">){</span>
+<span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">arg</span> <span class="k">of</span> <span class="nx">args</span><span class="p">)</span> <span class="p">{</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">arg</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
+
+<ol>
+  <li>Named Arguments</li>
+</ol>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">function</span> <span class="nx">init</span><span class="p">({</span><span class="nx">height</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="nx">width</span><span class="o">=</span><span class="mi">100</span><span class="p">}){</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">width</span><span class="p">);</span>
+<span class="p">}</span></code></pre></figure>
+
+<h3 id="classes">Classes</h3>
+
+<p>Prior to ES6, we implemented Classes by creating a constructor function
+and adding properties by extending the prototype. ES6 provides much needed
+syntactic sugar for doing this under the hood. We can create Classes directly,</p>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">class</span> <span class="nx">Person</span> <span class="p">{</span>
+<span class="kd">constructor</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">age</span><span class="p">,</span> <span class="nx">gender</span><span class="p">)</span> <span class="p">{</span>
+<span class="k">this</span><span class="p">.</span><span class="nx">name</span>   <span class="o">=</span> <span class="nx">name</span><span class="p">;</span>
+<span class="k">this</span><span class="p">.</span><span class="nx">age</span>    <span class="o">=</span> <span class="nx">age</span><span class="p">;</span>
+<span class="k">this</span><span class="p">.</span><span class="nx">gender</span> <span class="o">=</span> <span class="nx">gender</span><span class="p">;</span>
+<span class="p">}</span>
+
+    <span class="nx">incrementAge</span><span class="p">()</span> <span class="p">{</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">age</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="p">}</span>
+
+<span class="p">}</span>
+
+<span class="c1">// Extend classes</span>
+<span class="kd">class</span> <span class="nx">Personal</span> <span class="kd">extends</span> <span class="nx">Person</span> <span class="p">{</span>
+<span class="kd">constructor</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">age</span><span class="p">,</span> <span class="nx">gender</span><span class="p">,</span> <span class="nx">occupation</span><span class="p">,</span> <span class="nx">hobby</span><span class="p">)</span> <span class="p">{</span>
+<span class="k">super</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">age</span><span class="p">,</span> <span class="nx">gender</span><span class="p">);</span>
+<span class="k">this</span><span class="p">.</span><span class="nx">occupation</span> <span class="o">=</span> <span class="nx">occupation</span><span class="p">;</span>
+<span class="k">this</span><span class="p">.</span><span class="nx">hobby</span> <span class="o">=</span> <span class="nx">hobby</span><span class="p">;</span>
+<span class="p">}</span>
+
+    <span class="nx">incrementAge</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">super</span><span class="p">.</span><span class="nx">incrementAge</span><span class="p">();</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">age</span> <span class="o">+=</span> <span class="mi">20</span><span class="p">;</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">age</span><span class="p">);</span>
+    <span class="p">}</span>
+
+<span class="p">}</span></code></pre></figure>
+
+<h3 id="maps">Maps</h3>
+
+<p>Maps is a dictionary-like data structure that holds key-value pairs. A typical
+Maps structure looks like this,</p>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">map</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Map</span><span class="p">();</span>
+
+<span class="o">&gt;</span> <span class="nx">map</span><span class="p">.</span><span class="kd">set</span><span class="p">(</span><span class="dl">'</span><span class="s1">foo</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">bar</span><span class="dl">'</span><span class="p">);</span>
+<span class="o">&gt;</span> <span class="nx">map</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">foo</span><span class="dl">'</span><span class="p">);</span>
+<span class="o">&gt;</span> <span class="nx">bar</span>
+<span class="o">&gt;</span> <span class="nx">map</span><span class="p">.</span><span class="nx">has</span><span class="p">(</span><span class="dl">'</span><span class="s1">name</span><span class="dl">'</span><span class="p">);</span>
+<span class="o">&gt;</span> <span class="kc">true</span>
+<span class="o">&gt;</span> </code></pre></figure>
+
+<p>You can also iterate over maps like this,</p>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="err">\</span><span class="p">[</span><span class="nx">key</span><span class="p">,</span> <span class="nx">value</span><span class="err">\</span><span class="p">]</span> <span class="k">of</span> <span class="nx">map</span><span class="p">.</span><span class="nx">entries</span><span class="p">())</span> <span class="p">{</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">key</span><span class="p">,</span> <span class="nx">value</span><span class="p">);</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>If these new features were enough to excite you for what ES6 has in store, then I
+would strongly recommend reading some of the following articles written by <a href="https://ponyfoo.com/about">Nicolás Bevacqua</a>,</p>
+
+<ul>
+  <li><a href="https://ponyfoo.com/articles/es6">ES6 Overview in 350 Bullet Points</a></li>
+  <li><a href="https://ponyfoo.com/articles/tagged/es6-in-depth">ES6-in Depth series</a></li>
+</ul>
+:ET

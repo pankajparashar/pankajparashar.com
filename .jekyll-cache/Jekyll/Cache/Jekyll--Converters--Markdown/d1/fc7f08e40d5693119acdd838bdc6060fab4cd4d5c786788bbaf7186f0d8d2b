@@ -1,0 +1,264 @@
+I"?t<p>Python’s collection of magic methods can broadly be classified into the following
+categories,</p>
+
+<ul>
+  <li>Construction &amp; Destruction</li>
+  <li>Operators</li>
+  <li>Builtins</li>
+  <li>Type Conversion</li>
+  <li>Attribute access</li>
+  <li>Containers &amp; Dicts</li>
+  <li>Context Managers</li>
+</ul>
+
+<h3 id="construction--destruction">Construction &amp; Destruction</h3>
+
+<p><code class="highlighter-rouge">__new__(cls, *args)</code> - It is the first method invoked when you create an object
+ of a class.<br />
+<code class="highlighter-rouge">__init__(self, *args)</code> - Invoked after the <code class="highlighter-rouge">__new__</code> during the initialization
+of an object.<br />
+<code class="highlighter-rouge">__del__(self)</code> - It is called when the object is garbage collected. Contrary to
+popular belief, it is not called when we execute <code class="highlighter-rouge">del obj</code> statement.</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">obj</span> <span class="o">=</span> <span class="n">MyClass</span><span class="p">()</span>     <span class="c1">#: Calls __new__ and then __init__</span></code></pre></figure>
+
+<h3 id="operators">Operators</h3>
+
+<p>Operators are further divided into Comparison, Arithmetic, Refleced Arithmetic,
+Augmented Assignment and Unary operators.</p>
+
+<p><strong>1. Comparison operators</strong><br />
+<code class="highlighter-rouge">__eq__(self, other)</code> - Implements equality <code class="highlighter-rouge">==</code><br />
+<code class="highlighter-rouge">__ne__(self, other)</code> - Implements inequality <code class="highlighter-rouge">!=</code><br />
+<code class="highlighter-rouge">__lt__(self, other)</code> - Implements less-than <code class="highlighter-rouge">&lt;</code><br />
+<code class="highlighter-rouge">__gt__(self, other)</code> - Implements greater-than <code class="highlighter-rouge">&gt;</code><br />
+<code class="highlighter-rouge">__le__(self, other)</code> - Implements less-than-or-equal-to <code class="highlighter-rouge">&lt;=</code><br />
+<code class="highlighter-rouge">__ge__(self, other)</code> - Implements greater-than-or-equal-to <code class="highlighter-rouge">&gt;=</code></p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">obj1</span> <span class="o">=</span> <span class="n">MyClass</span><span class="p">()</span>
+<span class="n">obj2</span> <span class="o">=</span> <span class="n">MyClass</span><span class="p">()</span>
+
+<span class="n">obj1</span> <span class="o">==</span> <span class="n">obj2</span>    <span class="c1">#: Calls __eq__
+</span><span class="n">obj1</span> <span class="o">!=</span> <span class="n">obj2</span>    <span class="c1">#: Calls __ne__
+</span><span class="n">obj1</span> <span class="o">&lt;</span> <span class="n">obj2</span>     <span class="c1">#: Calls __lt__
+</span><span class="n">obj1</span> <span class="o">&gt;</span> <span class="n">obj2</span>     <span class="c1">#: Calls __gt__
+</span><span class="n">obj1</span> <span class="o">&lt;=</span> <span class="n">obj2</span>    <span class="c1">#: Calls __le__
+</span><span class="n">obj1</span> <span class="o">&gt;=</span> <span class="n">obj2</span>    <span class="c1">#: Calls __ge__</span></code></pre></figure>
+
+<p><strong>2. Arithmetic operators</strong><br />
+<code class="highlighter-rouge">__add__(self, other)</code> - Implements addition <code class="highlighter-rouge">+</code><br />
+<code class="highlighter-rouge">__sub__(self, other)</code> - Implements subtraction <code class="highlighter-rouge">-</code><br />
+<code class="highlighter-rouge">__mul__(self, other)</code> - Implements multiplication <code class="highlighter-rouge">*</code><br />
+<code class="highlighter-rouge">__div__(self, other)</code> - Implements division <code class="highlighter-rouge">/</code><br />
+<code class="highlighter-rouge">__floordiv__(self, other)</code> - Implements integer division <code class="highlighter-rouge">//</code><br />
+<code class="highlighter-rouge">__truediv__(self, other)</code> - Implements true division<br />
+<code class="highlighter-rouge">__mod__(self, other)</code> - Implements modulo <code class="highlighter-rouge">%</code><br />
+<code class="highlighter-rouge">__divmod__(self, other)</code> - Implements <code class="highlighter-rouge">divmod()</code> builtin<br />
+<code class="highlighter-rouge">__pow__</code> - Implements power-of <code class="highlighter-rouge">**</code><br />
+<code class="highlighter-rouge">__lshift__(self, other)</code> - Implements left bitwise shift <code class="highlighter-rouge">&lt;&lt;</code><br />
+<code class="highlighter-rouge">__rshift__(self, other)</code> - Implements right bitwise shift <code class="highlighter-rouge">&gt;&gt;</code><br />
+<code class="highlighter-rouge">__and__(self, other)</code> - Implements bitwise AND <code class="highlighter-rouge">&amp;</code><br />
+<code class="highlighter-rouge">__or__(self, other)</code> - Implements bitwise OR <code class="highlighter-rouge">|</code><br />
+<code class="highlighter-rouge">__xor__(self, other)</code> - Implements bitwise XOR <code class="highlighter-rouge">^</code></p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">obj</span> <span class="o">=</span> <span class="n">MyClass</span><span class="p">()</span>
+
+<span class="n">obj</span> <span class="o">+</span> <span class="mi">1</span>         <span class="c1">#: Calls __add__
+</span><span class="n">obj</span> <span class="o">-</span> <span class="mi">1</span>         <span class="c1">#: Calls __sub__
+</span><span class="n">obj</span> <span class="o">*</span> <span class="mi">1</span>         <span class="c1">#: Calls __mul__
+</span><span class="n">obj</span> <span class="o">/</span> <span class="mi">1</span>         <span class="c1">#: Calls __div__ (if from __future__ import division then Calls __truediv__)
+</span><span class="n">obj</span> <span class="o">//</span> <span class="mi">1</span>        <span class="c1">#: Calls __floordiv__
+</span><span class="n">obj</span> <span class="o">**</span> <span class="mi">2</span>        <span class="c1">#: Calls __pow__
+</span><span class="n">obj</span> <span class="o">&lt;&lt;</span> <span class="mi">1</span>        <span class="c1">#: Calls __lshift__
+</span><span class="n">obj</span> <span class="o">&gt;&gt;</span> <span class="mi">1</span>        <span class="c1">#: Calls __rshift__
+</span><span class="n">obj</span> <span class="o">&amp;</span> <span class="mi">1</span>         <span class="c1">#: Calls __and__
+</span><span class="n">obj</span> <span class="o">|</span> <span class="mi">1</span>         <span class="c1">#: Calls __or__
+</span><span class="n">obj</span> <span class="o">^</span> <span class="mi">1</span>         <span class="c1">#: Calls __xor__</span></code></pre></figure>
+
+<p><strong>3. Reflected Arithmetic operators</strong></p>
+
+<p>Reflected Arithmetic comes into the picture when operands are switched around,
+thus creating a reflection. For example, <code class="highlighter-rouge">obj + other</code> can be switched to <code class="highlighter-rouge">other + obj</code>
+which calls a different set of magic methods, listed below,</p>
+
+<p><code class="highlighter-rouge">__radd__(self, other)</code> - Implements addition <code class="highlighter-rouge">+</code><br />
+<code class="highlighter-rouge">__rsub__(self, other)</code> - Implements subtraction <code class="highlighter-rouge">-</code><br />
+<code class="highlighter-rouge">__rmul__(self, other)</code> - Implements multiplication <code class="highlighter-rouge">*</code><br />
+<code class="highlighter-rouge">__rdiv__(self, other)</code> - Implements division <code class="highlighter-rouge">/</code><br />
+<code class="highlighter-rouge">__rfloordiv__(self, other)</code> - Implements integer division <code class="highlighter-rouge">//</code><br />
+<code class="highlighter-rouge">__rtruediv__(self, other)</code> - Implements true division<br />
+<code class="highlighter-rouge">__rmod__(self, other)</code> - Implements modulo <code class="highlighter-rouge">%</code><br />
+<code class="highlighter-rouge">__rdivmod__(self, other)</code> - Implements <code class="highlighter-rouge">divmod()</code> builtin<br />
+<code class="highlighter-rouge">__rpow__</code> - Implements power-of <code class="highlighter-rouge">**</code><br />
+<code class="highlighter-rouge">__rlshift__(self, other)</code> - Implements left bitwise shift <code class="highlighter-rouge">&lt;&lt;</code><br />
+<code class="highlighter-rouge">__rrshift__(self, other)</code> - Implements right bitwise shift <code class="highlighter-rouge">&gt;&gt;</code><br />
+<code class="highlighter-rouge">__rand__(self, other)</code> - Implements bitwise AND <code class="highlighter-rouge">&amp;</code><br />
+<code class="highlighter-rouge">__ror__(self, other)</code> - Implements bitwise OR <code class="highlighter-rouge">|</code><br />
+<code class="highlighter-rouge">__rxor__(self, other)</code> - Implements bitwise XOR <code class="highlighter-rouge">^</code></p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">obj</span> <span class="o">=</span> <span class="n">MyClass</span><span class="p">()</span>
+
+<span class="mi">1</span> <span class="o">+</span> <span class="n">obj</span>         <span class="c1">#: Calls __add__
+</span><span class="mi">1</span> <span class="o">-</span> <span class="n">obj</span>         <span class="c1">#: Calls __sub__
+</span><span class="mi">1</span> <span class="o">*</span> <span class="n">obj</span>         <span class="c1">#: Calls __mul__
+</span><span class="mi">1</span> <span class="o">/</span> <span class="n">obj</span>         <span class="c1">#: Calls __div__ (if from __future__ import division then Calls __truediv__)
+</span><span class="mi">1</span> <span class="o">//</span> <span class="n">obj</span>        <span class="c1">#: Calls __floordiv__
+</span><span class="mi">1</span> <span class="o">**</span> <span class="n">obj</span>        <span class="c1">#: Calls __pow__
+</span><span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="n">obj</span>        <span class="c1">#: Calls __lshift__
+</span><span class="mi">1</span> <span class="o">&gt;&gt;</span> <span class="n">obj</span>        <span class="c1">#: Calls __rshift__
+</span><span class="mi">1</span> <span class="o">&amp;</span> <span class="n">obj</span>         <span class="c1">#: Calls __and__
+</span><span class="mi">1</span> <span class="o">|</span> <span class="n">obj</span>         <span class="c1">#: Calls __or__
+</span><span class="mi">1</span> <span class="o">^</span> <span class="n">obj</span>         <span class="c1">#: Calls __xor__</span></code></pre></figure>
+
+<p><strong>4. Augmented assignment operators</strong><br />
+<code class="highlighter-rouge">__iadd__(self, other)</code> - Implements addition with assignment <code class="highlighter-rouge">+=</code><br />
+<code class="highlighter-rouge">__isub__(self, other)</code> - Implements subtraction with assignment <code class="highlighter-rouge">-=</code><br />
+<code class="highlighter-rouge">__imul__(self, other)</code> - Implements multiplication with assignment <code class="highlighter-rouge">*=</code><br />
+<code class="highlighter-rouge">__ifloordiv__(self, other)</code> - Implements integer division with assignment <code class="highlighter-rouge">//=</code><br />
+<code class="highlighter-rouge">__idiv__(self, other)</code> - Implements division with assignment <code class="highlighter-rouge">/=</code><br />
+<code class="highlighter-rouge">__itruediv__(self, other)</code> - Implements true division with assignment <code class="highlighter-rouge">/=</code><br />
+<code class="highlighter-rouge">__imod__(self, other)</code> - Implements modulo with assignment <code class="highlighter-rouge">%=</code><br />
+<code class="highlighter-rouge">__ipow__</code> - Implements exponents with assignment <code class="highlighter-rouge">**=</code><br />
+<code class="highlighter-rouge">__ilshift__(self, other)</code> - Implements left bitwise shift with assignment <code class="highlighter-rouge">&lt;&lt;=</code><br />
+<code class="highlighter-rouge">__irshift__(self, other)</code> - Implements right bitwise shift with assignment <code class="highlighter-rouge">&gt;&gt;=</code><br />
+<code class="highlighter-rouge">__iand__(self, other)</code> - Implements bitwise AND with assignment <code class="highlighter-rouge">&amp;=</code><br />
+<code class="highlighter-rouge">__ior__(self, other)</code> - Implements bitwise OR with assignment <code class="highlighter-rouge">|=</code><br />
+<code class="highlighter-rouge">__ixor__(self, other)</code> - Implements bitwise XOR with assignment <code class="highlighter-rouge">^=</code></p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">obj1</span> <span class="o">=</span> <span class="n">MyClass</span><span class="p">()</span>
+<span class="n">obj2</span> <span class="o">=</span> <span class="n">MyClass</span><span class="p">()</span>
+
+<span class="n">obj1</span> <span class="o">+=</span> <span class="n">obj2</span>    <span class="c1">#: Calls __iadd__
+</span><span class="n">obj1</span> <span class="o">-=</span> <span class="n">obj2</span>    <span class="c1">#: Calls __isub__
+</span><span class="n">obj1</span> <span class="o">*=</span> <span class="n">obj2</span>    <span class="c1">#: Calls __imul__
+</span><span class="n">obj1</span> <span class="o">/=</span> <span class="n">obj2</span>    <span class="c1">#: Calls __idiv__ (if from __future__ import division then Calls __itruediv__)
+</span><span class="n">obj1</span> <span class="o">//=</span> <span class="n">obj2</span>   <span class="c1">#: Calls __ifloordiv__
+</span><span class="n">obj1</span> <span class="o">**=</span> <span class="mi">2</span>      <span class="c1">#: Calls __ipow__
+</span><span class="n">obj1</span> <span class="o">&lt;&lt;=</span> <span class="n">obj2</span>   <span class="c1">#: Calls __ilshift__
+</span><span class="n">obj1</span> <span class="o">&gt;&gt;=</span> <span class="n">obj2</span>   <span class="c1">#: Calls __irshift__
+</span><span class="n">obj1</span> <span class="o">&amp;=</span> <span class="n">obj2</span>    <span class="c1">#: Calls __iand__
+</span><span class="n">obj1</span> <span class="o">|=</span> <span class="n">obj2</span>    <span class="c1">#: Calls __ior__
+</span><span class="n">obj1</span> <span class="o">^=</span> <span class="n">obj2</span>    <span class="c1">#: Calls __ixor__</span></code></pre></figure>
+
+<p><strong>5. Unary operators</strong><br />
+<code class="highlighter-rouge">__pos__(self)</code> - Implements unary positive <code class="highlighter-rouge">+</code><br />
+<code class="highlighter-rouge">__neg__(self)</code> - Implements negation <code class="highlighter-rouge">-</code><br />
+<code class="highlighter-rouge">__invert__(self)</code> - Implements inversion <code class="highlighter-rouge">~</code></p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="n">obj</span> <span class="o">=</span> <span class="n">MyClass</span><span class="p">()</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="o">+</span><span class="n">obj</span>    <span class="c1">#: Calls __pos__
+</span><span class="o">&gt;&gt;&gt;</span> <span class="o">-</span><span class="n">obj</span>    <span class="c1">#: Calls __neg__
+</span><span class="o">&gt;&gt;&gt;</span> <span class="o">~</span><span class="n">obj</span>    <span class="c1">#: Calls __invert__</span></code></pre></figure>
+
+<h3 id="builtins">Builtins</h3>
+
+<p>Python provides a useful bunch of magic methods for <code class="highlighter-rouge">builtins</code> and few methods
+of the <code class="highlighter-rouge">math</code> library as well.</p>
+
+<p><code class="highlighter-rouge">__abs__(self)</code> - Implements <code class="highlighter-rouge">abs()</code><br />
+<code class="highlighter-rouge">__round__(self, n)</code> - Implements <code class="highlighter-rouge">round()</code> (n: number of decimal places)<br />
+<code class="highlighter-rouge">__repr__(self)</code> - Implements <code class="highlighter-rouge">repr()</code><br />
+<code class="highlighter-rouge">__format__(self, istr)</code> - Implements <code class="highlighter-rouge">format()</code><br />
+<code class="highlighter-rouge">__hash__(self)</code> - Implements <code class="highlighter-rouge">hash()</code><br />
+<code class="highlighter-rouge">__bool__(self)</code> - Implements <code class="highlighter-rouge">bool()</code><br />
+<code class="highlighter-rouge">__dir__(self)</code> - Implements <code class="highlighter-rouge">dir()</code><br />
+<code class="highlighter-rouge">__isinstance__(self, instance)</code> - Implements <code class="highlighter-rouge">isinstance()</code><br />
+<code class="highlighter-rouge">__issubclass__(self, subclass)</code> - Implements <code class="highlighter-rouge">issubclass()</code>
+<code class="highlighter-rouge">__call__(self, *args)</code> - Implements an instance of a class to be called as a function <br />
+<code class="highlighter-rouge">__sizeof__(self)</code> - Implements <code class="highlighter-rouge">sys.getsizeof()</code><br />
+<code class="highlighter-rouge">__floor__(self)</code> - Implements <code class="highlighter-rouge">math.floor()</code><br />
+<code class="highlighter-rouge">__ceil__(self)</code> - Implements <code class="highlighter-rouge">math.ceil()</code><br />
+<code class="highlighter-rouge">__trunc__(self)</code> - Implements <code class="highlighter-rouge">math.trunc()</code></p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="n">obj</span> <span class="o">=</span> <span class="n">MyClass</span><span class="p">()</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">abs</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>                    <span class="c1">#: Invokes __abs__
+</span><span class="o">&gt;&gt;&gt;</span> <span class="nb">round</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>                  <span class="c1">#: Invokes __round__
+</span><span class="o">&gt;&gt;&gt;</span> <span class="nb">repr</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>                   <span class="c1">#: Invokes __repr__
+</span><span class="o">&gt;&gt;&gt;</span> <span class="s">''</span><span class="o">.</span><span class="nb">format</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>              <span class="c1">#: Invokes __format__
+</span><span class="o">&gt;&gt;&gt;</span> <span class="nb">hash</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>                   <span class="c1">#: Invokes __hash__
+</span><span class="o">&gt;&gt;&gt;</span> <span class="nb">bool</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>                   <span class="c1">#: Invokes __bool__
+</span><span class="o">&gt;&gt;&gt;</span> <span class="nb">dir</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>                    <span class="c1">#: Invokes __dir__
+</span><span class="o">&gt;&gt;&gt;</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">MyClass</span><span class="p">)</span>    <span class="c1">#: Invokes __isinstance__
+</span><span class="o">&gt;&gt;&gt;</span> <span class="nb">issubclass</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="nb">object</span><span class="p">)</span>     <span class="c1">#: Invokes __issubclass__
+</span><span class="o">&gt;&gt;&gt;</span> <span class="n">obj</span><span class="p">()</span>                       <span class="c1">#: Invokes __call__
+</span><span class="o">&gt;&gt;&gt;</span> <span class="n">math</span><span class="o">.</span><span class="n">floor</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>             <span class="c1">#: Invokes __floor__
+</span><span class="o">&gt;&gt;&gt;</span> <span class="n">math</span><span class="o">.</span><span class="n">ceil</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>              <span class="c1">#: Invokes __ceil__
+</span><span class="o">&gt;&gt;&gt;</span> <span class="n">math</span><span class="o">.</span><span class="n">trunc</span>                  <span class="c1">#: Invokes __trunc__
+</span><span class="o">&gt;&gt;&gt;</span> <span class="n">obj</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>                      <span class="c1">#: Invokes __index__</span></code></pre></figure>
+
+<h3 id="type-conversion">Type Conversion</h3>
+
+<p><code class="highlighter-rouge">__int__(self)</code> - Implements <code class="highlighter-rouge">int()</code><br />
+<code class="highlighter-rouge">__long__(self)</code> - Implements <code class="highlighter-rouge">long()</code><br />
+<code class="highlighter-rouge">__float__(self)</code> - Implements <code class="highlighter-rouge">float()</code><br />
+<code class="highlighter-rouge">__complex__(self)</code> - Implements <code class="highlighter-rouge">complex()</code><br />
+<code class="highlighter-rouge">__oct__(self)</code> - Implements <code class="highlighter-rouge">oct()</code><br />
+<code class="highlighter-rouge">__hex__(self)</code> - Implements <code class="highlighter-rouge">hex()</code><br />
+<code class="highlighter-rouge">__str__(self)</code> - Implements <code class="highlighter-rouge">str()</code><br />
+<code class="highlighter-rouge">__unicode__(self)</code> - Implements <code class="highlighter-rouge">unicode()</code></p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="n">obj</span> <span class="o">=</span> <span class="n">MyClass</span><span class="p">()</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">int</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>        <span class="c1">#: Invokes __int__
+</span><span class="o">&gt;&gt;&gt;</span> <span class="nb">long</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>       <span class="c1">#: Invokes __long__
+</span><span class="o">&gt;&gt;&gt;</span> <span class="nb">float</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>      <span class="c1">#: Invokes __float__
+</span><span class="o">&gt;&gt;&gt;</span> <span class="nb">complex</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>    <span class="c1">#: Invokes __complex__
+</span><span class="o">&gt;&gt;&gt;</span> <span class="nb">oct</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>        <span class="c1">#: Invokes __oct__
+</span><span class="o">&gt;&gt;&gt;</span> <span class="nb">hex</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>        <span class="c1">#: Invokes __hex__
+</span><span class="o">&gt;&gt;&gt;</span> <span class="nb">str</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>        <span class="c1">#: Invokes __str__
+</span><span class="o">&gt;&gt;&gt;</span> <span class="nb">unicode</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>    <span class="c1">#: Invokes __unicode__</span></code></pre></figure>
+
+<h3 id="attribute-access">Attribute Access</h3>
+
+<p><code class="highlighter-rouge">__getattr__(self, name)</code> - Implements getter<br />
+<code class="highlighter-rouge">__setattr__(self, name, value)</code> - Implements setter<br />
+<code class="highlighter-rouge">__delattr__(self, name)</code> - Implements deleter</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="n">obj</span> <span class="o">=</span> <span class="n">MyClass</span><span class="p">()</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="n">obj</span><span class="o">.</span><span class="n">attr1</span>           <span class="c1">#: Invokes __getattr__
+</span><span class="o">&gt;&gt;&gt;</span> <span class="n">obj</span><span class="o">.</span><span class="n">attr1</span> <span class="o">=</span> <span class="mi">1</span>       <span class="c1">#: Invokes __setattr__
+</span><span class="o">&gt;&gt;&gt;</span> <span class="k">del</span> <span class="n">obj</span><span class="o">.</span><span class="n">attr1</span>       <span class="c1">#: Invokes __delattr__</span></code></pre></figure>
+
+<h3 id="containers--dicts">Containers &amp; Dicts</h3>
+
+<p><code class="highlighter-rouge">__len__(self)</code> - Implements <code class="highlighter-rouge">len()</code><br />
+<code class="highlighter-rouge">__index__(self)</code> - Implements <code class="highlighter-rouge">obj[i]</code><br />
+<code class="highlighter-rouge">__getitem__(self, key)</code> - Implements <code class="highlighter-rouge">obj[key]</code><br />
+<code class="highlighter-rouge">__setitem__(self, key, value)</code> - Implements <code class="highlighter-rouge">obj[key] = val</code><br />
+<code class="highlighter-rouge">__delitem__(self, key)</code> - Implements <code class="highlighter-rouge">del obj[key]</code><br />
+<code class="highlighter-rouge">__iter__(self)</code> - Implements <code class="highlighter-rouge">iter()</code><br />
+<code class="highlighter-rouge">__reversed__(self)</code> - Implements <code class="highlighter-rouge">reversed()</code><br />
+<code class="highlighter-rouge">__contains__(self, item)</code> - Implements <code class="highlighter-rouge">in</code> and <code class="highlighter-rouge">not in</code><br />
+<code class="highlighter-rouge">__missing__(self, key)</code> - Implements the behavior when a key is missing from dictionary</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="n">obj</span> <span class="o">=</span> <span class="n">MyClass</span><span class="p">()</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>                <span class="c1">#: Invokes __len__
+</span><span class="o">&gt;&gt;&gt;</span> <span class="n">obj</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>                  <span class="c1">#: Invokes __index__
+</span><span class="o">&gt;&gt;&gt;</span> <span class="n">obj</span><span class="p">[</span><span class="s">'key1'</span><span class="p">]</span>             <span class="c1">#: Invokes __getitem__
+</span><span class="o">&gt;&gt;&gt;</span> <span class="n">obj</span><span class="p">[</span><span class="s">'key1'</span><span class="p">]</span> <span class="o">=</span> <span class="s">'val1'</span>    <span class="c1">#: Invokes __setitem__
+</span><span class="o">&gt;&gt;&gt;</span> <span class="k">del</span> <span class="n">obj</span> <span class="p">[</span><span class="s">'key1'</span><span class="p">]</span>        <span class="c1">#: Invokes __delitem__
+</span><span class="o">&gt;&gt;&gt;</span> <span class="nb">iter</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>               <span class="c1">#: Invokes __iter__
+</span><span class="o">&gt;&gt;&gt;</span> <span class="nb">reversed</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>           <span class="c1">#: Invokes __reversed__
+</span><span class="o">&gt;&gt;&gt;</span> <span class="s">'key1'</span> <span class="ow">in</span> <span class="n">obj</span>           <span class="c1">#: Invokes __contains__
+</span><span class="o">&gt;&gt;&gt;</span> <span class="n">obj</span><span class="p">[</span><span class="s">'key2'</span><span class="p">]</span>             <span class="c1">#: Invokes __missing__ ('key2' is missing in obj)</span></code></pre></figure>
+
+<h3 id="context-managers">Context Managers</h3>
+
+<p>Context managers allow setup and cleanup actions to be taken for objects when
+their creation is wrapped with a with statement. The behavior of the context
+manager is determined by two magic methods,</p>
+
+<p><code class="highlighter-rouge">__enter__(self)</code> - Defines what the context manager should do at the beginning of the
+block created by the with statement. Note that the return value of <code class="highlighter-rouge">__enter__</code>
+is bound to the target of the <code class="highlighter-rouge">with</code> statement, or the name after the <code class="highlighter-rouge">as</code>.<br />
+<code class="highlighter-rouge">__exit__(self, exception_type, exception_value, traceback)</code> - Defines what the
+context manager should do after its block has been executed (or terminates).</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s">'file.txt'</span><span class="p">)</span> <span class="k">as</span> <span class="n">fp</span><span class="p">:</span>        <span class="c1">#: Invokes __enter__
+</span><span class="o">...</span>     <span class="n">fp</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>                       <span class="c1">#: At the end, invokes __exit__</span></code></pre></figure>
+
+:ET

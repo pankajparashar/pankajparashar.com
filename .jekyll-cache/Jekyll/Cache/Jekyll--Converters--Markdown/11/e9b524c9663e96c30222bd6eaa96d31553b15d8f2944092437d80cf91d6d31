@@ -1,0 +1,40 @@
+I"E<p>For a comprehensive rundown on the technical aspect on this saga, follow the link.
+<strong>TL;DR</strong>? Continue reading the following summary.</p>
+
+<h2 id="the-case">The Case</h2>
+
+<p>In the San Bernadino shooting, FBI found an iPhone 5C of one of the gunmen. The
+FBI has a search warrant to check the contents of the iPhone to build its case.</p>
+
+<h4 id="the-challenges">The Challenges</h4>
+
+<p>Unfortunately, the iPhone is locked with a passcode and predictably the FBI doesn’t
+know the passcode. So obviously someone in the FBI needs to guess the passcode
+to unlock the iPhone. <strong>Brute force!</strong>, But it is not that simple, why?</p>
+
+<ul>
+  <li>iOS will completely wipe the user’s data after too many incorrect attempts.</li>
+  <li>PIN must be entered manually, one-by-one. One cannot enter the PIN programmatically.</li>
+  <li>iOS introduces a delay after every incorrect PIN entry.</li>
+</ul>
+
+<h4 id="what-fbi-is-asking-apple-to-do">What FBI is asking Apple to do?</h4>
+
+<p>In lay man terms, FBI is asking Apple to build a backdoor entry by,</p>
+
+<ul>
+  <li>Disabling the auto-erase function on that iPhone.</li>
+  <li>Allowing unlimited incorrect attempts.</li>
+  <li>Allowing FBI to input PIN from an external device programmatically.</li>
+  <li>Removing the software delay for each incorrect guess.</li>
+</ul>
+
+<p>In nutshell, FBI is asking Apple to build a custom version of iOS and install
+the OS directly on the RAM without affecting the user data.</p>
+
+<h4 id="is-it-challenging-for-apple-to-meet-fbis-demands">Is it challenging for Apple to meet FBI’s demands?</h4>
+
+<p><strong>No</strong>. But Apple is more worried that this backdoor entry (read ‘custom iOS’),
+if it falls into the wrong hands can lead to misuse. If you found this difficult
+to comprehend, then you are better off using an Android phone! Phew!</p>
+:ET

@@ -1,0 +1,94 @@
+I"P@<p>I have been working on a soon-to-be released project for which I needed a bunch of randomly generated colors. Ofcourse, I could have taken the JavaScript route to accomplish this, but I wanted to keep my setup light, as the project itself was completely CSS-based. This brought me to the idea of using Sass to randomly generate colors for the CSS. Ofcourse, I knew that we could use <a href="https://github.com/sass/sass/blob/master/doc-src/SASS_CHANGELOG.md#330-7-march-2014">Sass to randomly generate numbers</a>, I was keen to extend this concept for colors as well.</p>
+
+<p>The idea is to randomly generate a number and assign it to each component of the color. For intuitiveness and simplicity, I used the RGB color model and randomly generated the red, green and the blue components of the color in Sass. Minimum and maximum range for each color component is 0 and 255. However, Sass random() starts from 1. We can tackle this problem in the following way,</p>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="err">$</span><span class="nt">red</span><span class="o">:</span> <span class="nt">random</span><span class="o">(</span><span class="nt">256</span><span class="o">)</span><span class="nt">-1</span><span class="o">;</span>
+<span class="err">$</span><span class="nt">green</span><span class="o">:</span> <span class="nt">random</span><span class="o">(</span><span class="nt">256</span><span class="o">)</span><span class="nt">-1</span><span class="o">;</span>
+<span class="err">$</span><span class="nt">blue</span><span class="o">:</span> <span class="nt">random</span><span class="o">(</span><span class="nt">256</span><span class="o">)</span><span class="nt">-1</span><span class="o">;</span></code></pre></figure>
+
+<p>We can extend the same concept for alpha channel as well which typically accepts values between 0 to 1. In this case, we’ll keep the precision after decimal to 2 places only by dividing the randomly generated number by 100.</p>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="err">$</span><span class="nt">alpha</span><span class="o">:</span> <span class="nt">random</span><span class="o">(</span><span class="nt">100</span><span class="o">)/</span><span class="nt">100</span><span class="o">;</span>
+<span class="nc">.random-color</span> <span class="p">{</span>
+    <span class="nl">color</span><span class="p">:</span> <span class="nb">rgb</span><span class="p">(</span><span class="err">$</span><span class="no">red</span><span class="p">,</span> <span class="err">$</span><span class="no">green</span><span class="p">,</span> <span class="err">$</span><span class="no">blue</span><span class="p">);</span>
+    <span class="nl">background-color</span><span class="p">:</span> <span class="n">rgba</span><span class="p">(</span><span class="err">$</span><span class="no">red</span><span class="p">,</span> <span class="err">$</span><span class="no">green</span><span class="p">,</span> <span class="err">$</span><span class="no">blue</span><span class="p">,</span> <span class="err">$</span><span class="n">alpha</span><span class="p">);</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>However, Sass does some <a href="https://github.com/sass/sass/issues/363#issuecomment-35144591">funky stuff with colors</a> that makes the output CSS appear in a different format in comparison to the authored style. For example,</p>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="c">/* [Sass] -&gt; Compiled CSS */</span>
+<span class="nt">rgb</span><span class="o">(</span><span class="nt">255</span><span class="o">,</span> <span class="nt">0</span><span class="o">,</span> <span class="nt">0</span><span class="o">)</span> <span class="nt">-</span><span class="o">&gt;</span> <span class="nt">red</span>
+<span class="nt">rgb</span><span class="o">(</span><span class="nt">255</span><span class="o">,</span> <span class="nt">200</span><span class="o">,</span> <span class="nt">100</span><span class="o">)</span> <span class="nt">-</span><span class="o">&gt;</span> <span class="nf">#ffc864</span>
+<span class="nt">rgba</span><span class="o">(</span><span class="nt">255</span><span class="o">,</span> <span class="nt">100</span><span class="o">,</span> <span class="nt">100</span><span class="o">,</span> <span class="nc">.05</span><span class="o">)</span> <span class="nt">-</span><span class="o">&gt;</span> <span class="nt">rgba</span><span class="o">(</span><span class="nt">255</span><span class="o">,</span> <span class="nt">100</span><span class="o">,</span> <span class="nt">100</span><span class="o">,</span> <span class="nt">0</span><span class="nc">.05</span><span class="o">)</span></code></pre></figure>
+
+<p>To counter this problem, <a href="https://twitter.com/pankajparashar/status/462623911180394497">I created a string template</a> with the desired format and just needed to substitue the values for each color component. But before we could set this value to any of the CSS properties, we have to remove the quotes.</p>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.random-color</span> <span class="p">{</span>
+    <span class="nl">color</span><span class="p">:</span> <span class="n">unquote</span><span class="p">(</span><span class="s1">"rgb(#{$red}, #{$green}, #{$blue})"</span><span class="p">);</span>
+    <span class="nl">background-color</span><span class="p">:</span> <span class="n">unquote</span><span class="p">(</span><span class="s1">"rgba(#{$red}, #{$green}, #{$blue}, #{$alpha})"</span><span class="p">);</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>… and the compiled CSS is exactly how we authored originally in the <code class="highlighter-rouge">.scss</code> file,</p>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.random-color</span> <span class="p">{</span>
+    <span class="nl">color</span><span class="p">:</span> <span class="nb">rgb</span><span class="p">(</span><span class="m">70</span><span class="p">,</span> <span class="m">110</span><span class="p">,</span> <span class="m">219</span><span class="p">);</span>
+    <span class="nl">background-color</span><span class="p">:</span> <span class="n">rgba</span><span class="p">(</span><span class="m">70</span><span class="p">,</span> <span class="m">110</span><span class="p">,</span> <span class="m">219</span><span class="p">,</span> <span class="m">0.88</span><span class="p">);</span>
+<span class="p">}</span></code></pre></figure>
+
+<h4 id="scalable">Scalable</h4>
+<p>The above code is good if you are sparingly using this concept, however, it is always better we can improvise this idea into a scalable solution with much more color format options and easy-to-use configuration.</p>
+
+<p>Let’s create a random color component using Sass maps,</p>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="err">$</span><span class="nt">color</span><span class="o">:</span> <span class="o">(</span>
+    <span class="nt">percent</span><span class="o">:</span> <span class="o">(</span>
+        <span class="nt">red</span><span class="o">:</span> <span class="nt">random</span><span class="o">(</span><span class="nt">101</span><span class="o">)</span><span class="nt">-1</span><span class="o">,</span> <span class="nt">green</span><span class="o">:</span> <span class="nt">random</span><span class="o">(</span><span class="nt">101</span><span class="o">)</span><span class="nt">-1</span><span class="o">,</span> <span class="nt">blue</span><span class="o">:</span> <span class="nt">random</span><span class="o">(</span><span class="nt">101</span><span class="o">)</span><span class="nt">-1</span><span class="o">,</span>
+        <span class="nt">saturation</span><span class="o">:</span> <span class="nt">random</span><span class="o">(</span><span class="nt">101</span><span class="o">)</span><span class="nt">-1</span><span class="o">,</span> <span class="nt">light</span><span class="o">:</span> <span class="nt">random</span><span class="o">(</span><span class="nt">101</span><span class="o">)</span><span class="nt">-1</span>
+    <span class="o">),</span>
+    <span class="nt">octal</span><span class="o">:</span> <span class="o">(</span> <span class="nt">red</span><span class="o">:</span> <span class="nt">random</span><span class="o">(</span><span class="nt">256</span><span class="o">)</span><span class="nt">-1</span><span class="o">,</span> <span class="nt">green</span><span class="o">:</span> <span class="nt">random</span><span class="o">(</span><span class="nt">256</span><span class="o">)</span><span class="nt">-1</span><span class="o">,</span> <span class="nt">blue</span><span class="o">:</span> <span class="nt">random</span><span class="o">(</span><span class="nt">256</span><span class="o">)</span><span class="nt">-1</span> <span class="o">),</span>
+    <span class="nt">deg</span><span class="o">:</span> <span class="o">(</span> <span class="nt">hue</span><span class="o">:</span> <span class="nt">random</span><span class="o">(</span><span class="nt">361</span><span class="o">)</span><span class="nt">-1</span> <span class="o">),</span>
+    <span class="nt">fraction</span><span class="o">:</span> <span class="o">(</span> <span class="nt">alpha</span><span class="o">:</span> <span class="nt">random</span><span class="o">(</span><span class="nt">100</span><span class="o">)/</span><span class="nt">100</span> <span class="o">)</span>
+<span class="o">);</span></code></pre></figure>
+
+<p>The color map is divided into base and the actual color component. To retrieve individual color components, we’ll build a function that will traverse through the nested color map to fetch the right component,</p>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="k">@function</span> <span class="n">color</span><span class="p">(</span><span class="err">$</span><span class="n">base</span><span class="p">,</span> <span class="err">$</span><span class="n">component</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">@return</span> <span class="n">map-get</span><span class="p">(</span><span class="n">map-get</span><span class="p">(</span><span class="err">$</span><span class="n">color</span><span class="p">,</span> <span class="err">$</span><span class="n">base</span><span class="p">),</span> <span class="err">$</span><span class="n">component</span><span class="p">);</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>We can then easily retrieve the red color component in octal format by using <code>color(octal, red)</code>. Everytime we need a random color, we can call a function and pass the relevant format in which we need the randomly generated color. In-case, there is no argument, we will generate a named color, for which we need the Sass list of 147 color names valid in CSS.</p>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="err">$</span><span class="nt">named-colors</span><span class="o">:</span> <span class="s2">'AliceBlue'</span><span class="o">,</span> <span class="s2">'AntiqueWhite'</span><span class="o">,</span> <span class="o">...,</span> <span class="s2">'YellowGreen'</span><span class="o">;</span></code></pre></figure>
+
+<p>… and the usage,</p>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.random-color</span> <span class="p">{</span>
+    <span class="nl">border-top-color</span><span class="p">:</span> <span class="n">getRandomColor</span><span class="p">();</span>
+    <span class="nl">border-right-color</span><span class="p">:</span> <span class="n">getRandomColor</span><span class="p">(</span><span class="s1">"hex"</span><span class="p">);</span>
+    <span class="nl">border-bottom-color</span><span class="p">:</span> <span class="n">getRandomColor</span><span class="p">(</span><span class="s1">"rgb"</span><span class="p">);</span>
+    <span class="nl">border-left-color</span><span class="p">:</span> <span class="n">getRandomColor</span><span class="p">(</span><span class="s1">"%rgb"</span><span class="p">);</span>
+    <span class="py">outline-top-color</span><span class="p">:</span> <span class="n">getRandomColor</span><span class="p">(</span><span class="s1">"hsl"</span><span class="p">);</span>
+    <span class="py">outline-right-color</span><span class="p">:</span> <span class="n">getRandomColor</span><span class="p">(</span><span class="s1">"rgba"</span><span class="p">);</span>
+    <span class="py">outline-bottom-color</span><span class="p">:</span> <span class="n">getRandomColor</span><span class="p">(</span><span class="s1">"%rgba"</span><span class="p">);</span>
+    <span class="py">outline-left-color</span><span class="p">:</span> <span class="n">getRandomColor</span><span class="p">(</span><span class="s1">"hsla"</span><span class="p">);</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>Now, onto the crucial part of the code that will hook the requested color format with the corresponding randomly generated color map.</p>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="k">@function</span> <span class="n">getRandomColor</span><span class="p">(</span><span class="err">$</span><span class="n">format</span><span class="p">:</span> <span class="n">NULL</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">@if</span> <span class="err">$</span><span class="n">format</span> <span class="err">==</span> <span class="s1">"hex"</span> <span class="p">{</span>
+        <span class="k">@return</span> <span class="nb">rgb</span><span class="p">(</span><span class="n">color</span><span class="p">(</span><span class="n">octal</span><span class="p">,</span> <span class="no">red</span><span class="p">),</span> <span class="n">color</span><span class="p">(</span><span class="n">octal</span><span class="p">,</span> <span class="no">green</span><span class="p">),</span> <span class="n">color</span><span class="p">(</span><span class="n">octal</span><span class="p">,</span> <span class="no">blue</span><span class="p">));</span>
+    <span class="p">}</span>
+    <span class="k">@else</span> <span class="n">if</span> <span class="err">$</span><span class="n">format</span> <span class="err">==</span> <span class="s1">"rgb"</span>   <span class="p">{</span> <span class="o">...</span> <span class="p">}</span>
+    <span class="k">@else</span> <span class="n">if</span> <span class="err">$</span><span class="n">format</span> <span class="err">==</span> <span class="s1">"%rgb"</span>  <span class="p">{</span> <span class="o">...</span> <span class="p">}</span>
+    <span class="k">@else</span> <span class="n">if</span> <span class="err">$</span><span class="n">format</span> <span class="err">==</span> <span class="s1">"rgba"</span>  <span class="p">{</span> <span class="o">...</span> <span class="p">}</span> 
+    <span class="k">@else</span> <span class="n">if</span> <span class="err">$</span><span class="n">format</span> <span class="err">==</span> <span class="s1">"%rgba"</span> <span class="p">{</span> <span class="o">...</span> <span class="p">}</span>
+    <span class="k">@else</span> <span class="n">if</span> <span class="err">$</span><span class="n">format</span> <span class="err">==</span> <span class="s1">"hsl"</span>   <span class="p">{</span> <span class="o">...</span> <span class="p">}</span> 
+    <span class="k">@else</span> <span class="n">if</span> <span class="err">$</span><span class="n">format</span> <span class="err">==</span> <span class="s1">"hsla"</span>  <span class="p">{</span> <span class="o">...</span> <span class="p">}</span> 
+    <span class="k">@else</span> <span class="p">{</span> 
+        <span class="k">@return</span> <span class="n">nth</span><span class="p">(</span><span class="err">$</span><span class="n">named-colors</span><span class="p">,</span> <span class="n">random</span><span class="p">(</span><span class="m">147</span><span class="p">));</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>For the complete code, make sure you check out the <a href="https://gist.github.com/pankajparashar/413419cdbdd1b9d58de3">gist</a> or the working example on <a href="http://sassmeister.com/gist/413419cdbdd1b9d58de3">Sassmeister</a> to get you started.</p>
+:ET

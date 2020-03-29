@@ -1,0 +1,86 @@
+I"1<p>Assuming, you have completed the development work on the frontend of your next web project and are ready to deploy it in production. A typical project involves concatenating and minifying the assets, checking the code for errors, compressing the images and testing it across different combination and breed of browsers, devices and operating system. So, here goes my wishlist,</p>
+
+<p>The typical build process of a project follows,</p>
+
+<figure class="highlight"><pre><code class="language-sh" data-lang="sh">Compilation <span class="o">&gt;</span> Linting <span class="o">&gt;</span> Concatenation <span class="o">&gt;</span> Compression <span class="o">&gt;</span> Miscellaneous</code></pre></figure>
+
+<p>Hence, I have divided the build task into the following categories,</p>
+
+<h4 id="compilation">Compilation</h4>
+
+<p>If you use some kind of a pre-processor in your workflow to write your HTML, CSS or JavaScript, the compilation of code into its raw form naturally becomes the first step of any build task.</p>
+
+<ul>
+  <li><a href="http://haml.info/">HAML</a> / <a href="https://daringfireball.net/projects/markdown/">MarkDown</a> / <a href="http://jade-lang.com/">Jade</a> / <a href="http://jade-lang.com/">Slim</a> to HTML.</li>
+  <li><a href="http://sass-lang.com/">Sass</a> / <a href="http://sass-lang.com/">SCSS</a> / <a href="http://lesscss.org/">LESS</a> / <a href="http://learnboost.github.io/stylus/">Stylus</a> to CSS.</li>
+  <li><a href="http://compass-style.org/">Compass</a> / <a href="http://bourbon.io/">Bourbon</a> to CSS.</li>
+  <li><a href="http://coffeescript.org/">CoffeeScript</a> / <a href="http://livescript.net/">LiveScript</a> / <a href="http://www.typescriptlang.org/">TypeScript</a> to JavaScript.</li>
+</ul>
+
+<h4 id="linting">Linting</h4>
+
+<p>Linting refers to validating your code against errors, suspicous code and checking if the code corresponds to a certain style guidelines.</p>
+
+<ul>
+  <li>Lint all <code class="highlighter-rouge">.html</code>, <code class="highlighter-rouge">.css</code> and <code class="highlighter-rouge">.js</code> files.</li>
+  <li>Should have the ability to configure linting rules and flexiblity to add new style guidelines rules.</li>
+</ul>
+
+<h4 id="concatenation">Concatenation</h4>
+
+<p>Concatenation combines several files of the same type into a single file so that you can reduce the number of HTTP requests to the server.</p>
+
+<ul>
+  <li>Combining <code class="highlighter-rouge">.css</code> and <code class="highlighter-rouge">.js</code> files separately with added flexiblity to choose the order in which the files are merged.</li>
+  <li>Sprite all background images into a single image file and update the CSS code with the correct background url and position value of each image.</li>
+</ul>
+
+<h4 id="compression">Compression</h4>
+
+<p>Compression helps reduce the overall size of the resource being transferred across the network. Following are some of the ways we can achieve compression,</p>
+
+<ul>
+  <li>Compress all the <code class="highlighter-rouge">.png</code>, <code class="highlighter-rouge">.jpg</code>, <code class="highlighter-rouge">.gif</code> and <code class="highlighter-rouge">.svg</code> images with the ability to choose the compression/optimization level.</li>
+  <li>Minify the <code class="highlighter-rouge">.html</code>, <code class="highlighter-rouge">.css</code> and the <code class="highlighter-rouge">.js</code> document with optional features like add banner, keep special comments and report useful statistics at the end of the process.</li>
+  <li>Generate source maps for CSS and JS files to define an exact mapping between the production code and the authored code.</li>
+  <li>Remove unused CSS rulesets.</li>
+</ul>
+
+<h4 id="hashing">Hashing</h4>
+
+<p>Using hash-ed filenames in addition to the Expiry headers, can help bust the cache without worrying about old assets wreaking havoc on your site.</p>
+
+<ul>
+  <li>Rename assets (<code class="highlighter-rouge">.css</code>, <code class="highlighter-rouge">.js</code> and images embedded in CSS) with hash-ed filenames to bust the cache and update the references in the source code.</li>
+  <li>Hashed filename can be a prefix, suffix or a custom naming pattern scheme.</li>
+  <li>It should also have the ability to choose a pre-defined algorithm like <a href="http://en.wikipedia.org/wiki/MD5">MD5</a>, <a href="http://en.wikipedia.org/wiki/SHA-1">SHA1</a>, <a href="http://en.wikipedia.org/wiki/SHA-2">SHA2</a> etc. or a custom algorithm to generate the hash value.</li>
+  <li>An added flexibility to define the number of characters, salt of the output value.</li>
+</ul>
+
+<h4 id="miscellaneous">Miscellaneous</h4>
+
+<p>Some of the tasks that do not belong to any of the aforementioned categories are below,</p>
+
+<ul>
+  <li>Add banner at the top of <code class="highlighter-rouge">.html</code>, <code class="highlighter-rouge">.css</code> and <code class="highlighter-rouge">.js</code> files indicating the license, author and the version no of the file with the ability to automatically increment the no. after every iteration.</li>
+  <li>Resize images to a predetermined width/height to avoid excessive image resize/decode work on the client-side in the browser.</li>
+  <li>Generate responsive images on demand at different resolutions for use with <a href="https://github.com/scottjehl/picturefill">PictureFill</a> or <a href="http://www.w3.org/html/wg/drafts/srcset/w3c-srcset/">Srcset</a>.</li>
+  <li>Convert longhand CSS declarations to shorthand CSS equivalent.</li>
+  <li>Automatically add vendor prefixes to CSS properties.</li>
+  <li>Use Google’s <a href="https://code.google.com/p/closure-stylesheets/#Renaming">Closure Stylesheets</a> to rename CSS class names in the generated stylesheet, which helps reduce the size of the CSS that is eventually sent down to the user.</li>
+  <li>Arrange CSS properties in alphabetical order to <a href="http://coding.smashingmagazine.com/2012/10/02/csscomb-tool-sort-css-properties/">improve the performance of the selector</a>.</li>
+  <li>Convert assets like images and fonts to their equivalent base64 encoded data uris with the ability to choose the threshold size <code class="highlighter-rouge">(~4kb)</code>.</li>
+  <li>Integration with unit testing framework like <a href="http://visionmedia.github.io/mocha/">Mocha</a> or <a href="http://pivotal.github.io/jasmine/">Jasmine</a> or <a href="http://qunitjs.com/">QUnit</a> in a headless browser like <a href="http://phantomjs.org/">PhantomJS</a>.</li>
+  <li>Automatically push static assets (like images) embedded in HTML directly to CDN (like <a href="http://aws.amazon.com/s3/">Amazon S3</a> or <a href="http://aws.amazon.com/cloudfront/">CloudFront</a> and update the new url in the source files.</li>
+  <li>Automatically generate device screenshots on various combination of browsers and operating system via <a href="http://www.browserstack.com/screenshots/api">BrowserStack’s Screenshot API</a>.</li>
+  <li>Run through Google’s <a href="https://developers.google.com/speed/pagespeed/">Pagespeed Optimizer API</a> and the <a href="http://tools.pingdom.com/">Pingdom Tools API</a> to gather Network Utilisation, Web Page Performance audit and other useful statistics that helps you gather significant information about the performance of your website.</li>
+  <li>Identify all the links (both external/internal) that no-longer exists or doesn’t return HTTP 200.</li>
+  <li>Generate documentation of the entire project supported with CSS Style Guides and JavaScript functions.</li>
+</ul>
+
+<h4 id="grulp-project">Grulp Project</h4>
+
+<p>I understand that no build tool would ever be able to meet the outrageous demands of the list above. However, I started with a <a href="https://github.com/pankajparashar/grulp">project on Github</a> to compile a list of ready-to-use grunt/gulp plugins that accomplishes most of the tasks.</p>
+
+<p>!(http://res.cloudinary.com/dw9fem4ki/image/upload/v1391875671/Grulp_d1t3u6.png)</p>
+:ET

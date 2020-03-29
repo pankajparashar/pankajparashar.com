@@ -1,0 +1,198 @@
+I"�<p>Whether it is about mocking an object, class, method or a function, in Python,
+everything can be more or less decomposed into a handful of similar steps. Throughout the article,
+we would only make use of the <code class="highlighter-rouge">patch</code> decorator that can be imported as,</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; from mock import patch
+</code></pre></div></div>
+
+<blockquote>
+  <p>In-case you’re version of Python doesn’t come bundled up with the <code class="highlighter-rouge">mock</code> library, 
+then you could install it by running the following command, in you’re nearest terminal,</p>
+</blockquote>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ pip install mock
+</code></pre></div></div>
+
+<h3 id="mock-the-return-value-of-a-function">Mock the return value of a function</h3>
+
+<p>Let’s say you want to mock the return value of a function <code class="highlighter-rouge">f2</code> that is being
+called from the function <code class="highlighter-rouge">f1</code>.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; def f2():
+...     return 'Inside f2'
+...
+&gt;&gt;&gt; def f1():
+...     print( f2() )
+...
+&gt;&gt;&gt; f1()
+Inside f2
+</code></pre></div></div>
+
+<p>We’ll patch the <code class="highlighter-rouge">return_value</code> of the function <code class="highlighter-rouge">f2</code> by applying a decorator to our
+test function, <code class="highlighter-rouge">test_f1</code>.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; @patch('__main__.f2')
+... def test_f1(mock_f2):
+...     mock_f2.return_value = 'Inside mock f2'
+...     f1()
+... 
+&gt;&gt;&gt; test_f1()
+Inside mock f2
+</code></pre></div></div>
+
+<h3 id="mock-a-variable-in-function-scope">Mock a variable in function scope</h3>
+
+<p>Let’s say we want to mock the value of a variable <code class="highlighter-rouge">x</code> local to a function scope of <code class="highlighter-rouge">f1</code>.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; def f1():
+...     x = 1
+...     print( x )
+...
+&gt;&gt;&gt; f1()
+1
+</code></pre></div></div>
+
+<p>As per Alex Martelli, this is impossible to mock as explained in this <a href="http://stackoverflow.com/a/28688149/903446">Stackoverflow answer</a>.
+Instead use a default argument, as part of the function signature.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; def f1(x=None):
+...     x = x or 1
+...     print( x )
+...
+&gt;&gt;&gt; f1()
+1
+</code></pre></div></div>
+
+<p>Now it is easy to write a test function, by simply calling the function with the 
+expected value.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; def test_f1():
+...     f1(x=2)
+...
+&gt;&gt;&gt; test_f1()
+2
+</code></pre></div></div>
+
+<h3 id="mock-a-variable-in-module-scope">Mock a variable in module scope</h3>
+
+<p>Let’s say we want to mock the value of a variable <code class="highlighter-rouge">x</code> local to a module scope of <code class="highlighter-rouge">module.py</code>.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#: Contents of module.py
+x = 1
+def f1():
+    print( x )
+</code></pre></div></div>
+
+<p>Since, <code class="highlighter-rouge">x</code> is in a global scope for module <code class="highlighter-rouge">module.py</code>, you can mock the value without using
+<code class="highlighter-rouge">patch</code>.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; import module
+&gt;&gt;&gt; def test_f1():
+...     module.x = 2
+...     module.f1()
+...
+&gt;&gt;&gt; test_f1()
+2
+</code></pre></div></div>
+
+<p>If you want to achieve the same behavior, using the <code class="highlighter-rouge">@patch</code> decorator, then it can be done 
+in the following way,</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; import module
+&gt;&gt;&gt; @patch('module.x', 2)
+... def test_f1():
+...     module.f1()
+... 
+&gt;&gt;&gt; test_f1()
+2
+</code></pre></div></div>
+
+<h3 id="mock-an-instance-attribute">Mock an instance attribute</h3>
+
+<p>Let’s say we want to mock an attribute <code class="highlighter-rouge">attr1</code> of an instance <code class="highlighter-rouge">obj1</code> of class <code class="highlighter-rouge">MyClass</code>.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; class MyClass:
+...     attr1 = 1
+...     def f1( self ):
+...         print( self.attr1 )
+... 
+&gt;&gt;&gt; obj1 = MyClass()
+&gt;&gt;&gt; obj1.f1()
+1
+</code></pre></div></div>
+
+<p>This could easily be achieved without using the <code class="highlighter-rouge">@patch</code> decorator in the following way,</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; def test_f1():
+...     obj = MyClass()
+...     obj.attr1 = 2
+...     obj.f1()
+...
+2
+</code></pre></div></div>
+
+<p>Implementing the same behavior using <code class="highlighter-rouge">@patch</code>,</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; @patch('__main__.MyClass.attr1', 2)
+... def test_f1():
+...     obj1 = MyClass()
+...     obj1.f1()
+... 
+&gt;&gt;&gt; 
+&gt;&gt;&gt; test_f1()
+2
+</code></pre></div></div>
+
+<h3 id="mock-an-instance-method">Mock an instance method</h3>
+
+<p>Let’s say we want to mock a method <code class="highlighter-rouge">f1</code> of an instance <code class="highlighter-rouge">obj1</code> of class <code class="highlighter-rouge">MyClass</code>.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; class MyClass:
+...     def f2( self ):
+...         return 'Inside f2' 
+...     
+...     def f1( self ):
+...         print( self.f2() )
+... 
+&gt;&gt;&gt; obj1 = MyClass()
+&gt;&gt;&gt; obj1.f1()
+Inside f2
+</code></pre></div></div>
+
+<p>Now we could patch the <code class="highlighter-rouge">MyClass</code> and change the <code class="highlighter-rouge">return_value</code> of function <code class="highlighter-rouge">f2</code>.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; @patch('__main__.MyClass.f2')
+... def test_f1(mock_f2):
+...     mock_f2.return_value = 'Inside mock f2'
+...     obj1 = MyClass()
+...     obj1.f1()
+... 
+&gt;&gt;&gt; 
+&gt;&gt;&gt; test_f1()
+Inside mock f2
+</code></pre></div></div>
+
+<h3 id="mock-the-instance-itself">Mock the instance itself</h3>
+
+<p>Mocking a class instance can be done by changing the <code class="highlighter-rouge">return_value</code> attribute
+of the mocked class.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; class MyClass:
+...     def __init__(self):
+...         print( 'Inside init' )
+... 
+&gt;&gt;&gt; 
+&gt;&gt;&gt; MyClass()
+Inside init
+
+&gt;&gt;&gt; @patch('__main__.MyClass')
+... def test_f(mock_MyClass):
+...     mock_MyClass.return_value = 'Inside mock init'
+...     print( MyClass() )
+...
+Inside mock init
+</code></pre></div></div>
+
+<p>In nutshell, we manage to test each scenario without using <code class="highlighter-rouge">Mock</code> or <code class="highlighter-rouge">MagicMock</code>. In
+most of the cases, <code class="highlighter-rouge">patch</code> should be enough to unit test your code.</p>
+:ET

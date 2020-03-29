@@ -1,0 +1,118 @@
+I",<blockquote>
+  <p>There’s no such thing as CSS4, as pointed out by Tab Atkins on <a href="http://www.xanthir.com/b4Ko0">his blog</a>. 
+CSS3 is the current <strong>evolution</strong> of CSS, in which the recommendations are split into modules that 
+can be progressed independently. Instead of there being a <strong>CSS4</strong>, the modules have levels, like Level 3, Level 4 etc.</p>
+</blockquote>
+
+<p>The complete specification has a lot of new selectors, but a few of them run the risk of getting dropped before the 
+specification reaches <a href="http://stackoverflow.com/questions/2864202/difference-between-the-proposed-recommendation-and-the-candidate-recommendati">candidate recommendation</a>. 
+Following is the list of new selectors that I think, are going to be the most useful ones,</p>
+
+<h4 id="has">:has()</h4>
+
+<p>The relational pseudo class <code class="highlighter-rouge">:has()</code> accepts a list of selectors as an argument to target those elements that contain 
+atleast one element from the list.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/**
+ * Match &lt;a&gt; elements that contain an &lt;img&gt; tag as 
+ * the direct child **/
+ 
+a:has(&gt; img)
+
+/**
+ * Match &lt;dt&gt; elements that are immediately followed 
+ * by another &lt;dt&gt; element **/
+
+dt:has(+ dt)
+
+/**
+ * Match &lt;section&gt; elements that don’t contain any 
+ * header elements **/
+ 
+section:not(:has(h1, h2, h3, h4, h5, h6))
+
+/**
+ * Match &lt;section&gt; elements that contains anything that's 
+ * not a header element **/
+
+section:has(:not(h1, h2, h3, h4, h5, h6))
+</code></pre></div></div>
+
+<h4 id="multiple-attribute-selectors">Multiple attribute selectors</h4>
+
+<p>Multiple attribute selectors can be used to represent several attributes of an element, or several conditions on 
+the same attribute.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/* Here, the selector represents a span element whose hello attribute 
+has exactly the value 'Cleveland' and whose goodbye attribute has 
+exactly the value 'Columbus' */
+
+span[hello="Cleveland"][goodbye="Columbus"]
+</code></pre></div></div>
+
+<h4 id="dir-and-lang">:dir() and :lang()</h4>
+
+<p>The <code class="highlighter-rouge">:dir()</code> pseudo-class allows the author to write selectors that represent an element based on its 
+directionality as determined by the document language. The <code class="highlighter-rouge">:lang()</code> pseudo-class represents an element 
+that is in one of the languages listed in its argument. It accepts a comma-separated list of one or more 
+language ranges as its argument.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>:dir(ltr) # Matches all elements with 'dir' as 'ltr'
+
+/**
+ * Match elements with `lang` attribute defined either 
+ * as French or German **/
+
+:lang(fr, de) 
+</code></pre></div></div>
+
+<h4 id="empty">:empty</h4>
+
+<p>The :empty pseudo-class represents an element that has no children at all.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/**
+ * For instance, to target a paragragh tag that has no children 
+ * at all [&lt;p&gt;&lt;/p&gt;], we could use **/
+
+p:empty
+</code></pre></div></div>
+
+<h4 id="only-child">:only-child</h4>
+
+<p>The <code class="highlighter-rouge">:only-child</code> pseudo-class represents an element that has no siblings at all. It is exactly same as 
+<code class="highlighter-rouge">:first-child:last-child</code> or <code class="highlighter-rouge">:nth-child(1):nth-last-child(1)</code>, but with a lower specificity.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/** 
+ * Match if the element is the only child of its parent, 
+ * like [&lt;div&gt;&lt;p&gt;&lt;/p&gt;&lt;/div&gt;] **/
+
+p:only-child
+</code></pre></div></div>
+
+<h4 id="typed-child-indexed-pseudo-classes">Typed Child-indexed Pseudo-classes</h4>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># Target every-even [img] element
+img:nth-of-type(2n) 
+
+# Target the 2nd last [img] element
+img:nth-last-of-type(2n)
+
+# Target the first [img] element within its parent scope
+img:first-of-type
+
+# Target the last [img] element within its parent scope
+img:last-of-type
+
+# Target the [img] element when there is no similar 
+# element within its parent scope
+img:only-of-type
+</code></pre></div></div>
+
+<p>The introduction of these selectors, gives us a lot more flexiblity while writing CSS, reduces dependencies 
+on JavaScript for trivial tasks and eventually makes CSS an extremely powerful language. If you want to keep an 
+eye on the progress of CSS Selectors Level 4 specification, then I would strongly recommend you to bookmark this link,</p>
+
+<blockquote>
+  <p><a href="http://dev.w3.org/csswg/selectors-4/">http://dev.w3.org/csswg/selectors-4/</a></p>
+</blockquote>
+:ET
