@@ -9,7 +9,7 @@ body {
     margin: 0; line-height: 1.5; color: #333;
 }
 
-pre, code { font-family: "Operator Mono"; font-size: 14px; background-color: white; padding: 0 5px;}
+pre, code { font-family: "iA Writer Duospace"; font-size: .9em; background-color: white; padding: 0 5px; line-height: inherit;}
 .grid {
 	display: grid;
 	grid-gap: 1em;
