@@ -2,45 +2,37 @@
 layout: home
 ---
 
-<div style="padding: 1em;">
-    <h2 style="color:#000;margin-bottom: 0;">
-        <a href="{{ post.url | prepend: site.baseurl }}">{{ page.title }}</a>
-    </h2>
-    <time>{{ page.date | date: "%b %d, %Y" }}</time>
-    &nbsp;+&nbsp;
-    <time>{% assign words = page.content | number_of_words %} {% if words < 360 %} Less than 1 min {% else %} Approx {{ words | divided_by: 180 }} mins {% endif %}</time>
-    <p style="color:#666">{{ page.excerpt }}</p>
-    <p style="color:#666">Did you enjoy reading this article? I'd love to hear your thoughts. Shoot me an <a href="mailto:email@pankajparashar.com">email</a> or send me a <a href="https://twitter.com/intent/tweet?url={{ page.url | prepend: site.url | uri_escape }}&amp;text={{ page.title }} -&amp;via=pankajparashar">tweet</a> if you've got any comments.</p>
-    <p><a href="/">/home</a></p>
+<div class="content single">
+  <article class="feature">
+    <header>
+      <h1>
+        <a href="{{ page.url }}" title="{{ page.title }}">{{ page.title }}</a></h1>
+      <time datetime="2013-12-31" pubdate>{{ page.date | date: "%b %d, %Y" }} + {% assign words = page.content | number_of_words %} {% if words < 360 %} Less than 1 min {% else %} Approx {{ words | divided_by: 180 }} mins {% endif %}</time>
+
+    </header>
+    <p>{{ page.excerpt }}</p>
+{{content}}  
+</article>
+
+<div class="list-end">
+  <p>
+    {% if paginator.previous_page %}
+                      {% if paginator.previous_page == 1 %}
+                          <a href="/">/prev</a>
+                      {% else %}
+                          <a href="{{ paginator.previous_page_path }}">/prev</a>
+                      {% endif %}
+                  {% else %}
+                      <a>/prev</a>
+                  {% endif %}
+
+                  {% if paginator.next_page %}
+                      <a href="{{ paginator.next_page_path }}">/next</a>
+                  {% else %}
+                      <a>/next</a>
+                  {% endif %}
+  </p>
 
 </div>
-<div style="padding: 1em;">
-    {{ content }}    
-</div>
 
-<div style="padding: 1em;">
-    {% if page.previous.url %}
-        <p style="text-align: right;">/prev
-            <br>
-            <h2>
-                <a class="prev" href="{{page.previous.url}}">{{page.previous.title}}</a>
-            </h2>
-        </p>
-        <p style="text-align: right;">
-            {{ page.previous.excerpt }}
-        </p>
-    {% endif %}
-</div>
-<div style="padding: 1em;">
-    {% if page.next.url %}
-    <p>/next
-        <br>
-        <h2>
-            <a class="next" href="{{page.next.url}}">{{page.next.title}}</a>
-        </h2>
-    </p>
-    <p>
-        {{ page.next.excerpt }}
-    </p>
-    {% endif %}
 </div>

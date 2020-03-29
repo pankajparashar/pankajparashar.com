@@ -1,4 +1,0 @@
-I"û<p>A web app to generate Atomic CSS from the input markup that uses Atomic classes.
-It is based on node.js library, <a href="https://github.com/yahoo/atomizer">Atomizer</a> by Yahoo, which is then wired into
-a JavaScript library using Browserify.</p>
-:ET

@@ -1,4 +1,0 @@
-I"U<p><a href="https://developers.google.com/speed/docs/insights/EnableCompression?csw=1#ServeFromCookielessDomain">Google</a>, <a href="https://developer.yahoo.com/performance/rules.html#cookie_free">Yahoo</a> and others for long have been strongly recommending <strong>to serve your static assets from a cookieless domain</strong> for a 
-faster site. <a href="http://www.jonathanklein.net/">Jonathan Klein</a>, however, questions this notion with the help of a comprehensive article supporting his claim that 
-serving CSS files from the same domain as the base page might be a performance win.</p>
-:ET

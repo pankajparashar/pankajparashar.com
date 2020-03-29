@@ -23,7 +23,7 @@ then you could install it by running the following command, in you're nearest te
 $ pip install mock
 ```
 
-### Mock the return value of a function
+## Mock the return value of a function
 
 Let's say you want to mock the return value of a function `f2` that is being
 called from the function `f1`. 
@@ -52,7 +52,7 @@ test function, `test_f1`.
 Inside mock f2
 ```
 
-### Mock a variable in function scope
+## Mock a variable in function scope
 
 Let's say we want to mock the value of a variable `x` local to a function scope of `f1`.
 
@@ -88,7 +88,7 @@ expected value.
 2
 ```
 
-### Mock a variable in module scope
+## Mock a variable in module scope
 
 Let's say we want to mock the value of a variable `x` local to a module scope of `module.py`.
 
@@ -125,7 +125,7 @@ in the following way,
 2
 ```
 
-### Mock an instance attribute
+## Mock an instance attribute
 
 Let's say we want to mock an attribute `attr1` of an instance `obj1` of class `MyClass`.
 
@@ -164,7 +164,7 @@ Implementing the same behavior using `@patch`,
 2
 ```
 
-### Mock an instance method
+## Mock an instance method
 
 Let's say we want to mock a method `f1` of an instance `obj1` of class `MyClass`.
 
@@ -195,7 +195,7 @@ Now we could patch the `MyClass` and change the `return_value` of function `f2`.
 Inside mock f2
 ```
 
-### Mock the instance itself
+## Mock the instance itself
 
 Mocking a class instance can be done by changing the `return_value` attribute
 of the mocked class.

@@ -1,5 +1,0 @@
-I"g<p>Well, if you think loading script in HTML is as simple as including the <code class="highlighter-rouge">script</code> tag then you need to 
-read this piece by Jake Archibald. The article dicusses various ways in which you 
-can load external JavaScript files in your document, the challenges associated
-with each of them and how to circumvent problems.</p>
-:ET

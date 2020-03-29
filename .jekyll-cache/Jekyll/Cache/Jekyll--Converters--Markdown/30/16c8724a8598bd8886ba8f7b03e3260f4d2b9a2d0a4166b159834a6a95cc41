@@ -1,6 +1,0 @@
-I"Û<p>Roughly around 1430 hours Pacific time on Tuesday, March 22nd, 2016, <a href="https://www.npmjs.com">@npmjs</a>
-observed hundreds of failures per minute for missing dependencies requesting
-for the now-unpublished package, <code class="highlighter-rouge">left-pad</code>. Notably popular open source libraries
-like Babel, React etc stopped working as this package was enlisted as one of the
-dependencies in the <code class="highlighter-rouge">package.json</code> file.</p>
-:ET

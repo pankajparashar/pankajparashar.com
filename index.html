@@ -2,21 +2,39 @@
 layout: home
 ---
 
-{% for post in paginator.posts %}
-<article>
-    <h2 style="color:#000;margin-bottom: 0;">
-        <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-    </h2>
-    <time>{{ post.date | date: "%b %d, %Y" }}</time>
-    &nbsp;+&nbsp;
-    <time>{% assign words = post.content | number_of_words %} {% if words < 360 %} Less than 1 min {% else %} Approx {{ words | divided_by: 180 }} mins {% endif %}</time>
+<div class="content list">
+  {% for post in paginator.posts %}
+  <article>
+    <header>
+      <h1>
+        <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></h1>
+      <time datetime="2013-12-31" pubdate>{{ post.date | date: "%b %d, %Y" }} + {% assign words = post.content | number_of_words %} {% if words < 360 %} Less than 1 min {% else %} Approx {{ words | divided_by: 180 }} mins {% endif %}</time>
+    </header>
+    <p>{{ post.excerpt }}</p>
+    <p> <a href="blog/2013-the-year-of-the-dollar#more-259" class="more-link">/more</a></p>
+  </article>
+  {% endfor %}
 
-    {% if post.type == 'post' %}
-        <p style="color:#666">{{ post.excerpt }}</p>
-        <p><strong>/more</strong></p>
-    {% elsif post.type == 'link' %}
-        <p style="color:#666">{{ post.excerpt }}</p>
-        <p><strong>/visit</strong></p>
-   {% endif %}
-</article>
-{% endfor %}
+  <div class="list-end">
+    <p>
+      {% if paginator.previous_page %}
+                        {% if paginator.previous_page == 1 %}
+                            <a href="/">/prev</a>
+                        {% else %}
+                            <a href="{{ paginator.previous_page_path }}">/prev</a>
+                        {% endif %}
+                    {% else %}
+                        <a>/prev</a>
+                    {% endif %}
+
+                    {% if paginator.next_page %}
+                        <a href="{{ paginator.next_page_path }}">/next</a>
+                    {% else %}
+                        <a>/next</a>
+                    {% endif %}
+    </p>
+  
+  </div>
+
+
+</div>
