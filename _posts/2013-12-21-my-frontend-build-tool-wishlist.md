@@ -1,13 +1,16 @@
 ---
 title: Frontend build tool wishlist
-date: 2013-12-21 00:00:00 Z
+date: 2013-12-21T00:00:00.000+00:00
 layout: post
-type: post
 excerpt: For quite a long time now, I have been toying around an idea of a perfect
   build tool to deploy front-end projects. This article is all about my wishlist from
   such a tool.
----
+timeToRead: '1'
+authors:
+- Pankaj Parashar
+hero: "/images/images.png"
 
+---
 Assuming, you have completed the development work on the frontend of your next web project and are ready to deploy it in production. A typical project involves concatenating and minifying the assets, checking the code for errors, compressing the images and testing it across different combination and breed of browsers, devices and operating system. So, here goes my wishlist,
 
 The typical build process of a project follows,
@@ -82,7 +85,4 @@ Some of the tasks that do not belong to any of the aforementioned categories are
 
 I understand that no build tool would ever be able to meet the outrageous demands of the list above. However, I started with a [project on Github](https://github.com/pankajparashar/grulp) to compile a list of ready-to-use grunt/gulp plugins that accomplishes most of the tasks.
 
-<figure>
-    <img alt="Grulp" src="http://res.cloudinary.com/dw9fem4ki/image/upload/v1391875671/Grulp_d1t3u6.png">
-    <figcaption><a href="https://github.com/pankajparashar/grulp">Grulp</a> - List of ready-to-use grunt/gulp plugins to build your next web project.</figcaption>
-</figure>
+!(http://res.cloudinary.com/dw9fem4ki/image/upload/v1391875671/Grulp_d1t3u6.png)

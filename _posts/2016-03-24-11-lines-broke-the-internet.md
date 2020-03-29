@@ -2,7 +2,7 @@
 title: How 11 lines of JavaScript broke the Internet?
 date: 2016-03-24 00:00:00 Z
 layout: link
-type: link
+type: post
 link: http://www.theregister.co.uk/2016/03/23/npm_left_pad_chaos?mt=1458754433021
 ---
 
@@ -18,13 +18,13 @@ failures across the internet, and eventually led to mass fallout on [Github](htt
 [Reddit](https://www.reddit.com/r/programming/comments/4bjss2/an_11_line_npm_package_called_leftpad_with_only/) and
 [Hacker News](https://news.ycombinator.com/item?id=11340510).
 
-### What is this package for?
+#### What is this package for?
 
 At the time of writing, `left-pad` is one of the most popular open source package
 registered at NPM, with roughly 2.5M downloads per month. All it does, is implement
 a basic left-pad string function using just 11 lines of JavaScript,
 
-{% highlight js %}
+```
 module.exports = leftpad;
 function leftpad (str, len, ch) {
     str = String(str);
@@ -35,9 +35,10 @@ function leftpad (str, len, ch) {
         str = ch + str;
     }
     return str;
-}{% endhighlight %}
+}
+```
 
-### What happened behind the scenes?
+#### What happened behind the scenes?
 
 Azer Koculu, the developer of this package pulled out approximately 250 packages
 from the NPM registry (including `left-pad`) in protest to alleged harassment from
@@ -58,7 +59,7 @@ Mike's response shows Kik in poor light, as evident here,
 NPM were not far too behind in publishing the timeline of the events as it unfolded
 on thier [blog](http://blog.npmjs.org/post/141577284765/kik-left-pad-and-npm).
 
-### Who's to blame?
+#### Who's to blame?
 
 Some of the folks in the community think that **@Azer** reacted too aggressively
 by unpublishing all the packages in anger. Majority of the people agree that **@Kik**

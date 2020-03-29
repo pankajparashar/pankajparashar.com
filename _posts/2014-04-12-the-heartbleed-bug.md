@@ -1,12 +1,14 @@
 ---
 title: The HeartBleed Bug
-date: 2014-04-12 00:00:00 Z
+date: 2014-04-12T00:00:00.000+00:00
 layout: post
-type: post
 excerpt: The encryption flaw that punctured the heart of the Internet and has left
   almost two-thirds of the world's websites vulnerable to attack by hackers.
----
+timeToRead: '1'
+authors:
+- Pankaj Parashar
 
+---
 This [bug](http://heartbleed.com/) was discovered on April 07, 2014, by Neel Mehta from Google Security and the team of security engineers (Riku, Antti and Matti) from Codenomicon and has affacted v1.0.1 and 1.0.2-beta releases of OpenSSL including 1.0.1f and 1.0.2-beta1.
 
 [XKCD does a better job](http://xkcd.com/1354/) of explaining a lay man's version of the bug. For a more technical description, I would recommend reading [Cloudfare's](http://blog.cloudflare.com/answering-the-critical-question-can-you-get-private-ssl-keys-using-heartbleed) version of explanation. They even had a [challenge page](https://www.cloudflarechallenge.com/heartbleed) setup to lure hackers to expose the vulnerabilities of the web server by hacking in to the private key of the SSL certificate.

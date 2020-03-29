@@ -1,11 +1,13 @@
 ---
 title: Shorter code is inconsiderate
-date: 2014-12-27 00:00:00 Z
+date: 2014-12-27T00:00:00.000+00:00
 layout: link
 type: link
 link: https://medium.com/on-coding/shorter-code-is-inconsiderate-41cce917b51b
----
+timeToRead: '1'
+draft: true
 
+---
 [Allan Reyes](https://twitter.com/allanbreyes) wrote an extremely pertinent article describing the pitfalls of writing 
 concise code with the intention of prematurely optimizing the code but ending up making life difficult for everyone. 
 Few downsides discussed in the article accompanied by examples,

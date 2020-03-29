@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+       {% include head.html %}
+   </head>
+    <body>
+        {% include header.html %}
+        <div style="background-color:#f1f1f1; padding: 2.5em 0;">
+
+            
+            <section class="grid" style="grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));">
+                {{ content }}
+            </section>
+
+            {% if page.layout == 'home' %}
+            <section class="grid" style="margin-bottom:0; grid-template-columns: 1fr 1fr">
+                <div style="text-align: right; padding: 1em 0 0 0;">
+                    {% if paginator.previous_page %}
+                        {% if paginator.previous_page == 1 %}
+                            <a href="/">/prev</a>
+                        {% else %}
+                            <a href="{{ paginator.previous_page_path }}">/prev</a>
+                        {% endif %}
+                    {% else %}
+                        <a>/prev</a>
+                    {% endif %}
+                </div>
+                <div style="padding: 1em 0 0 0">
+                    {% if paginator.next_page %}
+                        <a href="{{ paginator.next_page_path }}">/next</a>
+                    {% else %}
+                        <a>/next</a>
+                    {% endif %}
+                </div>
+            </section>
+            {% endif %}
+        </div>
+        {% include footer.html %}
+    </body>
+</html>

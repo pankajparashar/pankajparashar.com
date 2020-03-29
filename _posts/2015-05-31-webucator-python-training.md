@@ -1,11 +1,13 @@
 ---
 title: Webucator - Python Training
-date: 2015-05-31 00:00:00 Z
+date: 2015-05-31T00:00:00.000+00:00
 layout: link
 type: link
 link: https://www.webucator.com/programming/python.cfm
----
+timeToRead: '1'
+draft: true
 
+---
 The awesome folks at [Webucator](https://www.webucator.com/) converted my article on [Regular Expressions in Python](http://pankajparashar.com/posts/python-regular-expressions/)
 into a training video which can be found [here on Youtube](https://www.youtube.com/watch?v=K28U0HvkIG8). I particularly liked the 
 concept of transforming an article into a full length training video and I must say that Webucator has done an incredible job.

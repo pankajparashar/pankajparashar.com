@@ -54,7 +54,4 @@ As it stands, the approach is not completely perfect but still does a darn good
 job of showcasing the benefits by simply adopting Atomic CSS methodology.
 Need proof? check the stats of [twitter.com](https://atomize-io.herokuapp.com/twitter.com) here,
 
-<figure>
-    <img src="http://res.cloudinary.com/dw9fem4ki/image/upload/c_scale,w_800/v1458987639/Screen_Shot_2016-03-26_at_3.48.46_PM_afogfs.png">
-    <figcaption>Atomize IO stats for twitter.com. Also see this <a href="https://twitter.com/necolas/status/713123463301455873">tweet</a> by Nicolas Gallagher.</figcaption>
-</figure>
+!(http://res.cloudinary.com/dw9fem4ki/image/upload/c_scale,w_800/v1458987639/Screen_Shot_2016-03-26_at_3.48.46_PM_afogfs.png)[]

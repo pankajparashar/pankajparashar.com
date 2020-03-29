@@ -1,13 +1,16 @@
 ---
 title: Best practices vs HTTP 2.0
-date: 2015-03-05 00:00:00 Z
+date: 2015-03-05T00:00:00.000+00:00
 layout: post
 type: post
 excerpt: This post is all about the introduction of HTTP 2.0 into the mainstream by
   putting it side-to-side with some of the best practices that we have engineered
   and cultivated over the years.
----
+timeToRead: '10'
+authors:
+- Pankaj Parashar
 
+---
 ### Best practice 1 - Concatenation of assets
 
 Spriting multiple images, concatenating your CSS and JS files and inlining your assets with base64 are some of the techniques 

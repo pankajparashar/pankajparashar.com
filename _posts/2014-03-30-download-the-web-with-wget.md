@@ -1,13 +1,15 @@
 ---
 title: Download the web with WGET
-date: 2014-03-30 00:00:00 Z
+date: 2014-03-30T00:00:00.000+00:00
 layout: post
-type: post
 excerpt: Having recently discovered the power of wget command, I have written this
   article to remind myself the various ways we could use this command to download
   the world wide web.
----
+timeToRead: '1'
+authors:
+- Pankaj Parashar
 
+---
 The name `wget` is derived from the amalgamation of `World Wide Web` and `Get`. The UNIX [manual page](http://unixhelp.ed.ac.uk/CGI/man-cgi?wget) describes it as,
 
 {% highlight sh %}
@@ -64,7 +66,4 @@ $ wget ftp://cdn.pankajparashar.com/file.txt
 # FTP download using wget with username and password authentication.
 $ wget --ftp-user=USERNAME --ftp-password=PASSWORD ftp://cdn.pankajparashar.com/file.txt{% endhighlight %}
 
-<figure>
-    <img src="https://img.labnol.org/di/wget-mirror-site.png" title="WGET Cheatsheet">
-    <figcaption>WGET cheatsheet via @labnol - <a href="http://www.labnol.org/software/wget-command-examples/28750/">All the Wget Commands You Should Know</a></figcaption>
-</figure>
+!(https://img.labnol.org/di/wget-mirror-site.png)

@@ -1,12 +1,14 @@
 ---
 title: Why do I hate CSS preprocessors?
-date: 2013-05-05 00:00:00 Z
+date: 2013-05-05T00:00:00.000+00:00
 layout: post
-type: post
 excerpt: Preprocessors solves a problem that doesn’t really exist! Continue reading
   my musings about using a pre-processing tool for a language like CSS.
----
+timeToRead: "5"
+authors:
+- Pankaj Parashar
 
+---
 For the past few months I have been struggling to convince myself to switch to a CSS preprocessing language like [Sass](http://sass-lang.com/) or [LESS](http://www.lesscss.org/). But on the contrary, I ended up documenting the reasons for not using a CSS preprocessor. Here’s why,
 
 > Since, the time I wrote this article, I've moved on to use SCSS as my primary pre-processing language, due to its ability to understand plain CSS as well. I don't use all the features offered by SCSS, but use only few of them like variables, mixins, nesting etc. that helps me write better CSS – **November 23, 2013**.
@@ -23,8 +25,7 @@ The mixin works wonderfully well, but wait! did I forget how to write the CSS fo
 
 Writing pure CSS always brings me closer to the fact that how simple this language is. I write my HTML and JavaScript keeping in mind the simplicity that css can offer. This ensures that my CSS is always used for the presentational aspects only, whereas the complexities are dealt by JavaScript.
 
-<figure><img src="https://d262ilb51hltx0.cloudfront.net/fit/t/1800/756/0*MIhIq2HVG_osB0mU.jpeg">
-<figcaption>Code mess created with pre-processor tools like Sass!</figcaption></figure>
+![](https://d262ilb51hltx0.cloudfront.net/fit/t/1800/756/0*MIhIq2HVG_osB0mU.jpeg)
 
 However, the variables, mixins, extends, nesting etc., in preprocessors forces us to define our approach to write CSS in a programmatic manner rather than aesthetic one. Hence, it is easier to get carried away and lose the bigger picture, isn’t it?
 
@@ -32,7 +33,7 @@ However, the variables, mixins, extends, nesting etc., in preprocessors forces u
 
 Pundits will quickly discard this point as almost every CSS preprocessing tool on this earth is capable of minifying the output CSS. However, the final file size has more to do with the code written inside the file than just gzip and minification.
 
-> <a href="http://blog.millermedeiros.com/the-problem-with-css-pre-processors/">Studies</a> have proved that preprocessors have the tendency of generating redundant snippets of code, when the actual css could have been much smaller.
+> [Studies]() have proved that preprocessors have the tendency of generating redundant snippets of code, when the actual css could have been much smaller.
 
 Lea Verou explains this phenomenon with examples in her [opinionated article on CSS preprocessors](http://lea.verou.me/2011/03/on-css-preprocessors/).
 

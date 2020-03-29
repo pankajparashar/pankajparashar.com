@@ -1,0 +1,65 @@
+* {
+    outline: 0px solid #ccc;
+}
+
+body {
+    font-family: "Overpass";
+    margin: 0; line-height: 1.5; color: #333;
+}
+
+pre, code { font-family: "Operator Mono"; font-size: 14px; background-color: white; padding: 0 5px;}
+.grid {
+	display: grid;
+	grid-gap: 1em;
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+header, section, footer {
+    max-width: 1200px;
+    margin: auto;
+} 
+
+section {
+    margin-bottom: 1em; ;
+}
+
+article { padding: 0 1em; background-color: whitesmoke; transition: background-color 0.5s ease; }
+article:hover { background-color: white; }
+article p { color: #666;}
+a { color: #000; text-decoration: none; position: relative; border-bottom: 2px solid #333;}
+a:hover { border-bottom: 0;}
+
+a:after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0px;
+    height: 2px;
+    transition: all 0.2s ease-in-out;
+    background-color: #333;
+}
+a:hover:after {
+    width: 100%;
+}
+time {color: #666;}
+
+h2 a { border-bottom: 0;}
+h2 a:hover:after {width: 0;}
+
+figure {
+    margin: 0;
+}
+.highlight {
+    margin-bottom: 1.5em;
+}
+
+h3 {
+    border-bottom: 2px solid white;
+}
+
+blockquote {
+    border-left: 2px solid white;
+    margin: 0;
+    padding-left: 1em;
+}

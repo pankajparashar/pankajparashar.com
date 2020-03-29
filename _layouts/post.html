@@ -1,14 +1,46 @@
 ---
-layout: default
+layout: home
 ---
 
-<article>
-    <time itemprop="datePublished" content="{{ page.date | date: '%d-%b-%Y' }}" datetime="{{ page.date | date: '%Y-%m-%d' }}">{{ page.date | date: "%b %d, %Y" }}</time> &nbsp;•&nbsp; <time>{% assign words = page.content | number_of_words %} {% if words < 360 %} Less than 1 min {% else %} Approx {{ words | divided_by: 180 }} mins {% endif %}</time>
-    <h2><a href="{{ post.url }}">{{ page.title }}</a></h2>
+<div style="padding: 1em;">
+    <h2 style="color:#000;margin-bottom: 0;">
+        <a href="{{ post.url | prepend: site.baseurl }}">{{ page.title }}</a>
+    </h2>
+    <time>{{ page.date | date: "%b %d, %Y" }}</time>
+    &nbsp;+&nbsp;
+    <time>{% assign words = page.content | number_of_words %} {% if words < 360 %} Less than 1 min {% else %} Approx {{ words | divided_by: 180 }} mins {% endif %}</time>
     <p style="color:#666">{{ page.excerpt }}</p>
-    
-    {{ content }}
-    
     <p style="color:#666">Did you enjoy reading this article? I'd love to hear your thoughts. Shoot me an <a href="mailto:email@pankajparashar.com">email</a> or send me a <a href="https://twitter.com/intent/tweet?url={{ page.url | prepend: site.url | uri_escape }}&amp;text={{ page.title }} -&amp;via=pankajparashar">tweet</a> if you've got any comments.</p>
-    <p><a href="/">‹ Back to Home</a></p>
-</article>
+    <p><a href="/">/home</a></p>
+
+</div>
+<div style="padding: 1em;">
+    {{ content }}    
+</div>
+
+<div style="padding: 1em;">
+    {% if page.previous.url %}
+        <p style="text-align: right;">/prev
+            <br>
+            <h2>
+                <a class="prev" href="{{page.previous.url}}">{{page.previous.title}}</a>
+            </h2>
+        </p>
+        <p style="text-align: right;">
+            {{ page.previous.excerpt }}
+        </p>
+    {% endif %}
+</div>
+<div style="padding: 1em;">
+    {% if page.next.url %}
+    <p>/next
+        <br>
+        <h2>
+            <a class="next" href="{{page.next.url}}">{{page.next.title}}</a>
+        </h2>
+    </p>
+    <p>
+        {{ page.next.excerpt }}
+    </p>
+    {% endif %}
+</div>

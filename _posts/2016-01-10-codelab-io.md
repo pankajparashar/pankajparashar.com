@@ -1,10 +1,10 @@
 ---
 title: Codelab IO
-date: 2016-01-10 00:00:00 Z
+date: 2016-01-10T00:00:00.000+00:00
 type: project
 link: https://codelab-io.herokuapp.com/
----
 
+---
 Over the weekend, I dished out a realtime in-browser code editor, perfect for
 collaborating online with other developers. It can also be used as a whiteboard
 to interview candidates distanced by geographical location. As far as the technology
@@ -14,6 +14,4 @@ stack is concerned,
 - [Socket.io](http://socket.io/) is used to establish real-time communication across users.
 - HTML5, CSS3 and JavaScript constitutes the front-end.
 
-<figure>
-    <img src="https://res.cloudinary.com/dw9fem4ki/image/upload/c_scale,w_800/v1452432134/codelab_xrkofo.png" style="margin-bottom: -1.5em;" alt="Screenshot for Codelab in action">
-</figure>
+!(https://res.cloudinary.com/dw9fem4ki/image/upload/c_scale,w_800/v1452432134/codelab_xrkofo.png)[]

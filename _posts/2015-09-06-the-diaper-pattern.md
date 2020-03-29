@@ -1,11 +1,15 @@
 ---
 title: The Diaper Pattern
-date: 2015-09-06 00:00:00 Z
+date: 2015-09-06T00:00:00.000+00:00
 layout: link
 type: link
 link: http://mike.pirnat.com/2009/05/09/the-diaper-pattern-stinks/
----
+timeToRead: '1'
+authors:
+- Pankaj Parashar
+draft: true
 
+---
 [Mike Pirnat](http://mike.pirnat.com/) wrote about the diaper pattern almost
 6 years ago, but the essence of his writing is still fresh in my mind. It refers
 to the practice of catching generic exceptions in your code, allowing them to
