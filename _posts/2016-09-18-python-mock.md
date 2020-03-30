@@ -11,7 +11,7 @@ excerpt: The Python mock library has largely been a black hole when it comes to 
 Whether it is about mocking an object, class, method or a function, in Python,
 everything can be more or less decomposed into a handful of similar steps. Throughout the article,
 we would only make use of the `patch` decorator that can be imported as,
-
+<!-- more -->
 ```
 >>> from mock import patch
 ```
@@ -22,7 +22,6 @@ then you could install it by running the following command, in you're nearest te
 ```
 $ pip install mock
 ```
-
 ## Mock the return value of a function
 
 Let's say you want to mock the return value of a function `f2` that is being

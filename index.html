@@ -10,9 +10,17 @@ layout: home
         <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></h1>
       <time datetime="2013-12-31" pubdate>{{ post.date | date: "%b %d, %Y" }} + {% assign words = post.content | number_of_words %} {% if words < 360 %} Less than 1 min {% else %} Approx {{ words | divided_by: 180 }} mins {% endif %}</time>
     </header>
-    <p>{{ post.excerpt }}</p>
-    <p> <a href="blog/2013-the-year-of-the-dollar#more-259" class="more-link">/more</a></p>
-  </article>
+    {% if post.content contains "<!-- more -->" %}
+      <p>{{ post.excerpt }}</p>
+      <p>{{ post.content | split:"<!-- more -->" | first }}</p>
+      <p>
+        <a href="{{ post.url }}">+read-more</a>
+      </p>
+    {% else %}
+      {{ post.excerpt }}
+    {% endif %}
+
+</article>
   {% endfor %}
 
   <div class="list-end">
