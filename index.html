@@ -17,9 +17,14 @@ layout: home
         <a href="{{ post.url }}">+read-more</a>
       </p>
     {% else %}
-      {{ post.excerpt }}
+      {{ post.content }}
     {% endif %}
-
+    
+    {% if post.type  == 'link' %}
+      <p>
+        <a href="{{ post.link }}">+visit-link</a>
+      </p>    
+    {% endif %}
 </article>
   {% endfor %}
 
@@ -27,18 +32,18 @@ layout: home
     <p>
       {% if paginator.previous_page %}
                         {% if paginator.previous_page == 1 %}
-                            <a href="/">/prev</a>
+                            <a href="/">+prev</a>
                         {% else %}
-                            <a href="{{ paginator.previous_page_path }}">/prev</a>
+                            <a href="{{ paginator.previous_page_path }}">+prev</a>
                         {% endif %}
                     {% else %}
-                        <a>/prev</a>
+                        <a>+prev</a>
                     {% endif %}
-
+|
                     {% if paginator.next_page %}
-                        <a href="{{ paginator.next_page_path }}">/next</a>
+                        <a href="{{ paginator.next_page_path }}">+next</a>
                     {% else %}
-                        <a>/next</a>
+                        <a>+next</a>
                     {% endif %}
     </p>
   

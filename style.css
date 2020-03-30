@@ -181,13 +181,14 @@ h1 a {
 
 h2 {
     font-size: 1.33333333333333em;
-    line-height: 1.125;
+    line-height: 1.5;
     margin-top: 1.75em;
     margin-bottom: 0.5em;
-    font-weight: 400;
+    font-weight: bold;
     color: #333;
+    border-bottom: 1px solid #eee;
 }
-
+img {width:100%}
 p {
     margin: 1.5em 10% 1.5em 0;
 }
@@ -215,7 +216,6 @@ ol {
 }
 
 pre, li {
-    margin-top: 1.5em;
 }
 
 pre { padding: 1em; }
@@ -228,10 +228,13 @@ pre, code {
     white-space: pre-wrap;
     white-space: pre-line;
     word-wrap: break-word;
-    font-size:14px;
+    font-size:15px;
     font-weight: 400;
     letter-spacing: -1px;
 }
+
+article ul { }
+article li { margin-left:1em; }
 
 pre, .highlight {
     background: whitesmoke;

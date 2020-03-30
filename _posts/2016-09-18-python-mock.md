@@ -11,7 +11,9 @@ excerpt: The Python mock library has largely been a black hole when it comes to 
 Whether it is about mocking an object, class, method or a function, in Python,
 everything can be more or less decomposed into a handful of similar steps. Throughout the article,
 we would only make use of the `patch` decorator that can be imported as,
+
 <!-- more -->
+
 ```
 >>> from mock import patch
 ```

@@ -12,9 +12,9 @@ and run it against your website. I have been massively impressed with the idea b
 and always wanted to build something to find out, how much duplicate CSS declarations
 live inside the CSS codebase of popular websites and by how much they can benefit by adopting the Atomic CSS methodology.
 
+<!-- more -->
 Atomize IO answers both the questions and represents the results with bunch of numbers.
 In the next section, I will outline the principle and algorithm developed to calculate these numbers.
-
 ### Principle
 
 Since, Atomic CSS relies on single purpose classes, it manages to avoid duplicate

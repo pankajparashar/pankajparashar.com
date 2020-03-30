@@ -10,7 +10,9 @@ layout: home
       <time datetime="2013-12-31" pubdate>{{ page.date | date: "%b %d, %Y" }} + {% assign words = page.content | number_of_words %} {% if words < 360 %} Less than 1 min {% else %} Approx {{ words | divided_by: 180 }} mins {% endif %}</time>
 
     </header>
-    <p>{{ page.excerpt }}</p>
+    {% if post.excerpt %}
+      <p>{{ page.excerpt }}</p>
+    {% endif %}
 {{content}}  
 </article>
 
