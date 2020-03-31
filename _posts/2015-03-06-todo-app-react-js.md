@@ -13,9 +13,11 @@ In this article, we'll build an extremely simple app using Facebook's [react.js]
 unfamiliar with this library, then I would strongly recommend reading the complete tutorial on building a [Comment system](http://facebook.github.io/react/docs/tutorial.html) using React.
 
 > This article has been updated several times in the past few months, to prevent it
-> from becoming outdated in lieu with the rapid changes in the react.js library
+> from becoming obsolete.
 
-#### Thinking in components
+<!-- more -->
+
+## Thinking in components
 
 The fundamental way of building a React.js app is to break down your app into bunch of useful components and then work your
 way backwards to build them separately. Once the individual components are ready, we can wire them up to exchange data
@@ -32,7 +34,7 @@ TODO APP
 	TODO FORM
 ```
 
-#### Wiring dependencies
+## Wiring dependencies
 
 React ofcourse needs the `react.js` library and the JSX Transformer for sugar syntax. Before, we proceed we'll add these dependencies
 into the `head` of our document.
@@ -49,10 +51,10 @@ into the `head` of our document.
 </body>
 ```
 
-#### Basic Skeleton
+## Basic Skeleton
 
 ```
-/* \[TODO APP\] */
+/* [TODO APP] */
 var TodoApp = React.createClass({ ... });
 
     /* [TODO BANNER] && [TODO LIST] */
@@ -68,115 +70,114 @@ var TodoApp = React.createClass({ ... });
 React.render(<TodoApp/>, document.body);
 ```
 
-#### Component 1 - TodoApp
+## Component 1 - TodoApp
 
 This component will hold a list of todo items that will be shared by its child components in various forms. The initial state
 of `items` will be a blank list. The list will be updated as soon as a new item is added via the `TodoForm` component.
 
 ```
-/* \[TODO APP\] */
+/* [TODO APP] */
 var TodoApp = React.createClass({
-getInitialState: function(){
-return {items: \[\]};
-},
-updateItems: function(newItem){
-var allItems = this.state.items.concat(\[newItem\]);
-this.setState({items: allItems});
-},
-render: function(){
-return (
-<div>
-<TodoBanner/>
-<TodoList items={this.state.items}/>
-<TodoForm onFormSubmit={this.updateItems}/>
-</div>
-);
-}
+	getInitialState: function(){
+		return {items: []};
+	},
+	updateItems: function(newItem){
+		var allItems = this.state.items.concat([newItem]);
+		this.setState({items: allItems});
+	},
+	render: function(){
+		return (
+			<div>
+				<TodoBanner/>
+				<TodoList items={this.state.items}/>
+				<TodoForm onFormSubmit={this.updateItems}/>
+			</div>
+		);
+	}
 });
-
 ```
 
-#### Component 2 - TodoBanner
+## Component 2 - TodoBanner
 
 It simply contains a heading tag. Nothing fancy here!
 
 ```
-/* \[TODO BANNER\] */
+/* [TODO BANNER] */
 var TodoBanner = React.createClass({
-render: function(){
-return (
-<h3>TODO</h3>
-);
-}
+	render: function(){
+		return (
+			<h3>TODO</h3>
+		);
+	}
 });
 ```
 
-#### Component 3 - TodoList
+## Component 3 - TodoList
 
 It accepts a list of items and wraps each item around a `TodoListItem` component. The final result is then wrapped with `<ul>` tag.
 
 ```
-/* \[TODO LIST\] */
+/* [TODO LIST] */
 var TodoList = React.createClass({
-render: function() {
-var createItem = function(itemText) {
-return (
-<TodoListItem>{itemText}</TodoListItem>
-);
-};
-return <ul>{this.props.items.map(createItem)}</ul>;
-}
+	render: function() {
+		var createItem = function(itemText) {
+			return (
+				<TodoListItem>{itemText}</TodoListItem>
+			);
+		};
+		return <ul>{this.props.items.map(createItem)}</ul>;
+	}
 });
 ```
 
-#### Component 4 - TodoListItem
+## Component 4 - TodoListItem
 
 It wraps list elements with `<li>` so that it renders as a list block in the final HTML. `this.props.children` predictably contains
 all the descendents passed to the `TodoListItem` tag from its parent component.
 
 ```
-/* \[TODO LISTITEM\] */
+/* [TODO LISTITEM] */
 var TodoListItem = React.createClass({
-render: function(){
-return (
-<li>{this.props.children}</li>
-);
-}
+	render: function(){
+		return (
+			<li>{this.props.children}</li>
+		);
+	}
 });
 ```
 
-#### Component 5 - TodoForm
+## Component 5 - TodoForm
 
 It contains a text field followed by a button to trigger the addition of item in the Todo list. This component will hold the
 current `item` entered in the textfield and both of them are kept in sync using the `onChange` event. As soon as the submit
 button is pressed, the `item` is passed to its parent component and the focus is returned back to the textfield.
 
 ```
-/* \[TODO FORM\] */
+/* [TODO FORM] */
 var TodoForm = React.createClass({
-getInitialState: function() {
-return {item: ''};
-},
-handleSubmit: function(e){
-e.preventDefault();
-this.props.onFormSubmit(this.state.item);
-this.setState({item: ''});
-React.findDOMNode(this.refs.item).focus();
-return;
-},
-onChange: function(e){
-this.setState({
-item: e.target.value
-});
-},
-render: function(){
-return (
-<form onSubmit={this.handleSubmit}>
-<input type='text' ref='item' onChange={this.onChange} value={this.state.item}/>
-<input type='submit' value='Add'/>
-</form>
-);
-}
+	getInitialState: function() {
+		return {item: ''};
+	},
+	handleSubmit: function(e){
+		e.preventDefault();
+		this.props.onFormSubmit(this.state.item);
+		this.setState({item: ''});
+		React.findDOMNode(this.refs.item).focus();
+		return;
+	},
+	onChange: function(e){
+		this.setState({
+			item: e.target.value
+		});
+	},
+	render: function(){
+		return (
+			<form onSubmit={this.handleSubmit}>
+				<input type='text' ref='item' onChange={this.onChange} value={this.state.item}/>
+				<input type='submit' value='Add'/>
+			</form>
+		);
+	}
 });
 ```
 

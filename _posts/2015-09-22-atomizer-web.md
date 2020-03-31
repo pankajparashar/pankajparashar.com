@@ -3,9 +3,8 @@ title: Atomizer Web
 date: 2015-09-22T00:00:00.000+00:00
 type: project
 link: http://pankajparashar.com/atomizer-web/
-draft: true
-
 ---
+
 A web app to generate Atomic CSS from the input markup that uses Atomic classes.
 It is based on node.js library, [Atomizer](https://github.com/yahoo/atomizer) by Yahoo, which is then wired into
 a JavaScript library using Browserify.
@@ -20,4 +19,4 @@ v2 of Atomic CSS has,
 - A preview window, to design in your browser.  
 - Ability to copy output to your clipboard, thanks to [clipboard.js](https://clipboardjs.com).  
 
-!(http://res.cloudinary.com/dw9fem4ki/image/upload/c_scale,w_800/v1457773327/Screen_Shot_2016-03-12_at_2.30.05_PM_imla7l.png)[]
+![](http://res.cloudinary.com/dw9fem4ki/image/upload/c_scale,w_800/v1457773327/Screen_Shot_2016-03-12_at_2.30.05_PM_imla7l.png)

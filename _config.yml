@@ -1,10 +1,10 @@
-title: Pankaj Parashar
+title: "Pankaj Parashar - Designer. Developer. Writer."
 email: email@pankajparashar.com
 description: >- # this means to ignore newlines until "baseurl:"
   I'm a Designer, Developer and Writer from Mumbai India. I write
   code to make a living and write about them on my blog here.
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: "/" # the subpath of your site, e.g. /blog
+url: "https://pankajparashar.com" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: pankajparashar
 github_username:  pankajparashar
 

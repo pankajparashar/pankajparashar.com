@@ -1,6 +1,5 @@
 ---
 title: Magic methods
-date: 2015-09-23 00:00:00 Z
 layout: post
 type: post
 excerpt: Python's got a bunch of very useful magic methods that most of us do not
@@ -18,6 +17,8 @@ categories,
 - Attribute access
 - Containers & Dicts
 - Context Managers
+
+<!-- more -->
 
 ### Construction & Destruction
 
