@@ -13,3 +13,5 @@ Albeit, there'll be some articles that still needs formatting based on the new l
 ![](https://res.cloudinary.com/dw9fem4ki/image/upload/c_scale,q_100,w_1436/v1585653017/smartmockups_k8frujno_jdep2z.jpg)
 
 <!-- more -->
+
+![](https://res.cloudinary.com/dw9fem4ki/image/upload/c_scale,q_100,w_1878/v1585653017/smartmockups_k8frtvx0_u8ujyg.jpg)
