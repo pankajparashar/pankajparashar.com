@@ -10,3 +10,5 @@ excerpt: Its been four years since I last wrote an article on this blog. Even th
 
 ---
 Albeit, there'll be some articles that still needs formatting based on the new layout, but hold your breath, those changes are coming thick and fast.
+
+![](https://res.cloudinary.com/dw9fem4ki/image/upload/c_scale,q_100,w_1436/v1585653017/smartmockups_k8frujno_jdep2z.jpg)
