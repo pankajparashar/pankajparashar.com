@@ -11,6 +11,7 @@ github_username:  pankajparashar
 # Build settings
 permalink: "/posts/:title/"
 theme: minima
+future: true
 plugins:
   - jekyll-feed
   - jekyll-paginate
