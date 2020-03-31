@@ -266,7 +266,7 @@ pre code {
     transition: filter .2s;
 }
 
-.commento-footer {
+#commento-footer {
     display: none
 }
 
