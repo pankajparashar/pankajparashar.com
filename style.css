@@ -266,6 +266,10 @@ pre code {
     transition: filter .2s;
 }
 
+.commento-footer {
+    display: none
+}
+
 .commento-root-font * {
     font-family: "Nitti Grotesk", sans-serif !important;
 }
