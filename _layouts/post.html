@@ -7,34 +7,22 @@ layout: home
     <header>
       <h1>
         <a href="{{ page.url }}" title="{{ page.title }}">{{ page.title }}</a></h1>
-      <time datetime="2013-12-31" pubdate>{{ page.date | date: "%b %d, %Y" }} + {% assign words = page.content | number_of_words %} {% if words < 360 %} Less than 1 min {% else %} Approx {{ words | divided_by: 180 }} mins {% endif %}</time>
-
+      <time datetime="2013-12-31" pubdate>{{ page.date | date: "%b %d, %Y" }} +
+        {% assign words = page.content | number_of_words %} {% if words < 360 %} Less than 1 min {% else %} Approx
+        {{ words | divided_by: 180 }} mins {% endif %}</time>
     </header>
     {% if post.excerpt %}
-      <p>{{ page.excerpt }}</p>
+    <p>{{ page.excerpt }}</p>
     {% endif %}
-{{content}}  
-</article>
+    {{content}}
+  </article>
 
-<div class="list-end">
-  <p>
-    {% if paginator.previous_page %}
-                      {% if paginator.previous_page == 1 %}
-                          <a href="/">/prev</a>
-                      {% else %}
-                          <a href="{{ paginator.previous_page_path }}">/prev</a>
-                      {% endif %}
-                  {% else %}
-                      <a>/prev</a>
-                  {% endif %}
-
-                  {% if paginator.next_page %}
-                      <a href="{{ paginator.next_page_path }}">/next</a>
-                  {% else %}
-                      <a>/next</a>
-                  {% endif %}
-  </p>
-
-</div>
+  <div class="list-end">
+    <p>+prev<br>
+    {% if page.previous.url %}
+      <a class="next" href="{{page.previous.url}}">{{page.previous.title}}</a>
+    {% endif %}    
+    </p>
+  </div>
 
 </div>
