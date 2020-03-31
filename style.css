@@ -212,9 +212,6 @@ ol {
     list-style: lower-roman inside;
 }
 
-pre, li {
-}
-
 pre { padding: 1em; }
 code { padding: 0 2px; }
 
@@ -230,9 +227,43 @@ pre, code {
     letter-spacing: -1px;
 }
 
-article ul { }
+
+pre {
+    -webkit-overflow-scrolling: touch;
+    overflow-x: auto;
+    white-space: pre;
+    word-wrap: normal;
+    white-space: pre;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+pre, code {
+    border-radius: 3px;    
+}
+
+pre code {    
+    background: none;
+    display: block;
+    white-space: pre;
+    word-wrap: normal;
+    direction: ltr;
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+
+	-moz-tab-size: 4;
+	  -o-tab-size: 4;
+	     tab-size: 4;
+}
+
+
 article li { margin-left:1em; }
 
+.highlight {
+    margin-bottom:1em;
+}
 pre, .highlight {
     background: whitesmoke;
 }

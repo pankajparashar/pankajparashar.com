@@ -11,8 +11,8 @@ layout: home
         {% assign words = page.content | number_of_words %} {% if words < 360 %} Less than 1 min {% else %} Approx
         {{ words | divided_by: 180 }} mins {% endif %}</time>
     </header>
-    {% if post.excerpt %}
-    <p>{{ page.excerpt }}</p>
+    {% if page.excerpt %}
+      <p>{{ page.excerpt }}</p>
     {% endif %}
     {{content}}
   </article>
