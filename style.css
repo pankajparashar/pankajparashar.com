@@ -258,6 +258,18 @@ pre code {
 	     tab-size: 4;
 }
 
+.commento-root {
+    max-width: 90%;
+}
+
+.commento-main-area {
+    transition: filter .2s;
+    margin-right: 1.5em;
+}
+
+.commento-root-font * {
+    font-family: "Nitti Grotesk", sans-serif !important;
+}
 
 article li { margin-left:1em; }
 
