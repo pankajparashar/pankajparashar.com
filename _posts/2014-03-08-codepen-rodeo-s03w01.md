@@ -8,6 +8,6 @@ link: http://codepen.io/pankajparashar/full/plcLh
 
 Love it if you like it and do not forget to love other pens as well that you might find interesting. The experiment is responsive and works equally well on both small and large screens. Fonts used are [Average](http://www.google.com/fonts/specimen/Average), [Average Sans](http://www.google.com/fonts/specimen/Average+Sans) and Italic subset is from [Alegreya](http://www.google.com/fonts/specimen/Alegreya).
 
-!(https://res.cloudinary.com/dw9fem4ki/image/upload/v1394273533/codepen-rodeo-s03w01_bogrzy.png")[]
+![](https://res.cloudinary.com/dw9fem4ki/image/upload/v1394273533/codepen-rodeo-s03w01_bogrzy.png)
 
 My entry for this week's [Codepen rodeo challenge](http://blog.codepen.io/rodeo/season-three/) titled the "The Chili recipe".

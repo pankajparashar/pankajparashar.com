@@ -1,6 +1,5 @@
 ---
 title: Github pages with custom domain
-date: 2014-02-08 00:00:00 Z
 layout: post
 type: post
 excerpt: Setup custom domain on the user page and then all the project pages of Github
@@ -11,13 +10,19 @@ Github provides two types of pages,
 - User pages  
 - Project pages
 
-#### User pages
+## User pages
 
 It is nothing but a Github repository with a special name `username.github.io` and all the contents of this repository must be in the `master` branch. For example, [pankajparashar.github.io](https://github.com/pankajparashar/pankajparashar.github.io) is a repository for user pages under my Github username, [pankajparashar](https://github.com/pankajparashar).
 
-By default, the user pages are available under the url, `http://username.github.io`.
+By default, the user pages are available under the url, 
 
-#### Project pages
+```
+http://username.github.io
+```
+
+<!-- more -->
+
+## Project pages
 
 Project pages are project specific files lying in the `gh-pages` branch of the repository. These pages can be accessed via the url `username.github.io/repository_name`.
 
@@ -28,7 +33,7 @@ Repository name -> Color Stack
 URL -> http://pankajparashar.github.io/color-stack
 {% endhighlight %}
 
-#### Custom domain
+## Custom domain
 
 Now, coming to the meat of the article, custom domain can be set for both user and project pages. Moreover, the steps to setup the domain also remains the same for both the categories. However, this article will only deal with setting up custom domain for the user pages only.
 
@@ -48,6 +53,3 @@ Theoretically it can take 30 mins to 2 hours for the DNS propagation to complete
 The interesting part is that all the project pages are also being redirected under the same [Top-Level domain](http://en.wikipedia.org/wiki/Top-level_domain). This is fantastic, because for years I have been trying to bring all my projects and the personal website under the same domain. This process makes my entire workflow completely seamless. 
 
 > My Color Stack project, available at the url [pankajparashar.github.io/color-stack](http://pankajparashar.github.io/color-stack) is now automatically being redirected to [pankajparashar.com/color-stack](http://pankajparashar.github.io/color-stack).
-
-By the way, this tweet from [@jackrugile](https://twitter.com/jackrugile) triggered me to write this piece,
-

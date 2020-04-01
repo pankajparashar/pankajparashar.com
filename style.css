@@ -7,6 +7,8 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     vertical-align: baseline;
 }
 
+strong { font-weight: bold; }
+
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
     display: block;
 }
@@ -274,7 +276,7 @@ pre code {
     font-family: "Nitti Grotesk", sans-serif !important;
 }
 
-article li { margin-left:1em; }
+article li { margin-left:2.5em; }
 
 .highlight {
     margin-bottom:1em;
@@ -355,12 +357,20 @@ article h1 {
 }
 
 time {
-    font-size: 0.666666667em;
+    font-size: 12px;
     font-weight: 300;
     text-transform: uppercase;
     color: #919191;
     line-height: 1.928571429;
 }
+
+table {
+    border: 1px solid #eee;
+    max-width: 90%;
+}
+
+thead, tr:nth-child(even) { background-color:whiteSmoke}
+thead, tbody, tr, td, th { padding: 5px; border: 1px solid #eee; }
 
 figure {
     margin-top: 1.5em;

@@ -12,4 +12,4 @@ Thanks to [Chris](http://chriscoyier.net/), I once again got the amazing opportu
 - [Weekly News for Designers - #234](http://speckyboy.com/2014/05/13/weekly-news-designers-n-234/) by SpeckyBoy.
 - [Marcin Pietrzak](https://profiles.wordpress.org/iworks/) later alson converted this into a [Wordpress plugin](https://wordpress.org/plugins/reading-position-indicator/).
 
-!(https://res.cloudinary.com/dw9fem4ki/image/upload/v1398621227/examples_dglnrr.png)[]
+![](https://res.cloudinary.com/dw9fem4ki/image/upload/v1398621227/examples_dglnrr.png)

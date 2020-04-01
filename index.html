@@ -37,13 +37,13 @@ layout: home
                             <a href="{{ paginator.previous_page_path }}">+prev</a>
                         {% endif %}
                     {% else %}
-                        <a>+prev</a>
+                        <span>+prev</span>
                     {% endif %}
 |
                     {% if paginator.next_page %}
                         <a href="{{ paginator.next_page_path }}">+next</a>
                     {% else %}
-                        <a>+next</a>
+                        <span>+next</span>
                     {% endif %}
     </p>
   

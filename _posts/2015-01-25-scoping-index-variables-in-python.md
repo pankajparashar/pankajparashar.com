@@ -1,6 +1,5 @@
 ---
 title: Scoping of index variables in Python
-date: 2015-01-25 00:00:00 Z
 layout: post
 type: post
 excerpt: The way scoping of index variables work in Python might surprise a few! This
@@ -11,7 +10,7 @@ excerpt: The way scoping of index variables work in Python might surprise a few!
 Thanks to [Eli Bendersky](http://eli.thegreenplace.net/) for bringing this to my attention by [writing about](http://eli.thegreenplace.net/2015/the-scope-of-index-variables-in-pythons-for-loops/) it on his blog. Let's
 take a few scenarios and you're job is to guess the output,
 
-#### Scenario 1
+## Scenario 1
 
 {% highlight python %}
 >>> for i in []:
@@ -22,12 +21,14 @@ take a few scenarios and you're job is to guess the output,
 Since, there is no element in the list, the `for` loop simply doesn't run leaving `i` as an undefined variable in the current
 scope. Hence, you'll get,
 
+<!-- more -->
+
 {% highlight python %}
 >>> print(i)
 NameError: name 'i' is not defined
 {% endhighlight %}
 
-#### Scenario 2
+## Scenario 2
 
 {% highlight python %}
 >>> for i in [1,2,3]:

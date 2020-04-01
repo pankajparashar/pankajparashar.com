@@ -9,7 +9,9 @@ excerpt: Debuting today, is the new RSS-to-Email feature that I have enabled on 
 
 [Campaign Monitor](http://www.campaignmonitor.com/) is the slickest, [Mailchimp](http://mailchimp.com/) has the most features and [Sendicate](https://www.sendicate.net/) is the easiest to setup. And I chose Sendicate, here's why?
 
-!(https://res.cloudinary.com/dw9fem4ki/image/upload/v1393778080/sendicate_mu2vp6.jpg)[]
+![](https://res.cloudinary.com/dw9fem4ki/image/upload/v1393778080/sendicate_mu2vp6.jpg)
+
+<!-- more -->
 
 All three of them offer Free account. Campaign Monitor allows you to browse through the basic features but as soon as you are ready to send your first email, it will ask you to upgrade.
 

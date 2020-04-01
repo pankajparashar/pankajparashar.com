@@ -6,22 +6,21 @@ type: post
 excerpt: This post is all about the introduction of HTTP 2.0 into the mainstream by
   putting it side-to-side with some of the best practices that we have engineered
   and cultivated over the years.
-timeToRead: '10'
-authors:
-- Pankaj Parashar
-
 ---
-### Best practice 1 - Concatenation of assets
+
+## Best practice 1 - Concatenation of assets
 
 Spriting multiple images, concatenating your CSS and JS files and inlining your assets with base64 are some of the techniques 
 that we have engineered to avoid multiple HTTP requests. We all know how expensive a single HTTP request can be, given the 
 roundtrips required to perform just handshake between the client and the server. 
 
+<!-- more -->
+
 HTTP2 is here to change this practice by providing us the ability to keep the connection between the client and server 
 open for re-use for extended periods. This would eliminate the need for frequent handshakes per request between the client and 
 the server.
 
-### Best practice 2 - Compression of assets
+## Best practice 2 - Compression of assets
 
 Compression of assets is a common technique to reduce the payload being exchanged across the network. This reduces the time 
 taken to send/receive the message and consume less bandwidth while exchanging data. 
@@ -29,7 +28,7 @@ taken to send/receive the message and consume less bandwidth while exchanging da
 Well, with the advent of HTTP2 this technique is no more required, as HTTP2 uses compression, unlike HTTP1, and so the size of 
 the request is significantly smaller and thus faster.
 
-### Best practice 3 - Domain sharding
+## Best practice 3 - Domain sharding
 
 The HTTP 1.1 spec allowed a client to use maximum two TCP connections for each host. So, in order to not violate the spec 
 clever sites simply invented the concept of **Domain Sharding**. It basically means spreading out your service on as many

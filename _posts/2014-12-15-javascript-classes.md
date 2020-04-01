@@ -19,7 +19,9 @@ JavaScript has first-class functions, which means that we can treat functions li
 
 > Beware! throughout this article, I'll be using the terms `class` and `function` interchangeably. Although they are different terms, but are used in a similar way throughout the context of this article. Please do not get confused!.
 
-#### Class objects  
+<!-- more -->
+
+## Class objects  
 
 {% highlight js %}
 var Person = function(){};
@@ -34,7 +36,7 @@ console.log(person2 instanceof Person); // true
 Imagine a class `Person` created with a function expression. We can create objects of this class using the `new` keyword. 
 Each object has a separate location in the memory but are of type `Person`.
 
-#### Constructor
+## Constructor
 
 {% highlight js %}
 var Person = function(firstName){
@@ -52,7 +54,7 @@ console.log('person2 is ' + person2.firstName); // logs "Bar"
 The function definition acts as the constructor of the class `Person`. The arguments passed to the function are the parameters
 passed to the constructor while creating an object. Using `this` keyword we can initialize the attributes of the class like `firstName`.
 
-#### Private members
+## Private members
 
 {% highlight js %}
 var Person = function(firstName) {
@@ -91,7 +93,7 @@ person1.getFirstName(); // Foo
 person2.getFirstName(); // Bar
 {% endhighlight %}
 
-#### Public members
+## Public members
 
 {% highlight js %}
 var Person = function(firstName) {
@@ -111,7 +113,7 @@ person2.sayHello(); // logs "Bar says Hello!"
 
 `firstName` and `sayHello` are public members of the class `Person` and can be accessed and manipulated from outside the definition of the function.
 
-#### Static members
+## Static members
 
 {% highlight js %}
 var Person = function() {}
@@ -125,7 +127,7 @@ console.log(Person.firstName); //logs "First Name"
 
 Static members of the class can be accessed with the className and are not affected with the objects of the class.
 
-#### Inheritance
+## Inheritance
 
 {% highlight js %}
 var Person = function(firstName) {
