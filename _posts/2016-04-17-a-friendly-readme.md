@@ -1,11 +1,9 @@
 ---
 title: A friendly Readme
-date: 2016-04-17T00:00:00.000+00:00
 layout: post
-layout: post
-link: http://rowanmanning.com/posts/writing-a-friendly-readme
+excerpt: Rowan Manning writes about the importance of writing a friendly
+  README for your project, which is perhaps in my opinion is the most underrated yet extremely 
+  important part of maintaining a project.
 ---
 
-[Rowan Manning](http://rowanmanning.com/) writes about the importance of writing a friendly
-README for your project, which is perhaps in my opinion is the most underrated yet extremely 
-important part of maintaining a project.
+Checkout his [article](http://rowanmanning.com/posts/writing-a-friendly-readme) on writing a friendly README.

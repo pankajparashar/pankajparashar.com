@@ -1,21 +1,16 @@
 ---
 title: Introducing Atomize IO
-date: 2016-03-26 00:00:00 Z
-layout: post
 layout: post
 excerpt: Over the weekend, I pushed out a new update to the Atomize IO app and this
   post is all about, explaining how those numbers are calculated.
 ---
 
-If you are unfamiliar with [Atomize IO](https://atomize-io.herokuapp.com/), then make sure you checkout the web app
-and run it against your website. I have been massively impressed with the idea behind [Atomic CSS](http://acss.io/)
-and always wanted to build something to find out, how much duplicate CSS declarations
-live inside the CSS codebase of popular websites and by how much they can benefit by adopting the Atomic CSS methodology.
+If you are unfamiliar with [Atomize IO](https://atomize-io.herokuapp.com/), then make sure you checkout the web app and run it against your website. I have been massively impressed with the idea behind [Atomic CSS](http://acss.io/) and always wanted to build something to find out, how much duplicate CSS declarations live inside the CSS codebase of popular websites and by how much they can benefit by adopting the Atomic CSS methodology.
 
-<!-- more -->
 Atomize IO answers both the questions and represents the results with bunch of numbers.
 In the next section, I will outline the principle and algorithm developed to calculate these numbers.
-### Principle
+
+## Principle
 
 Since, Atomic CSS relies on single purpose classes, it manages to avoid duplicate
 declarations in the CSS codebase. However, a typical CSS codebase is flooded with
@@ -25,7 +20,7 @@ classes we are used to writing. This leads to redundancy, bloat and maintenance 
 Hence, it becomes imperative to identify all the unique property-value pairs,
 construct a ruleset containing each pair with a unique class selector to identify the ruleset.
 
-### Algorithm
+## Algorithm
 
 1. Grab the input URL.  
 2. Make a request to the URL and get the HTML in response.
@@ -39,7 +34,7 @@ generated at **Step 4** (Before) and **Step 6** (After).
 > **Note -** Step 4 is only used to generate numbers for Single Page CSS view. Combined
 CSS view uses the complete CSS at Step 3.
 
-### Caveats
+## Caveats
 
 There are few caveats in the above algorithm, that you should keep in mind while
 interpreting these numbers.  
