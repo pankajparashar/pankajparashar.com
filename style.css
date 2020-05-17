@@ -15,7 +15,7 @@
 body {
     color: #2a2f35;
     font-weight: 300;
-    font-size: 1.1em;
+    font-size: clamp(1em, 1.5vmax, 2em);
     font-family: "Whitney", sans-serif;
     margin: 0;
     padding: 0;
