@@ -31,7 +31,7 @@ construct a ruleset containing each pair with a unique class selector to identif
 7. Now you can count the no. of declarations, selectors, rulesets found in CSS files
 generated at **Step 4** (Before) and **Step 6** (After).
 
-> **Note -** Step 4 is only used to generate numbers for Single Page CSS view. Combined
+> Step #4 is only used to generate numbers for Single Page CSS view. Combined
 CSS view uses the complete CSS at Step 3.
 
 ## Caveats
