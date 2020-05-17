@@ -11,9 +11,6 @@ fields:
 - type: text
   name: layout
   label: layout
-- type: text
-  name: type
-  label: type
 - type: textarea
   name: excerpt
   label: excerpt
