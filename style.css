@@ -42,6 +42,7 @@ pre, code {
     font-size: 14px;
     background: whitesmoke;
     padding: 0 5px;
+    overflow-x: scroll;
 }
 img {
     width: 100%;
