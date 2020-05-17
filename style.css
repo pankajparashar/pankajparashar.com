@@ -52,10 +52,11 @@ a { color: #333; }
 a:hover { text-decoration: none; }
 h1 {margin-top: 0; line-height: 1.25;}
 .light{color: #96a1ad;}
+.highlighter-rouge {font-size: .8em;}
 pre, code {
     font-family: 'Cascadia Mono Regular', monospace;
     letter-spacing: 0;
-    font-size: .8em;
+    
     background: whitesmoke;
     padding: 0 5px;
     overflow-x: auto;

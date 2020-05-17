@@ -9,11 +9,9 @@ twitter_username: pankajparashar
 github_username:  pankajparashar
 
 # Build settings
+highlighter: rouge
 permalink: "/posts/:title/"
-theme: minima
-future: true
 plugins:
-  - jekyll-feed
   - jekyll-paginate
 
 paginate: 15

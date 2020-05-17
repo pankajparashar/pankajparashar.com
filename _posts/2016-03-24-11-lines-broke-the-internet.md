@@ -20,17 +20,17 @@ At the time of writing, `left-pad` is one of the most popular open source packag
 registered at NPM, with roughly 2.5M downloads per month. All it does, is implement
 a basic left-pad string function using just 11 lines of JavaScript,
 
-```
+```js
 module.exports = leftpad;
 function leftpad (str, len, ch) {
-    str = String(str);
-    var i = -1;
-    if (!ch && ch !== 0) ch = ' ';
-    len = len - str.length;
-    while (++i < len) {
-        str = ch + str;
-    }
-    return str;
+  str = String(str);
+  var i = -1;
+  if (!ch && ch !== 0) ch = ' ';
+  len = len - str.length;
+  while (++i < len) {
+    str = ch + str;
+  }
+  return str;
 }
 ```
 
@@ -49,7 +49,7 @@ Mike's response shows Kik in poor light, as evident here,
  it’s a registered Trademark in most countries around the world and if you
  actually release an open source project called kik, our trademark lawyers are
  going to be banging on your door and taking down your accounts and stuff like
- that — and we’d have no choice but to do all that because you have to enforce
+ that and we’d have no choice but to do all that because you have to enforce
  trademarks or you lose them.
 
 NPM were not far too behind in publishing the timeline of the events as it unfolded
