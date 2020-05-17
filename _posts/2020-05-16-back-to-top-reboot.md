@@ -1,6 +1,6 @@
 ---
 title: Back to Top reboot
-date: 2020-05-16 18:30:00 +0000
+date: 2020-05-09 18:30:00 +0000
 layout: post
 type: ''
 excerpt: The "Back To Top" button has been a holy grail along with the hamburger menu.
