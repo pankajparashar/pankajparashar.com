@@ -32,16 +32,12 @@ layout: home
                       {% else %}
                       ‹ <a href="{{ paginator.previous_page_path }}">prev</a>
                       {% endif %}
-                  {% else %}
-                      <span style="color: #ccc;">‹ prev</span>
                   {% endif %}
                 </h1></div>
 
   <div style="text-align: right;"><h1 style="margin-bottom:0;">
                   {% if paginator.next_page %}
                       <a href="{{ paginator.next_page_path }}">next</a> ›
-                  {% else %}
-                      <span style="color: #ccc;">next ›</span>
                   {% endif %}
   </h1></div>
 </div>
