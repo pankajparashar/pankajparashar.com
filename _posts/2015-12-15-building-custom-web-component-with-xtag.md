@@ -1,13 +1,9 @@
 ---
 title: Building Custom Web Components with X-Tag
-date: 2015-12-15T00:00:00.000+00:00
-layout: post
 layout: post
 excerpt: ''
-http://www.sitepoint.com/building-custom-web-components-with-x-tag/
-draft: true
-
 ---
+
 After [Google](https://www.polymer-project.org/1.0/) and [Mozilla‘s](http://brick.mozilla.io/)
 solutions for web components, it is now Microsoft’s turn to enter this space
 with their public release of the [X-Tag library](http://x-tag.github.io/). I have turned
@@ -16,3 +12,5 @@ view [custom element](http://codepen.io/SitePoint/full/VevVpa) using the X-Tag l
 
 Checkout my SitePoint [authors page](http://www.sitepoint.com/author/pparashar/),
 to read more articles of mine!
+
+[Read more](http://www.sitepoint.com/building-custom-web-components-with-x-tag/)

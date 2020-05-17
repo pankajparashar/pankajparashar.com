@@ -9,8 +9,6 @@ excerpt: Neat little trick I learned from Joshua Hibbert's website, where he has
 
 Ever wondered, how you can stretch the background of the container beyond the viewport but the content should not exceed the defined width? Well, if you are looking closely, then the answer is all over the place on this website. As I have used this technique, to design the `blockquotes`, `pre`, and `code` blocks on my website.
 
-<!-- more -->
-
 ## Technique
 
 The idea stems from the [box model technique](http://css-tricks.com/the-css-box-model/), in which you can apply negative margins on block child container for them to stretch outside the parent container. We use this idea of negative margins to stretch the background of the container to the entire width of the webpage. For example, `margin-left: -999em` will stretch the left margin of the box to far left, which in this case is outside the viewport (`-999em` is the magic number).
@@ -49,7 +47,7 @@ Interestingly, this technique not only works for fixed-width containers but also
 
 Without a doubt, the next thing I hopped into are handy Sass-mixins to leverage this technique for your projects.
 
-{% highlight css %}
+```
 @mixin align($num: 999em, $dir: 'left') {
     @if $dir == 'center' {
         margin: 0 -#{$num};
@@ -64,12 +62,12 @@ Without a doubt, the next thing I hopped into are handy Sass-mixins to leverage 
         padding-#{$dir}: #{$num};
     }
 }
-{% endhighlight %}
+```
 
 .. and the usage of this mixin, for each type of variation,
 
-{% highlight css %}
+```
 .left-align {
     @include align($dir: 'left');
 }
-{% endhighlight %}
+```

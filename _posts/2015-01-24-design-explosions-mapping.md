@@ -1,10 +1,7 @@
 ---
 title: Mapping on iOS and Android
-date: 2015-01-24 00:00:00 Z
-layout: post
 layout: post
 excerpt: ''
-https://medium.com/design-explosion/design-explosions-mapping-on-ios-ad4ec6ba5c59
 ---
 
 The [UX Launchpad](http://uxlaunchpad.com/) team has done an in-depth analysis and a comprehensive
@@ -15,3 +12,5 @@ to evaluate the user experience on both the apps with no clear winner.
 
 The idea behind this article is to teach rather than judge, with just a bunch of design lessons inspired from studying two
 similar products. Do not complain if you find the article too long for your liking!
+
+[Read more](https://medium.com/design-explosion/design-explosions-mapping-on-ios-ad4ec6ba5c59)

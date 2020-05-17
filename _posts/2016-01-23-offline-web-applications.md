@@ -1,10 +1,7 @@
 ---
 title: Offline Web Applications
-date: 2016-01-23 00:00:00 Z
-layout: post
 layout: post
 excerpt: ''
-https://www.udacity.com/course/offline-web-applications--ud899
 ---
 
 Mobile-first applications have now been replaced by Offline-first applications.
@@ -16,3 +13,5 @@ connectivity or absolutely no internet connection.
 offline-first web applications by [Jake Archibald](https://jakearchibald.com/).
 For those who don't know, Jake is perhaps the most knowledgeable person when it comes
 to building offline apps, having written some amazing articles on this topic on his blog.
+
+[Read more](https://www.udacity.com/course/offline-web-applications--ud899)

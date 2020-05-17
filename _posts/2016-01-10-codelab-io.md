@@ -2,11 +2,11 @@
 title: Codelab IO
 layout: post
 excerpt: ''
-https://codelab-io.herokuapp.com/
-excerpt: Over the weekend, I dished out a realtime in-browser code editor, perfect for
-  collaborating online with other developers. It can also be used as a whiteboard
-  to interview candidates distanced by geographical location. 
 ---
+
+Over the weekend, I dished out a realtime in-browser code editor, perfect for
+collaborating online with other developers. It can also be used as a whiteboard
+to interview candidates distanced by geographical location. 
 
 As far as the technology stack is concerned
 
@@ -15,3 +15,5 @@ As far as the technology stack is concerned
 - HTML5, CSS3 and JavaScript constitutes the front-end.
 
 ![](https://res.cloudinary.com/dw9fem4ki/image/upload/c_scale,w_800/v1452432134/codelab_xrkofo.png)
+
+[Read more](https://codelab-io.herokuapp.com/)

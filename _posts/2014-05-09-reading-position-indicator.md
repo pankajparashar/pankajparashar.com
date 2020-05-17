@@ -1,10 +1,7 @@
 ---
 title: Reading Position Indicator
-date: 2014-05-09 00:00:00 Z
-layout: post
 layout: post
 excerpt: ''
-http://css-tricks.com/reading-position-indicator/
 ---
 
 Thanks to [Chris](http://chriscoyier.net/), I once again got the amazing opportunity to write this article as a guest author for [CSS-Tricks](http://css-tricks.com/) and also got featured on,
@@ -14,3 +11,5 @@ Thanks to [Chris](http://chriscoyier.net/), I once again got the amazing opportu
 - [Marcin Pietrzak](https://profiles.wordpress.org/iworks/) later alson converted this into a [Wordpress plugin](https://wordpress.org/plugins/reading-position-indicator/).
 
 ![](https://res.cloudinary.com/dw9fem4ki/image/upload/v1398621227/examples_dglnrr.png)
+
+[Read more](http://css-tricks.com/reading-position-indicator/)

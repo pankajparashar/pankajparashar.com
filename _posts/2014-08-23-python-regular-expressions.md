@@ -1,7 +1,5 @@
 ---
 title: Regular Expressions in Python
-date: 2014-08-23 00:00:00 Z
-layout: post
 layout: post
 excerpt: Regular expressions are hard but this post is not going to make them appear
   harder. Instead it attempts to simplify the complications that surround the world
@@ -13,8 +11,6 @@ In Python, the module that deals with regular expressions is called [re](https:/
 ```
 import re
 ```
-
-<!-- more -->
 
 ## Basic patterns
 

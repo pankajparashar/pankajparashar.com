@@ -1,10 +1,7 @@
 ---
 title: Optimizing website using GTmetrix
-date: 2015-10-25 00:00:00 Z
-layout: post
 layout: post
 excerpt: ''
-https://gtmetrix.com/reports/pankajparashar.com/A698oWN7
 ---
 
 Recently, I've started using [GTmetrix](https://gtmetrix.com/) to analyze and
@@ -15,3 +12,5 @@ demonstrate the perceived rendering of your website.
 
 I'm very happy about the results with benchmarks running close to 100%, page
 loading under half-a-second and significantly smaller payload.
+
+[Read more](https://gtmetrix.com/reports/pankajparashar.com/A698oWN7)
