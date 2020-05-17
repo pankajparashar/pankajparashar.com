@@ -20,7 +20,7 @@
 body {
     color: #2a2f35;
     font-weight: 300;
-    font-size: clamp(16px, 1.5vmax, 1.5em);
+    font-size: clamp(18px, 1.5vmax, 1.5em);
     font-family: "Whitney", sans-serif;
     margin: 0;
     padding: 0;
