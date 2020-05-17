@@ -5,7 +5,7 @@ layout: home
 {% assign postsByYear = paginator.posts | group_by_exp:"post", "post.date | date: '%Y'" %}
 
 {% for year in postsByYear %}
-  <div style="padding: 1em; background: whitesmoke; border-bottom: 1px solid #ddd;">
+  <div style="padding: 1em; background: whitesmoke; border-bottom: 1px solid #ddd;width:100%;max-width: 100%;">
     <h1 style="margin-bottom: 0;">{{ year.name }}</h1>
   </div>
 
