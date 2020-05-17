@@ -8,9 +8,7 @@ excerpt: Its been four years since I last wrote an article on this blog. Even th
 
 Albeit, there'll be some articles that still needs formatting based on the new layout, but hold your breath, those changes are coming thick and fast.
 
-![](https://res.cloudinary.com/dw9fem4ki/image/upload/c_scale,q_100,w_1436/v1585653017/smartmockups_k8frujno_jdep2z.jpg)
-
-<!-- more -->
+![](https://res.cloudinary.com/dw9fem4ki/image/upload/c_scale,w_1600/v1589698533/smartmockups_kaap7h6b_ynjusv.jpg)
 
 ## Specs
 
@@ -18,7 +16,7 @@ The blog still uses [Jekyll](https://jekyllrb.com/) under the hood supported by 
 
 [VSCode](https://code.visualstudio.com/) is still the choice editor even after so many years. [Netlify](https://www.netlify.com/) takes care of the Nameservers, Custom domain management, Build & Deployment, CDN & caching and practically every other part of the stack under the sun.
 
-![](https://res.cloudinary.com/dw9fem4ki/image/upload/c_scale,q_100,w_1878/v1585653017/smartmockups_k8frtvx0_u8ujyg.jpg)
+![](https://res.cloudinary.com/dw9fem4ki/image/upload/c_scale,w_1600/v1589698532/smartmockups_kaap1g9g_b7841y.jpg)
 
 ## Promise
 
