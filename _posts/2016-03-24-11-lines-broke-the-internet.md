@@ -1,18 +1,12 @@
 ---
 title: How 11 lines of JavaScript broke the Internet?
-date: 2016-03-24 00:00:00 Z
 layout: post
-layout: post
-link: http://www.theregister.co.uk/2016/03/23/npm_left_pad_chaos?mt=1458754433021
+excerpt: Roughly around 1430 hours Pacific time on Tuesday, March 22nd, 2016, @npmjs
+  observed hundreds of failures per minute for missing dependencies requesting
+  for the now-unpublished package, left-pad. Notably popular open source libraries
+  like Babel, React etc stopped working as this package was enlisted as one of the
+  dependencies in the package.json file.  
 ---
-
-Roughly around 1430 hours Pacific time on Tuesday, March 22nd, 2016, [@npmjs](https://www.npmjs.com)
-observed hundreds of failures per minute for missing dependencies requesting
-for the now-unpublished package, `left-pad`. Notably popular open source libraries
-like Babel, React etc stopped working as this package was enlisted as one of the
-dependencies in the `package.json` file.  
-
-<!-- more -->
 
 This resulted into large-scale build and deployment
 failures across the internet, and eventually led to mass fallout on [Github](https://github.com/azer/left-pad/issues/4),
@@ -51,7 +45,7 @@ with their [side of the story](https://medium.com/@mproberts/a-discussion-about-
 
 Mike's response shows Kik in poor light, as evident here,
 
-> **@Bob Stratton** (Kik's patent lawyer) - We don’t mean to be a dick about it, but
+> @Bob Stratton (Kik's patent lawyer) - We don’t mean to be a dick about it, but
  it’s a registered Trademark in most countries around the world and if you
  actually release an open source project called kik, our trademark lawyers are
  going to be banging on your door and taking down your accounts and stuff like
@@ -63,10 +57,10 @@ on thier [blog](http://blog.npmjs.org/post/141577284765/kik-left-pad-and-npm).
 
 ## Who's to blame?
 
-Some of the folks in the community think that **@Azer** reacted too aggressively
-by unpublishing all the packages in anger. Majority of the people agree that **@Kik**
+Some of the folks in the community think that @Azer reacted too aggressively
+by unpublishing all the packages in anger. Majority of the people agree that @Kik
 were trying to bullshit their way with lawyers and patents to streamroll a hapless
-open-source contributor. **@npmjs** failed to play it nicely too, as they transferred
+open-source contributor. @npmjs failed to play it nicely too, as they transferred
 the ownership of the package without acquiring consent from the owner or sending
 prior notification.
 
@@ -76,3 +70,5 @@ to sum up with the conclusions that the Node.js community should take the blame 
 
 > Shortly after I published this piece, the Internet just broke again! but this
 time not due to an error but due to this, [left-pad.io](http://left-pad.io/)!
+
+Checkout the [link](http://www.theregister.co.uk/2016/03/23/npm_left_pad_chaos?mt=1458754433021) to this article.
