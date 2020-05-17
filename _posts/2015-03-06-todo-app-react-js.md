@@ -2,7 +2,7 @@
 title: Building a Todo app with React.js
 date: 2015-03-06T00:00:00.000+00:00
 layout: post
-type: post
+layout: post
 excerpt: This is my first attempt with React.js to build a basic Todo app. React has
   gained massive traction as a JavaScript library for building user interfaces largely
   because it is built by Facebook and their engineers have challenged the age-old

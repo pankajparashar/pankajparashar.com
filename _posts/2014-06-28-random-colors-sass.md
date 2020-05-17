@@ -1,7 +1,7 @@
 ---
 title: Random Colors in Sass
 layout: post
-type: post
+layout: post
 excerpt: Randomly generating numbers in Sass is easy using the random() function that
   was released in v3.3. Interestingly, we can extend this concept to randomly generate
   colors as well.

@@ -1,8 +1,8 @@
 ---
 title: Font-face saga of Chrome
 date: 2014-02-09T00:00:00.000+00:00
-layout: link
-type: link
+layout: post
+layout: post
 link: https://code.google.com/p/chromium/issues/detail?id=236298
 timeToRead: '1'
 authors:

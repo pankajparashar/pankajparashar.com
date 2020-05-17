@@ -1,8 +1,8 @@
 ---
 title: Reading Position Indicator
 date: 2014-05-09 00:00:00 Z
-layout: link
-type: link
+layout: post
+layout: post
 link: http://css-tricks.com/reading-position-indicator/
 ---
 

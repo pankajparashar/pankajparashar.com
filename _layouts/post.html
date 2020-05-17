@@ -2,31 +2,32 @@
 layout: home
 ---
 
-<div class="content single">
-  <article class="feature">
-    <header>
-      <h1>
-        <a href="{{ page.url }}" title="{{ page.title }}">{{ page.title }}</a></h1>
-      <time datetime="2013-12-31" pubdate>{{ page.date | date: "%b %d, %Y" }} +
-        {% assign words = page.content | number_of_words %} {% if words < 360 %} Less than 1 min {% else %} Approx
-        {{ words | divided_by: 180 }} mins {% endif %}</time>
-    </header>
-    {% if page.excerpt %}
+<div class="grid">
+  <div>
+      <h1>{{ page.title }}</h1>
       <p>{{ page.excerpt }}</p>
-    {% endif %}
-    {{content}}
-
-    <div id="commento"></div>
-    <script src="https://cdn.commento.io/js/commento.js"></script>
-
-  </article>
-
-  <div class="list-end">
-    <p>+prev<br>
-    {% if page.previous.url %}
-      <a class="next" href="{{page.previous.url}}">{{page.previous.title}}</a>
-    {% endif %}    
-    </p>
+      <p>Published on {{ page.date | date: "%b %d, %Y" }}</p>
   </div>
+  <div>
+    {{content}}
+  </div>
+</div>
 
+<div class="grid">
+  <div>
+    <p>
+      {% if page.previous.url %}
+        ‹ <a href="{{page.previous.url}}" style="color: white;">Previous</a>
+        <h1>{{page.previous.title}}</h1>
+      {% endif %}    
+    </p>  
+  </div>
+  <div>
+    <p style="text-align: right;">
+      {% if page.next.url %}
+        <a href="{{page.next.url}}">Next</a> ›
+        <h1 style="text-align: right;">{{page.next.title}}</h1>
+      {% endif %}    
+    </p>  
+  </div>
 </div>

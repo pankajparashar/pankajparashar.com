@@ -2,52 +2,46 @@
 layout: home
 ---
 
-<div class="content list">
-  {% for post in paginator.posts %}
-  <article>
-    <header>
-      <h1>
-        <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></h1>
-      <time datetime="2013-12-31" pubdate>{{ post.date | date: "%b %d, %Y" }} + {% assign words = post.content | number_of_words %} {% if words < 360 %} Less than 1 min {% else %} Approx {{ words | divided_by: 180 }} mins {% endif %}</time>
-    </header>
-    {% if post.content contains "<!-- more -->" %}
-      <p>{{ post.excerpt }}</p>
-      <p>{{ post.content | split:"<!-- more -->" | first }}</p>
-      <p>
-        <a href="{{ post.url }}">+read-more</a>
-      </p>
-    {% else %}
-      {{ post.content }}
-    {% endif %}
-    
-    {% if post.type  == 'link' %}
-      <p>
-        <a href="{{ post.link }}">+visit-link</a>
-      </p>    
-    {% endif %}
-</article>
-  {% endfor %}
+{% assign postsByYear = paginator.posts | group_by_exp:"post", "post.date | date: '%Y'" %}
 
-  <div class="list-end">
-    <p>
-      {% if paginator.previous_page %}
-                        {% if paginator.previous_page == 1 %}
-                            <a href="/">+prev</a>
-                        {% else %}
-                            <a href="{{ paginator.previous_page_path }}">+prev</a>
-                        {% endif %}
-                    {% else %}
-                        <span>+prev</span>
-                    {% endif %}
-|
-                    {% if paginator.next_page %}
-                        <a href="{{ paginator.next_page_path }}">+next</a>
-                    {% else %}
-                        <span>+next</span>
-                    {% endif %}
-    </p>
-  
+{% for year in postsByYear %}
+  <div style="padding: 1em; background: whitesmoke; border-bottom: 1px solid #ddd;">
+    <h1 style="margin-bottom: 0;">{{ year.name }}</h1>
   </div>
 
+  {% for post in year.items %}
+    <div class="grid">
+      <div>
+          <h1 style="margin-bottom: 0;">{{ post.date | date: "%b %d" }}</h1>
+        </div>
+        <div>
+          <h1 style="margin-bottom: 0;">{{ post.title }}</h1>
+          <p>{{ post.excerpt }}</p>
+          <p><a href="{{ post.url }}">+more</a></p>
+        </div>
+      </div>
+  {% endfor %}
+{% endfor %}
 
+<div style="display: grid; grid-template-columns: 1fr 1fr;padding: 1em;border-bottom: 1px solid #ddd;">
+  <div>
+    <h1 style="margin-bottom: 0;">
+    {% if paginator.previous_page %}
+                      {% if paginator.previous_page == 1 %}
+                      ‹ <a href="/">prev</a>
+                      {% else %}
+                      ‹ <a href="{{ paginator.previous_page_path }}">prev</a>
+                      {% endif %}
+                  {% else %}
+                      <span style="color: #ccc;">‹ prev</span>
+                  {% endif %}
+                </h1></div>
+
+  <div style="text-align: right;"><h1 style="margin-bottom:0;">
+                  {% if paginator.next_page %}
+                      <a href="{{ paginator.next_page_path }}">next</a> ›
+                  {% else %}
+                      <span style="color: #ccc;">next ›</span>
+                  {% endif %}
+  </h1></div>
 </div>

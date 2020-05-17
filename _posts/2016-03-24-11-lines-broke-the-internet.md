@@ -2,7 +2,7 @@
 title: How 11 lines of JavaScript broke the Internet?
 date: 2016-03-24 00:00:00 Z
 layout: post
-type: post
+layout: post
 link: http://www.theregister.co.uk/2016/03/23/npm_left_pad_chaos?mt=1458754433021
 ---
 

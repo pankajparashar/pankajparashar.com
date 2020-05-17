@@ -2,7 +2,7 @@
 title: Mocking Python
 date: 2016-09-18 00:00:00 Z
 layout: post
-type: post
+layout: post
 excerpt: The Python mock library has largely been a black hole when it comes to efficiently
   unit testing a Python code. Hopefully, this article will help you understand the
   essential bits to bump up that test coverage.

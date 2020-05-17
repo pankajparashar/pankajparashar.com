@@ -1,8 +1,8 @@
 ---
 title: S03W01 Codepen Rodeo - The Chili recipe
 date: 2014-03-08 00:00:00 Z
-layout: link
-type: link
+layout: post
+layout: post
 link: http://codepen.io/pankajparashar/full/plcLh
 ---
 

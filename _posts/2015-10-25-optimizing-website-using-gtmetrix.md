@@ -1,8 +1,8 @@
 ---
 title: Optimizing website using GTmetrix
 date: 2015-10-25 00:00:00 Z
-layout: link
-type: link
+layout: post
+layout: post
 link: https://gtmetrix.com/reports/pankajparashar.com/A698oWN7
 ---
 

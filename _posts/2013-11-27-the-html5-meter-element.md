@@ -1,8 +1,8 @@
 ---
 title: The HTML5 meter element
 date: 2013-11-27T00:00:00.000+00:00
-layout: link
-type: link
+layout: post
+layout: post
 link: http://css-tricks.com/html5-meter-element/
 timeToRead: '1'
 draft: true

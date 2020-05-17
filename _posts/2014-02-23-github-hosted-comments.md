@@ -1,8 +1,8 @@
 ---
 title: Github hosted comments
 date: 2014-02-23 00:00:00 Z
-layout: link
-type: link
+layout: post
+layout: post
 link: http://ivanzuzak.info/2011/02/18/github-hosted-comments-for-github-hosted-blogs.html
 ---
 

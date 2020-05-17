@@ -1,8 +1,8 @@
 ---
 title: Designers Guide to DPI
 date: 2014-08-17T00:00:00.000+00:00
-layout: link
-type: link
+layout: post
+layout: post
 link: http://sebastien-gabriel.com/designers-guide-to-dpi/home
 timeToRead: '1'
 draft: true

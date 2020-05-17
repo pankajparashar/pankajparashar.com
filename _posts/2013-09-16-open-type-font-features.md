@@ -1,8 +1,8 @@
 ---
 title: OpenType features in web browsers
 date: 2013-09-16 00:00:00 Z
-layout: link
-type: link
+layout: post
+layout: post
 link: https://www.typotheque.com/articles/opentype_features_in_web_browsers
 ---
 

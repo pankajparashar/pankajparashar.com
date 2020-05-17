@@ -2,7 +2,7 @@
 title: RSS to Email via Sendicate
 date: 2014-03-02 00:00:00 Z
 layout: post
-type: post
+layout: post
 excerpt: Debuting today, is the new RSS-to-Email feature that I have enabled on my
   blog using Sendicate. Subscribe to get notified to read new articles on my blog.
 ---

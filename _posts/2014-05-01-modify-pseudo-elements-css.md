@@ -1,7 +1,7 @@
 ---
 title: Modify pseudo element styles with JavaScript
 layout: post
-type: post
+layout: post
 excerpt: Quite often I run into situations where I need to modify the CSS styles of
   the pseudo elements dynamically. This post shows you different ways in which it
   can be done!

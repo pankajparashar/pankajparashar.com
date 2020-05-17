@@ -1,8 +1,8 @@
 ---
 title: Holy Grail of Script Loading
 date: 2014-08-17 00:00:00 Z
-layout: link
-type: link
+layout: post
+layout: post
 link: http://www.html5rocks.com/en/tutorials/speed/script-loading/
 ---
 

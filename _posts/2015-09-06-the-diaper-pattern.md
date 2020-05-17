@@ -1,8 +1,8 @@
 ---
 title: The Diaper Pattern
 date: 2015-09-06T00:00:00.000+00:00
-layout: link
-type: link
+layout: post
+layout: post
 link: http://mike.pirnat.com/2009/05/09/the-diaper-pattern-stinks/
 timeToRead: '1'
 authors:

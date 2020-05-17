@@ -1,7 +1,7 @@
 ---
 title: Freelance writing Infographics
-layout: link
-type: link
+layout: post
+layout: post
 link: http://www.expand2web.com/blog/copywriting-infographic/
 ---
 

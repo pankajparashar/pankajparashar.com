@@ -1,8 +1,8 @@
 ---
 title: CSS Selectors Level 3
 date: 2013-12-20T00:00:00.000+00:00
-layout: link
-type: link
+layout: post
+layout: post
 link: http://www.w3.org/TR/css3-selectors/#selectors
 draft: true
 

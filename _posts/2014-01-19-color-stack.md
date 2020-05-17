@@ -1,7 +1,7 @@
 ---
 title: Color Stack
 date: 2014-01-19T00:00:00.000+00:00
-type: link
+layout: post
 link: http://pankajparashar.com/color-stack/
 ---
 

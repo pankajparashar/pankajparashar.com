@@ -1,8 +1,8 @@
 ---
 title: Minimal business card design
 date: 2014-05-11 00:00:00 Z
-layout: link
-type: link
+layout: post
+layout: post
 link: http://codepen.io/pankajparashar/full/kdijF/
 ---
 

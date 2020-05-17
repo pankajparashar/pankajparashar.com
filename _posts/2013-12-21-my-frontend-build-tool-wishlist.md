@@ -10,9 +10,9 @@ Assuming, you have completed the development work on the frontend of your next w
 
 The typical build process of a project follows,
 
-{% highlight sh %}
+```
 Compilation > Linting > Concatenation > Compression > Miscellaneous
-{% endhighlight %}
+```
 
 <!-- more -->
 

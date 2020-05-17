@@ -1,8 +1,8 @@
 ---
 title: PEP8 for Humans
 date: 2016-03-05 00:00:00 Z
-layout: link
-type: link
+layout: post
+layout: post
 link: http://pep8.org/
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: Github pages with custom domain
 layout: post
-type: post
+layout: post
 excerpt: Setup custom domain on the user page and then all the project pages of Github
   repositories will automatically appear under the same url.
 ---

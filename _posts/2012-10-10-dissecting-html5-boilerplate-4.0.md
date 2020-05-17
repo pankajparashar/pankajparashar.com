@@ -1,8 +1,8 @@
 ---
 title: Dissecting HTML5 Boilerplate 4.0
 date: 2012-10-10T00:00:00.000+00:00
-layout: link
-type: link
+layout: post
+layout: post
 link: http://txpmag.com/meaningful-labour/dissecting-html5-boilerplate-40
 timeToRead: '1'
 draft: true

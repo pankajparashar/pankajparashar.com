@@ -1,7 +1,7 @@
 ---
 title: The HTML5 progress element
-layout: link
-type: link
+layout: post
+layout: post
 link: http://css-tricks.com/html5-progress-element/
 ---
 

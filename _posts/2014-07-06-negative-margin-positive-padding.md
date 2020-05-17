@@ -1,7 +1,7 @@
 ---
 title: Negative Margin, Positive Padding
 layout: post
-type: post
+layout: post
 excerpt: Neat little trick I learned from Joshua Hibbert's website, where he has effectively
   used this technique to design backgrounds stretching infinitely on either directions
   but the content respects the width.

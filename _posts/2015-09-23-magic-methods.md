@@ -1,7 +1,7 @@
 ---
 title: Magic methods
 layout: post
-type: post
+layout: post
 excerpt: Python's got a bunch of very useful magic methods that most of us do not
   use in day-to-day practice. This article is all about the dunder methods that can
   add magic to your python code.

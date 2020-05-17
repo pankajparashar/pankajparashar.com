@@ -1,13 +1,13 @@
 ---
 title: Codelab IO
-type: link
+layout: post
 link: https://codelab-io.herokuapp.com/
+excerpt: Over the weekend, I dished out a realtime in-browser code editor, perfect for
+  collaborating online with other developers. It can also be used as a whiteboard
+  to interview candidates distanced by geographical location. 
 ---
 
-Over the weekend, I dished out a realtime in-browser code editor, perfect for
-collaborating online with other developers. It can also be used as a whiteboard
-to interview candidates distanced by geographical location. As far as the technology
-stack is concerned,
+As far as the technology stack is concerned
 
 - [Node.js](https://nodejs.org/en/) is the backend.
 - [Socket.io](http://socket.io/) is used to establish real-time communication across users.

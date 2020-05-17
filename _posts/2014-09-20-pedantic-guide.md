@@ -1,7 +1,7 @@
 ---
 title: Pedantic Guide
 date: 2014-09-20 00:00:00 Z
-type: link
+layout: post
 link: https://pedantic-python.readme.io
 ---
 
