@@ -1,18 +1,11 @@
 ---
 title: The Apple FBI saga
-date: 2016-03-05T00:00:00.000+00:00
 layout: post
-layout: post
-link: http://blog.trailofbits.com/2016/02/17/apple-can-comply-with-the-fbi-court-order/
+excerpt: In the San Bernadino shooting, FBI found an iPhone 5C of one of the gunmen. The
+  FBI has a search warrant to check the contents of the iPhone to build its case.
 ---
 
-For a comprehensive rundown on the technical aspect on this saga, follow the link.
-**TL;DR**? Continue reading the following summary.
-
-## The Case
-
-In the San Bernadino shooting, FBI found an iPhone 5C of one of the gunmen. The
-FBI has a search warrant to check the contents of the iPhone to build its case.
+For a comprehensive rundown on the technical aspect on this saga, [follow this link](http://blog.trailofbits.com/2016/02/17/apple-can-comply-with-the-fbi-court-order/).
 
 ## The Challenges
 

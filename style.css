@@ -4,7 +4,7 @@
     font-family: 'Cascadia Mono Regular';
     font-style: normal;
     font-weight: normal;
-    src: local('Cascadia Mono Regular'), url('CascadiaMono.woff') format('woff');
+    src: url('SFMonoRegular.woff') format('woff');
     }
 @font-face {
     font-family: 'Whitney';
@@ -52,7 +52,7 @@ a { color: #333; }
 a:hover { text-decoration: none; }
 h1 {margin-top: 0; line-height: 1.25;}
 .light{color: #96a1ad;}
-.highlighter-rouge {font-size: .8em;}
+.highlighter-rouge {font-size: .75em; font-weight: bold; }
 pre, code {
     font-family: 'Cascadia Mono Regular', monospace;
     letter-spacing: 0;
