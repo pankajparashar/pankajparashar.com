@@ -3,7 +3,8 @@ title: Password strength meter
 date: 2015-12-05 00:00:00 Z
 layout: post
 layout: post
-link: https://css-tricks.com/password-strength-meter/
+excerpt: ''
+https://css-tricks.com/password-strength-meter/
 ---
 
 After a long time, I have finally managed to write an article for [CSS-Tricks](https://css-tricks.com/), on my beloved topic, the HTML5 `meter` element. This time, I've used the HTML5 meter element

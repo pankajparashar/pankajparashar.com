@@ -3,7 +3,8 @@ title: Shorter code is inconsiderate
 date: 2014-12-27T00:00:00.000+00:00
 layout: post
 layout: post
-link: https://medium.com/on-coding/shorter-code-is-inconsiderate-41cce917b51b
+excerpt: ''
+https://medium.com/on-coding/shorter-code-is-inconsiderate-41cce917b51b
 timeToRead: '1'
 draft: true
 

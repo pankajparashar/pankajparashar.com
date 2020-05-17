@@ -3,7 +3,8 @@ title: Minimal business card design
 date: 2014-05-11 00:00:00 Z
 layout: post
 layout: post
-link: http://codepen.io/pankajparashar/full/kdijF/
+excerpt: ''
+http://codepen.io/pankajparashar/full/kdijF/
 ---
 
 Little old, but [Boris Smus](http://smus.com/) introduced a minimal design concept of a [business card](http://smus.com/minimal-business-card-design/) way back in 2010 that looks incredibly simple but still quite detailed. I immediately, launched Codepen and whipped up an experiment to build this concept using plain-old CSS.

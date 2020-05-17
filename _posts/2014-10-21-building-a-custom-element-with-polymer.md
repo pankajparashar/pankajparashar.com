@@ -3,7 +3,8 @@ title: Building a Custom Element with Polymer
 date: 2014-10-21T00:00:00.000+00:00
 layout: post
 layout: post
-link: http://www.sitepoint.com/building-pull-quote-custom-element-polymer/
+excerpt: ''
+http://www.sitepoint.com/building-pull-quote-custom-element-polymer/
 
 ---
 The natural progression from my previous article on Sitepoint was to explain 

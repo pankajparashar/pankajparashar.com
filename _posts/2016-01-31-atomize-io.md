@@ -1,14 +1,15 @@
 ---
 title: Atomize IO
 layout: post
-link: https://atomize-io.herokuapp.com/
-excerpt: Atomize is now the new Optimize in the frontend development domain. Atomize.io
-  is a handy little tool to check how much your website can benefit from the adoption of
-  Atomic CSS.
+excerpt: ''
 ---
+
+Atomize is now the new Optimize in the frontend development domain. Atomize.io is a handy little tool to check how much your website can benefit from the adoption of Atomic CSS.
 
 If you don't know what Atomic CSS is, then I would strongly recommend
 checking [its website](http://acss.io/). I've also included direct links to top 25
 most popular websites in the world and surprisingly those folks have plenty of work to do!
 
 ![atomize.png](http://res.cloudinary.com/dw9fem4ki/image/upload/c_scale,w_800/v1458987639/Screen_Shot_2016-03-26_at_3.48.46_PM_afogfs.png)
+
+[Read more](https://atomize-io.herokuapp.com/)

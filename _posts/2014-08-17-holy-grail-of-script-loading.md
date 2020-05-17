@@ -3,7 +3,8 @@ title: Holy Grail of Script Loading
 date: 2014-08-17 00:00:00 Z
 layout: post
 layout: post
-link: http://www.html5rocks.com/en/tutorials/speed/script-loading/
+excerpt: ''
+http://www.html5rocks.com/en/tutorials/speed/script-loading/
 ---
 
 Well, if you think loading script in HTML is as simple as including the `script` tag then you need to 

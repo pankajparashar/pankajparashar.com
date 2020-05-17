@@ -81,15 +81,15 @@ To modify the color of the pseudo element - `.red::before` from `red` to `green`
   We can alter a different DOM attribute of the element by combining it with the content property, we can change the content (but not other properties, like margin or color) of pseudo elements dynamically.
 
   ```
-  # HTML
+  <!-- HTML -->
   <p class="red" data-attr="red">Hi, this is plain-old, sad-looking paragraph tag.</p>
      
-  # CSS
+  // CSS
   .red::before {
       content: attr(data-attr);
       color: red;
   }
   
-  # JS
+  /* JS */
   $('.red').attr('data-attr', 'green');
   ```

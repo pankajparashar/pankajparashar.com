@@ -2,7 +2,8 @@
 title: Pedantic Guide
 date: 2014-09-20 00:00:00 Z
 layout: post
-link: https://pedantic-python.readme.io
+excerpt: ''
+https://pedantic-python.readme.io
 ---
 
 A collection of style guides and best practices for popular programming languages

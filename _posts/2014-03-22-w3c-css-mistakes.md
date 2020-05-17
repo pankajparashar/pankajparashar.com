@@ -1,9 +1,7 @@
 ---
 title: Mistakes in the Design of CSS by W3C
-date: 2014-03-22 00:00:00 Z
 layout: post
-layout: post
-link: http://wiki.csswg.org/ideas/mistakes
+excerpt: ''
 ---
 
 I'm glad that the [CSS working group](http://wiki.csswg.org/main) wiki compiled
@@ -24,3 +22,5 @@ a great deal of courage to acknowledge the mistakes commited in the past and
 develop a genuine intention to resolve them.
 
 Hence, I laud the working group members for this!
+
+[Read more](http://wiki.csswg.org/ideas/mistakes)

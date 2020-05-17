@@ -3,7 +3,8 @@ title: Introduction to Polymer
 date: 2014-09-12 00:00:00 Z
 layout: post
 layout: post
-link: http://www.sitepoint.com/introduction-to-web-components-and-polymer-tutorial/
+excerpt: ''
+http://www.sitepoint.com/introduction-to-web-components-and-polymer-tutorial/
 ---
 
 [Louis](http://www.impressivewebs.com/) contacted me with an opportunity to write 

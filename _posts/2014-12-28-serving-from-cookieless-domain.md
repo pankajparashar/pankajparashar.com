@@ -3,7 +3,8 @@ title: Serving from a cookieless domain?
 date: 2014-12-28 00:00:00 Z
 layout: post
 layout: post
-link: http://www.jonathanklein.net/2014/02/revisiting-cookieless-domain.html
+excerpt: ''
+http://www.jonathanklein.net/2014/02/revisiting-cookieless-domain.html
 ---
 
 [Google](https://developers.google.com/speed/docs/insights/EnableCompression?csw=1#ServeFromCookielessDomain), [Yahoo](https://developer.yahoo.com/performance/rules.html#cookie_free) and others for long have been strongly recommending **to serve your static assets from a cookieless domain** for a 

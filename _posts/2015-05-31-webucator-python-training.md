@@ -3,7 +3,8 @@ title: Webucator - Python Training
 date: 2015-05-31T00:00:00.000+00:00
 layout: post
 layout: post
-link: https://www.webucator.com/programming/python.cfm
+excerpt: ''
+https://www.webucator.com/programming/python.cfm
 timeToRead: '1'
 draft: true
 

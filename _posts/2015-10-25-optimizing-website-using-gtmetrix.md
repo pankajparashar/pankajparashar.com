@@ -3,7 +3,8 @@ title: Optimizing website using GTmetrix
 date: 2015-10-25 00:00:00 Z
 layout: post
 layout: post
-link: https://gtmetrix.com/reports/pankajparashar.com/A698oWN7
+excerpt: ''
+https://gtmetrix.com/reports/pankajparashar.com/A698oWN7
 ---
 
 Recently, I've started using [GTmetrix](https://gtmetrix.com/) to analyze and

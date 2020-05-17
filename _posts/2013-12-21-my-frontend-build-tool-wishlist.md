@@ -14,8 +14,6 @@ The typical build process of a project follows,
 Compilation > Linting > Concatenation > Compression > Miscellaneous
 ```
 
-<!-- more -->
-
 Hence, I have divided the build task into the following categories,
 
 ## Compilation

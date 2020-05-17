@@ -3,7 +3,8 @@ title: Practical Aria Examples
 date: 2014-11-16 00:00:00 Z
 layout: post
 layout: post
-link: http://heydonworks.com/practical_aria_examples/
+excerpt: ''
+http://heydonworks.com/practical_aria_examples/
 ---
 
 We all know that [Heydon Pickering](http://www.heydonworks.com/) has been doing some amazing work in the field of accessibility. His next

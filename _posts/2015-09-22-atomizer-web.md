@@ -2,7 +2,8 @@
 title: Atomizer Web
 date: 2015-09-22T00:00:00.000+00:00
 type: project
-link: http://pankajparashar.com/atomizer-web/
+excerpt: ''
+http://pankajparashar.com/atomizer-web/
 ---
 
 A web app to generate Atomic CSS from the input markup that uses Atomic classes.

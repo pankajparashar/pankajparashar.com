@@ -3,7 +3,8 @@ title: Credit Card Custom Element with Polymer
 date: 2015-02-16T00:00:00.000+00:00
 layout: post
 layout: post
-link: http://www.sitepoint.com/building-credit-card-form-custom-element-polymer/
+excerpt: ''
+http://www.sitepoint.com/building-credit-card-form-custom-element-polymer/
 draft: true
 
 ---

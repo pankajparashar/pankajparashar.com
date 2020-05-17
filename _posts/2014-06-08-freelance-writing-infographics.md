@@ -2,7 +2,8 @@
 title: Freelance writing Infographics
 layout: post
 layout: post
-link: http://www.expand2web.com/blog/copywriting-infographic/
+excerpt: ''
+http://www.expand2web.com/blog/copywriting-infographic/
 ---
 
 Coming up with a cost of an article you’re writing as a guest author for some fancy blog could be quite tricky! Largely because you are unaware of the standard rates charged by fellow technical writers in the developer community and either parties do not want to end up on the losing side.

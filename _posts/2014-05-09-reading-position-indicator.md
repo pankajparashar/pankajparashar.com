@@ -3,7 +3,8 @@ title: Reading Position Indicator
 date: 2014-05-09 00:00:00 Z
 layout: post
 layout: post
-link: http://css-tricks.com/reading-position-indicator/
+excerpt: ''
+http://css-tricks.com/reading-position-indicator/
 ---
 
 Thanks to [Chris](http://chriscoyier.net/), I once again got the amazing opportunity to write this article as a guest author for [CSS-Tricks](http://css-tricks.com/) and also got featured on,

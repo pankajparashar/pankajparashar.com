@@ -3,7 +3,8 @@ title: Building Custom Web Components with X-Tag
 date: 2015-12-15T00:00:00.000+00:00
 layout: post
 layout: post
-link: http://www.sitepoint.com/building-custom-web-components-with-x-tag/
+excerpt: ''
+http://www.sitepoint.com/building-custom-web-components-with-x-tag/
 draft: true
 
 ---

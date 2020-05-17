@@ -3,7 +3,8 @@ title: Introducing Pedantic Python
 date: 2014-10-23 00:00:00 Z
 layout: post
 layout: post
-link: http://pedantic-python.readme.io/
+excerpt: ''
+http://pedantic-python.readme.io/
 ---
 
 Style guide and best practices to write perfect, performance-oriented and 

@@ -20,18 +20,16 @@ By default, the user pages are available under the url,
 http://username.github.io
 ```
 
-<!-- more -->
-
 ## Project pages
 
 Project pages are project specific files lying in the `gh-pages` branch of the repository. These pages can be accessed via the url `username.github.io/repository_name`.
 
 For example,
 
-{% highlight sh %}
+```
 Repository name -> Color Stack  
 URL -> http://pankajparashar.github.io/color-stack
-{% endhighlight %}
+```
 
 ## Custom domain
 

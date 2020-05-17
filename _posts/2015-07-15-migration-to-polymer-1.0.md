@@ -3,7 +3,8 @@ title: Migration to Polymer 1.0
 date: 2015-07-15 00:00:00 Z
 layout: post
 layout: post
-link: http://www.sitepoint.com/a-guide-to-upgrading-to-polymer-1-0/
+excerpt: ''
+http://www.sitepoint.com/a-guide-to-upgrading-to-polymer-1-0/
 ---
 
 I wrote a new article for Sitepoint after a while about migrating your web application to the latest version of the Polymer

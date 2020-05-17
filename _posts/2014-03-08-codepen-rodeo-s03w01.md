@@ -1,9 +1,7 @@
 ---
 title: S03W01 Codepen Rodeo - The Chili recipe
-date: 2014-03-08 00:00:00 Z
 layout: post
-layout: post
-link: http://codepen.io/pankajparashar/full/plcLh
+excerpt: ''
 ---
 
 Love it if you like it and do not forget to love other pens as well that you might find interesting. The experiment is responsive and works equally well on both small and large screens. Fonts used are [Average](http://www.google.com/fonts/specimen/Average), [Average Sans](http://www.google.com/fonts/specimen/Average+Sans) and Italic subset is from [Alegreya](http://www.google.com/fonts/specimen/Alegreya).
@@ -11,3 +9,5 @@ Love it if you like it and do not forget to love other pens as well that you mig
 ![](https://res.cloudinary.com/dw9fem4ki/image/upload/v1394273533/codepen-rodeo-s03w01_bogrzy.png)
 
 My entry for this week's [Codepen rodeo challenge](http://blog.codepen.io/rodeo/season-three/) titled the "The Chili recipe".
+
+[Read more](http://codepen.io/pankajparashar/full/plcLh)

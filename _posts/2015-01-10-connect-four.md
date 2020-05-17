@@ -2,7 +2,8 @@
 title: Connect Four
 date: 2015-01-10T00:00:00.000+00:00
 layout: post
-link: http://pankajparashar.com/connect-four/
+excerpt: ''
+http://pankajparashar.com/connect-four/
 ---
 
 Just need two players and a mouse to play with! First player to connect four
