@@ -47,7 +47,7 @@ pre, code {
 img {
     width: 100%;
 }
-p, h1, h2, blockquote{max-width: 800px;}
+p, h1, h2, blockquote, pre {max-width: 800px;}
 
 h2 { border-bottom: 1px solid #ddd;}
 blockquote { border-left: 2px solid #96a1ad;margin-left: 0;padding-left: 1em;color: #999;}
