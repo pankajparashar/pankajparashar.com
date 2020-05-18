@@ -1,10 +1,12 @@
 ---
 title: Atomize IO
-layout: post
-excerpt: ''
+layout: link
+excerpt_separator: <!--more-->
 ---
 
 Atomize is now the new Optimize in the frontend development domain. Atomize.io is a handy little tool to check how much your website can benefit from the adoption of Atomic CSS.
+
+<!--more-->
 
 If you don't know what Atomic CSS is, then I would strongly recommend
 checking [its website](http://acss.io/). I've also included direct links to top 25

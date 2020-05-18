@@ -17,13 +17,9 @@ layout: home
         <div>
           <h1 style="margin-bottom: 0;">{{ post.title }}</h1>
           <p>
-            {% if page.excerpt != '' %}
-              {{ post.excerpt }}
-            {% else %}
-              {{ post.content | truncatewords: 50 }}
-            {% endif %}
+            {{ post.excerpt }}
           </p>
-          <p><a href="{{ post.url }}">+more</a></p>
+          <p><a href="{{ post.url }}">+ more</a></p>
         </div>
       </div>
   {% endfor %}

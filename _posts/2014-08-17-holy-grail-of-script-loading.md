@@ -1,13 +1,15 @@
 ---
 title: Holy Grail of Script Loading
-layout: post
-excerpt: ''
+layout: link
+excerpt_separator: <!--more-->
 ---
 
 Well, if you think loading script in HTML is as simple as including the `script` tag then you need to 
 read this piece by Jake Archibald. The article dicusses various ways in which you 
 can load external JavaScript files in your document, the challenges associated
 with each of them and how to circumvent problems.
+
+<!--more-->
 
 Obviously, there is no clear winner as each method comes with its own set of baggage. But,
 nevertheless the style of writing is extremely simple yet the depth of topic is immense which 

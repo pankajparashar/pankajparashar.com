@@ -1,13 +1,15 @@
 ---
 title: Less vs Sass
-layout: post
-excerpt: ''
+layout: link
+excerpt_separator: <!--more-->
 ---
 
 [Matthew Dean](http://lesscss.org/about/#team), a core-team member of Less wrote
 an interesting piece, comparing Less with Sass and highlighting important
 differences between the design decisions of the two pre-processors. Obviously,
 there is no clear winner here!
+
+<!--more-->
 
 I've been using Sass, for as long as [I can remember](http://pankajparashar.com/posts/why-do-i-hate-css-preprocessors/)
 but the arguments made by Matt in his article are compelling enough for me to

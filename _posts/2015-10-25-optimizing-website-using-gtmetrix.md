@@ -1,14 +1,15 @@
 ---
 title: Optimizing website using GTmetrix
-layout: post
-excerpt: ''
+layout: link
+excerpt_separator: <!--more-->
 ---
 
 Recently, I've started using [GTmetrix](https://gtmetrix.com/) to analyze and
 improve the performance of my personal website. It allows you to audit your
-website against industry benchmarks like [PageSpeed](https://developers.google.com/speed/pagespeed/?hl=en),
-[YSlow](http://yslow.org/) etc. and also provides a video and a filmstrip to
+website against industry benchmarks like [PageSpeed](https://developers.google.com/speed/pagespeed/?hl=en), [YSlow](http://yslow.org/) etc. and also provides a video and a filmstrip to
 demonstrate the perceived rendering of your website.
+
+<!--more-->
 
 I'm very happy about the results with benchmarks running close to 100%, page
 loading under half-a-second and significantly smaller payload.

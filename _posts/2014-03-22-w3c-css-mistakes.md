@@ -1,12 +1,14 @@
 ---
 title: Mistakes in the Design of CSS by W3C
-layout: post
-excerpt: ''
+layout: link
+excerpt_separator: <!--more-->
 ---
 
 I'm glad that the [CSS working group](http://wiki.csswg.org/main) wiki compiled
 a list of mistakes that were made in the design of CSS and are willing to
 correct if anyone invents a time machine. My favorite one's are,
+
+<!--more-->
 
 * `rgba()` and `hsla()` should not exist, `rgb()` and `hsl()` should have gotten
    an optional fourth parameter for opacity.

@@ -1,10 +1,12 @@
 ---
 title: CSS Selectors Level 3
-layout: post
-excerpt: ''
+layout: link
+excerpt_separator: <!--more-->
 ---
 
 A Selector represents a structure that can be used as a condition to determine which elements a selector matches in the document tree.
+
+<!--more-->
 
 [CSS-Tricks Almanac](http://css-tricks.com/almanac/) is an alternative resource to read more about the CSS Selectors and Properties.
 

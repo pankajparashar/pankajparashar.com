@@ -1,11 +1,13 @@
 ---
 title: Shorter code is inconsiderate
-layout: post
-excerpt: ''
+layout: link
+excerpt_separator: <!--more-->
 ---
 
-[Allan Reyes](https://twitter.com/allanbreyes) wrote an extremely pertinent article describing the pitfalls of writing 
-concise code with the intention of prematurely optimizing the code but ending up making life difficult for everyone. 
+[Allan Reyes](https://twitter.com/allanbreyes) wrote an extremely pertinent article describing the pitfalls of writing concise code with the intention of prematurely optimizing the code but ending up making life difficult for everyone. 
+
+<!--more-->
+
 Few downsides discussed in the article accompanied by examples,
 
 - Debugging is difficult.

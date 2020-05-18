@@ -1,12 +1,14 @@
 ---
 title: Mapping on iOS and Android
-layout: post
-excerpt: ''
+layout: link
+excerpt_separator: <!--more-->
 ---
 
 The [UX Launchpad](http://uxlaunchpad.com/) team has done an in-depth analysis and a comprehensive
 review of comparing the mapping experience on iOS and Android. The article uses a bunch of parameters
 to evaluate the user experience on both the apps with no clear winner.
+
+<!--more-->
 
 ![](https://res.cloudinary.com/dw9fem4ki/image/upload/c_scale,w_800/v1445760469/google_maps_vs_apple_iphone.png)
 

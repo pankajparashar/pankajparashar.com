@@ -1,12 +1,14 @@
 ---
 title: Github hosted comments
-layout: post
-excerpt: ''
+layout: link
+excerpt_separator: <!--more-->
 ---
 
 Although a bit old, [Ivan Zuzak](http://ivanzuzak.info/) has written about an 
 interesting concept of using comments in issue tracker of Github hosted blog 
 repository.
+
+<!--more-->
 
 Before, starting this blog, I experimented with various techniques to support 
 comments on blog post, but never thought about this unique concept. I am

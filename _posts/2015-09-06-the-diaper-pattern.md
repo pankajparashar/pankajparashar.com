@@ -1,13 +1,15 @@
 ---
 title: The Diaper Pattern
-layout: post
-excerpt: ''
+layout: link
+excerpt_separator: <!--more-->
 ---
 
 [Mike Pirnat](http://mike.pirnat.com/) wrote about the diaper pattern almost
 6 years ago, but the essence of his writing is still fresh in my mind. It refers
 to the practice of catching generic exceptions in your code, allowing them to
 silently pass through your code which could yield dangerous results.
+
+<!--more-->
 
 Its called **diaper** because it catches all the shit. In practice, it is always
 recommended to catch specific exceptions and let the code break for any runtime
