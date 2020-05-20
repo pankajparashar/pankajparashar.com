@@ -1,25 +1,10 @@
-@font-face {
-    font-family: 'Cascadia Mono Regular';
-    font-style: normal;
-    font-weight: normal;
-    src: url('SFMonoRegular.woff') format('woff');
-    }
-@font-face {
-    font-family: 'Whitney';
-    src: url('Whitney-Book.woff') format('woff');
-    font-weight: 400;
-}
-@font-face {
-    font-family: 'Whitney';
-    src: url('Whitney-Bold.woff') format('woff');
-    font-weight: 700;
-}
 
 body {
     color: #2a2f35;
     font-weight: 400;
     font-size: clamp(18px, 1.5vmax, 1.5em);
     font-family: "Whitney", sans-serif;
+    font-display: swap;
     margin: 0;
     padding: 0;
     line-height: 1.5;
@@ -69,5 +54,3 @@ img {
 }
 p, h1, h2, blockquote, pre {max-width: 800px;}
 
-h2 { border-bottom: 1px solid #ddd;}
-blockquote { border-left: 2px solid #96a1ad;margin-left: 0;padding:0 1em;color: #666;background-color: whitesmoke;}
