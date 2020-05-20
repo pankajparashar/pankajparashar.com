@@ -12,38 +12,38 @@ take a few scenarios and you're job is to guess the output,
 
 ## Scenario 1
 
-{% highlight python %}
+```
 >>> for i in []:
 ...    pass
 >>> print(i)       # Output?
-{% endhighlight %}
+```
 
 Since, there is no element in the list, the `for` loop simply doesn't run leaving `i` as an undefined variable in the current
 scope. Hence, you'll get,
 
 <!-- more -->
 
-{% highlight python %}
+```
 >>> print(i)
 NameError: name 'i' is not defined
-{% endhighlight %}
+```
 
 ## Scenario 2
 
-{% highlight python %}
+```
 >>> for i in [1,2,3]:
 ...    pass
 >>> print(i)       # Output?
-{% endhighlight %}
+```
 
 You might think this would produce the same error as above. This is where things become different. In Python, the scoping rules
 are fairly simple and elegant: a block is either a module, a function body or a class body. Within a function body, names are
 visible from the point of their definition to the end of the block (including nested blocks such as nested functions). Hence, you'll get,
 
-{% highlight python %}
+```
 >>> print(i)
 3
-{% endhighlight %}
+```
 
 This behavior has been [well documented](https://docs.python.org/dev/reference/compound_stmts.html#for) in the official specification,
 

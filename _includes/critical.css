@@ -34,6 +34,7 @@ body {
 a { color: #333; }
 a:hover { text-decoration: none; }
 h1 {margin-top: 0; line-height: 1.25;}
+h2 {border-bottom: 1px solid #ddd;}
 .light{color: #96a1ad;}
 
 pre, code {

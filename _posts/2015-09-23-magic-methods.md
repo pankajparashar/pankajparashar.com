@@ -29,9 +29,9 @@ of an object.
 `__del__(self)` - It is called when the object is garbage collected. Contrary to
 popular belief, it is not called when we execute `del obj` statement.  
 
-{% highlight python %}
+```
 obj = MyClass()     #: Calls __new__ and then __init__
-{% endhighlight %}
+```
 
 ### Operators
 
@@ -46,7 +46,7 @@ Augmented Assignment and Unary operators.
 `__le__(self, other)` - Implements less-than-or-equal-to `<=`  
 `__ge__(self, other)` - Implements greater-than-or-equal-to `>=`  
 
-{% highlight python %}
+```
 obj1 = MyClass()
 obj2 = MyClass()
 
@@ -56,7 +56,7 @@ obj1 < obj2     #: Calls __lt__
 obj1 > obj2     #: Calls __gt__
 obj1 <= obj2    #: Calls __le__
 obj1 >= obj2    #: Calls __ge__
-{% endhighlight %}
+```
 
 **2. Arithmetic operators**  
 `__add__(self, other)` - Implements addition `+`  
@@ -74,7 +74,7 @@ obj1 >= obj2    #: Calls __ge__
 `__or__(self, other)` - Implements bitwise OR `|`  
 `__xor__(self, other)` - Implements bitwise XOR `^`  
 
-{% highlight python %}
+```
 obj = MyClass()
 
 obj + 1         #: Calls __add__
@@ -88,7 +88,7 @@ obj >> 1        #: Calls __rshift__
 obj & 1         #: Calls __and__
 obj | 1         #: Calls __or__
 obj ^ 1         #: Calls __xor__
-{% endhighlight %}
+```
 
 **3. Reflected Arithmetic operators**  
 
@@ -111,7 +111,7 @@ which calls a different set of magic methods, listed below,
 `__ror__(self, other)` - Implements bitwise OR `|`  
 `__rxor__(self, other)` - Implements bitwise XOR `^`  
 
-{% highlight python %}
+```
 obj = MyClass()
 
 1 + obj         #: Calls __add__
@@ -125,7 +125,7 @@ obj = MyClass()
 1 & obj         #: Calls __and__
 1 | obj         #: Calls __or__
 1 ^ obj         #: Calls __xor__
-{% endhighlight %}
+```
 
 **4. Augmented assignment operators**  
 `__iadd__(self, other)` - Implements addition with assignment `+=`  
@@ -142,7 +142,7 @@ obj = MyClass()
 `__ior__(self, other)` - Implements bitwise OR with assignment `|=`  
 `__ixor__(self, other)` - Implements bitwise XOR with assignment `^=`  
 
-{% highlight python %}
+```
 obj1 = MyClass()
 obj2 = MyClass()
 
@@ -157,20 +157,20 @@ obj1 >>= obj2   #: Calls __irshift__
 obj1 &= obj2    #: Calls __iand__
 obj1 |= obj2    #: Calls __ior__
 obj1 ^= obj2    #: Calls __ixor__
-{% endhighlight %}
+```
 
 **5. Unary operators**  
 `__pos__(self)` - Implements unary positive `+`  
 `__neg__(self)` - Implements negation `-`  
 `__invert__(self)` - Implements inversion `~`  
 
-{% highlight python %}
+```
 >>> obj = MyClass()
 
 >>> +obj    #: Calls __pos__
 >>> -obj    #: Calls __neg__
 >>> ~obj    #: Calls __invert__
-{% endhighlight %}
+```
 
 ### Builtins
 
@@ -192,7 +192,7 @@ of the `math` library as well.
 `__ceil__(self)` - Implements `math.ceil()`  
 `__trunc__(self)` - Implements `math.trunc()`
 
-{% highlight python %}
+```
 >>> obj = MyClass()
 
 >>> abs(obj)                    #: Invokes __abs__
@@ -209,7 +209,7 @@ of the `math` library as well.
 >>> math.ceil(obj)              #: Invokes __ceil__
 >>> math.trunc                  #: Invokes __trunc__
 >>> obj[0]                      #: Invokes __index__
-{% endhighlight %}
+```
 
 ### Type Conversion
 
@@ -222,7 +222,7 @@ of the `math` library as well.
 `__str__(self)` - Implements `str()`  
 `__unicode__(self)` - Implements `unicode()`  
 
-{% highlight python %}
+```
 >>> obj = MyClass()
 
 >>> int(obj)        #: Invokes __int__
@@ -233,7 +233,7 @@ of the `math` library as well.
 >>> hex(obj)        #: Invokes __hex__
 >>> str(obj)        #: Invokes __str__
 >>> unicode(obj)    #: Invokes __unicode__
-{% endhighlight %}
+```
 
 ### Attribute Access
 
@@ -241,13 +241,13 @@ of the `math` library as well.
 `__setattr__(self, name, value)` - Implements setter  
 `__delattr__(self, name)` - Implements deleter  
 
-{% highlight python %}
+```
 >>> obj = MyClass()
 
 >>> obj.attr1           #: Invokes __getattr__
 >>> obj.attr1 = 1       #: Invokes __setattr__
 >>> del obj.attr1       #: Invokes __delattr__
-{% endhighlight %}
+```
 
 ### Containers & Dicts
 
@@ -261,7 +261,7 @@ of the `math` library as well.
 `__contains__(self, item)` - Implements `in` and `not in`  
 `__missing__(self, key)` - Implements the behavior when a key is missing from dictionary  
 
-{% highlight python %}
+```
 >>> obj = MyClass()
 
 >>> len(obj)                #: Invokes __len__
@@ -273,7 +273,7 @@ of the `math` library as well.
 >>> reversed(obj)           #: Invokes __reversed__
 >>> 'key1' in obj           #: Invokes __contains__
 >>> obj['key2']             #: Invokes __missing__ ('key2' is missing in obj)
-{% endhighlight %}
+```
 
 ### Context Managers
 
@@ -287,7 +287,7 @@ is bound to the target of the `with` statement, or the name after the `as`.
 `__exit__(self, exception_type, exception_value, traceback)` - Defines what the
 context manager should do after its block has been executed (or terminates).
 
-{% highlight python %}
+```
 >>> with open('file.txt') as fp:        #: Invokes __enter__
 ...     fp.read()                       #: At the end, invokes __exit__
-{% endhighlight %}
+```
