@@ -1,7 +1,6 @@
 ---
 title: Magic methods
 layout: post
-layout: post
 excerpt: Python's got a bunch of very useful magic methods that most of us do not
   use in day-to-day practice. This article is all about the dunder methods that can
   add magic to your python code.
@@ -20,7 +19,7 @@ categories,
 
 <!-- more -->
 
-### Construction & Destruction
+## Construction & Destruction
 
 `__new__(cls, *args)` - It is the first method invoked when you create an object
  of a class.  
@@ -33,12 +32,13 @@ popular belief, it is not called when we execute `del obj` statement.
 obj = MyClass()     #: Calls __new__ and then __init__
 ```
 
-### Operators
+## Operators
 
 Operators are further divided into Comparison, Arithmetic, Refleced Arithmetic,
 Augmented Assignment and Unary operators.
 
-**1. Comparison operators**  
+### Comparison operators
+
 `__eq__(self, other)` - Implements equality `==`  
 `__ne__(self, other)` - Implements inequality `!=`  
 `__lt__(self, other)` - Implements less-than `<`  
@@ -58,7 +58,8 @@ obj1 <= obj2    #: Calls __le__
 obj1 >= obj2    #: Calls __ge__
 ```
 
-**2. Arithmetic operators**  
+### Arithmetic operators
+
 `__add__(self, other)` - Implements addition `+`  
 `__sub__(self, other)` - Implements subtraction `-`  
 `__mul__(self, other)` - Implements multiplication `*`  
@@ -90,7 +91,7 @@ obj | 1         #: Calls __or__
 obj ^ 1         #: Calls __xor__
 ```
 
-**3. Reflected Arithmetic operators**  
+### Reflected Arithmetic operators
 
 Reflected Arithmetic comes into the picture when operands are switched around,
 thus creating a reflection. For example, `obj + other` can be switched to `other + obj`
@@ -127,7 +128,8 @@ obj = MyClass()
 1 ^ obj         #: Calls __xor__
 ```
 
-**4. Augmented assignment operators**  
+### Augmented assignment operators
+
 `__iadd__(self, other)` - Implements addition with assignment `+=`  
 `__isub__(self, other)` - Implements subtraction with assignment `-=`  
 `__imul__(self, other)` - Implements multiplication with assignment `*=`  
@@ -159,7 +161,8 @@ obj1 |= obj2    #: Calls __ior__
 obj1 ^= obj2    #: Calls __ixor__
 ```
 
-**5. Unary operators**  
+### Unary operators 
+
 `__pos__(self)` - Implements unary positive `+`  
 `__neg__(self)` - Implements negation `-`  
 `__invert__(self)` - Implements inversion `~`  
@@ -172,7 +175,7 @@ obj1 ^= obj2    #: Calls __ixor__
 >>> ~obj    #: Calls __invert__
 ```
 
-### Builtins
+## Builtins
 
 Python provides a useful bunch of magic methods for `builtins` and few methods
 of the `math` library as well.
@@ -211,7 +214,7 @@ of the `math` library as well.
 >>> obj[0]                      #: Invokes __index__
 ```
 
-### Type Conversion
+## Type Conversion
 
 `__int__(self)` - Implements `int()`  
 `__long__(self)` - Implements `long()`  
@@ -235,7 +238,7 @@ of the `math` library as well.
 >>> unicode(obj)    #: Invokes __unicode__
 ```
 
-### Attribute Access
+## Attribute Access
 
 `__getattr__(self, name)` - Implements getter  
 `__setattr__(self, name, value)` - Implements setter  
@@ -249,7 +252,7 @@ of the `math` library as well.
 >>> del obj.attr1       #: Invokes __delattr__
 ```
 
-### Containers & Dicts
+## Containers & Dicts
 
 `__len__(self)` - Implements `len()`  
 `__index__(self)` - Implements `obj[i]`  
@@ -275,7 +278,7 @@ of the `math` library as well.
 >>> obj['key2']             #: Invokes __missing__ ('key2' is missing in obj)
 ```
 
-### Context Managers
+## Context Managers
 
 Context managers allow setup and cleanup actions to be taken for objects when
 their creation is wrapped with a with statement. The behavior of the context

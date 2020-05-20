@@ -10,7 +10,9 @@ excerpt: The "Back To Top" button has been a holy grail along with the hamburger
 ---
 This is the previous implementation,
 
-    <a role="button" onClick="window.scrollTo(0,0)" href="javascript:void(0)">Back to Top</a>
+```
+<a role="button" onClick="window.scrollTo(0,0)" href="javascript:void(0)">Back to Top</a>
+```
 
 Recently I [learned ](https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollIntoView)about the `Element.scrollIntoView` method that scrolls the elements parent container such that the element is visible to user in the viewport. Optionally, we can also define behavior to scroll smoothly.
 
