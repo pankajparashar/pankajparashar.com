@@ -35,22 +35,16 @@ a { color: #333; }
 a:hover { text-decoration: none; }
 h1 {margin-top: 0; line-height: 1.25;}
 .light{color: #96a1ad;}
-.highlighter-rouge {font-size: .75em; }
+
 pre, code {
     font-family: 'Cascadia Mono Regular', monospace;
-    letter-spacing: 0;
-    
-    background: whitesmoke;
-    padding: 0 5px;
-    overflow-x: auto;
-    white-space: pre-wrap;       /* css-3 */
- white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
- white-space: -pre-wrap;      /* Opera 4-6 */
- white-space: -o-pre-wrap;    /* Opera 7 */
- word-wrap: break-word;       /* Internet Explorer 5.5+ */
 }
 img {
     width: 100%;
 }
 p, h1, h2, blockquote, pre {max-width: 800px;}
-
+.highlighter-rouge {
+    font-size: .75em;
+    background-color: antiquewhite;
+    padding: 0 5px;
+}
