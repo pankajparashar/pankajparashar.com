@@ -57,7 +57,7 @@ u'0.17.0'
 
 4. Construct a dataframe from a Excel(.xlsx) file
 
-   {% highlight python %}
+   ```
    >>> xlsFile = pd.ExcelFile('file.xlsx')
    >>> xlsFile.sheet_names
    ['Sheet1', 'Sheet2']
@@ -66,11 +66,11 @@ u'0.17.0'
             Date    price  factor_1  factor_2
    0  2012-06-11  1600.20     1.255     1.548
    1  2012-06-12  1610.02     1.258     1.554
-   {% endhighlight %}
+   ```
 
 5. Add, Remove and Rename a column in a dataframe
 
-   {% highlight python %}
+   ```
    >>> df
       ColA  ColB  ColC
    0     1     2     3
@@ -96,11 +96,11 @@ u'0.17.0'
       ColA  ColB  ColC
    0     1     2     3
    1     4     5     6
-   {% endhighlight %}
+   ```
 
 6. Insert, Update and Delete rows from a dataframe
 
-   {% highlight python %}
+   ```
    >>> df
       ColA  ColB  ColC
    0     1     2     3
@@ -129,7 +129,7 @@ u'0.17.0'
       ColA  ColB  ColC
    0     1     2    10
    2     7     8    10
-   {% endhighlight %}
+   ```
 
 Of course, Pandas is a huge library and this article would never be considered complete.
 As I continue to learn new tricks in the Pandas library, I will update the article
