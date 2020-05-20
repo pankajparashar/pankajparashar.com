@@ -3,15 +3,18 @@
     font-style: normal;
     font-weight: normal;
     src: url('SFMonoRegular.woff') format('woff');
+    font-display: swap
     }
 @font-face {
     font-family: 'Whitney';
     src: url('Whitney-Book.woff') format('woff');
     font-weight: 400;
+    font-display: swap
 }
 @font-face {
     font-family: 'Whitney';
     src: url('Whitney-Bold.woff') format('woff');
     font-weight: 700;
+    font-display: swap
 }
 
