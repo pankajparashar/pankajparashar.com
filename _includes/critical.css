@@ -1,7 +1,7 @@
 
 body {
     color: #32325d;
-    background-color: #f6f9fc;
+    background-color: #F2F0FF;
     font-weight: 400;
     font-size: clamp(18px, 1.5vmax, 1.5em);
     font-family: "Whitney", sans-serif;
@@ -21,9 +21,9 @@ body {
 }
 
 .grid > div:nth-child(odd) { 
-    background-color: #32325d;
+    background-color: #2D2B38;
     color: whitesmoke;
-    border-bottom: 1px solid #4D5473;
+    border-bottom: 1px solid #F2F0FF;
 }
 .grid > div:nth-child(even) {
     border-bottom: 1px solid #d3d5d7;
@@ -47,16 +47,16 @@ img {
 p, h1, h2, blockquote, pre, .highlighter-rouge {max-width: 800px;}
 .highlighter-rouge {
     font-size: .75em;
-    background-color: antiquewhite;
+    background-color:antiquewhite;
     padding: 0 5px;
 }
 blockquote {
     margin: 0;
     padding: 0 1em;
     background-color: antiquewhite;
-    border-left: 5px solid wheat;
+    border-left: 5px solid #F59E47;
 }
-blockquote .highlighter-rouge {
+.highlighter-rouge {
     background-color: whitesmoke;
-    outline: 2px dotted wheat;
+    outline: 1px dashed #F59E47;
 }
