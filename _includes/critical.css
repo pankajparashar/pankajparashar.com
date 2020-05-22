@@ -4,7 +4,6 @@ body {
     font-weight: 400;
     font-size: clamp(18px, 1.5vmax, 1.5em);
     font-family: "Whitney", sans-serif;
-    font-display: swap;
     margin: 0;
     padding: 0;
     line-height: 1.5;
