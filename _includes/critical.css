@@ -36,6 +36,7 @@ body {
 h1, h2, h3 {
     font-size: 1em;
     color: var( --fg-color-head );
+    margin-bottom: 0;
 }
 
 .grid > div, h2, h3 {
@@ -43,7 +44,8 @@ h1, h2, h3 {
 }
 
 .grid > div:empty {
-    border-bottom: none;
+    border-top-width: 0;
+    border-bottom-width: 0;
 }
 
 blockquote {
@@ -79,6 +81,7 @@ pre, code {
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    column-gap: 1em;
 }
 
 ul {

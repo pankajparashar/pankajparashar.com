@@ -2,44 +2,40 @@
 layout: home
 ---
 
-{% assign postsByYear = site.posts | group_by_exp:"post", "post.date | date: '%Y'" %}
+{% assign posts = site.posts | group_by_exp: "post", "post.date | date: '%Y'" %}
+{% assign year = posts[0] %}
 
-{% assign year = postsByYear[0] %}
-  <div style="border: 1px solid #ddd;border-width:0px 0 1px 0; width: 100%;">
-    <p>{{ year.name }} </p>
+<div class="grid">
+  <div><p>{{year.name}}</p></div>
+</div>
+
+{% for post in year.items %}
+  <div class="grid">
+    <div {% if forloop.last %}style="border-bottom-width:1px"{% endif %}></div>
+    <div>
+      <p>
+        {% if post.link %}
+          <a rel="noreferrer" href="{{post.link}}">
+            <h1>{{post.title}}</h1>
+          </a>
+        {% else %}
+          <a href="{{post.url}}">
+            <h1>{{post.title}}</h1>
+          </a>
+        {% endif %}
+        <span>{{ post.date | date: "%b %d" }}</span>{% if post.author %} ⋆ {{post.author}}{% endif %}
+      </p>
+      <p>{{post.excerpt}}</p>
+    </div>
   </div>
+{% endfor %}
 
-  {% for post in year.items %}
-    <div class="grid">
-      <div></div>
-        {% if forloop.last %}
-        <div style="border-bottom: none;">
-          {% else %}
-        <div>
-        {% endif %}
-              <p>
-            {% if post.link %}
-              <a target='_blank' rel="noreferrer" href="{{post.link}}"><span style="font-weight:bold">{{ post.title }}</span></a>
-            {% else %}
-              <a href="{{post.url}}"><span style="font-weight:bold">{{ post.title }}</span></a>
-            {% endif %}
-            <br><span>{{ post.date | date: "%b %d" }}</span>
-            {% if post.link %}
-            ⋆ {{ post.author }}
-            {% endif %}
-          </p>
-          <p>{{ post.excerpt }}</p>
-        </div>
-      </div>
-  {% endfor %}
-
-  <div style="border-bottom: 1px solid #ddd;border-top: 1px solid #ddd;">
-    <p>Archive: 
-      {% for year in postsByYear offset:1 %}
-          <a href="/{{year.name}}">{{ year.name }}</a> 
-        {% if forloop.index != forloop.length %}
-          |
-        {% endif %}
+<div class="grid">
+  <div>  
+    <p style="text-align:center;max-width:100%">
+      {% for year in posts offset:1 %}
+        <a href="/{{year.name}}">{{year.name}}</a>{% if forloop.index != forloop.length %} | {% endif %}
       {% endfor %}
-  </p>
+    </p>  
+  </div>
 </div>
