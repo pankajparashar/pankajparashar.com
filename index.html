@@ -20,7 +20,7 @@ layout: home
         {% endif %}
               <p>
             {% if post.link %}
-              <a target='_blank' href="{{post.link}}"><span style="font-weight:bold">{{ post.title }}</span></a>
+              <a target='_blank' rel="noreferrer" href="{{post.link}}"><span style="font-weight:bold">{{ post.title }}</span></a>
             {% else %}
               <a href="{{post.url}}"><span style="font-weight:bold">{{ post.title }}</span></a>
             {% endif %}
