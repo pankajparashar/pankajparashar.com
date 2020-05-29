@@ -15,6 +15,7 @@ body {
 a[href*="//"]:not([href*="pankajparashar.com"]):after {
     content: '↗';
 }
+h1 {font-size: 1em;}
 h3 {font-size: 1em;color: #21272a;}
 h2 {font-size: 1em; border-bottom: 1px solid #ddd;color:#21272a}
 blockquote {background: #FCF7F4;margin: 0;border-left: 5px solid #f1dacc;}
