@@ -5,13 +5,13 @@ layout: home
 {% assign posts = site.posts | group_by_exp: "post", "post.date | date: '%Y'" %}
 {% assign year = posts[0] %}
 
-<div class="grid">
-  <div><p>{{year.name}}</p></div>
+<div class="row">
+  <p>{{year.name}}</p>
 </div>
 
 {% for post in year.items %}
   <div class="grid">
-    <div {% if forloop.last %}style="border-bottom-width:1px"{% endif %}></div>
+    <div></div>
     <div>
       <p>
         {% if post.link %}
@@ -30,12 +30,10 @@ layout: home
   </div>
 {% endfor %}
 
-<div class="grid">
-  <div>  
+<div class="row">
     <p style="text-align:center;max-width:100%">
       {% for year in posts offset:1 %}
         <a href="/{{year.name}}">{{year.name}}</a>{% if forloop.index != forloop.length %} | {% endif %}
       {% endfor %}
     </p>  
-  </div>
 </div>

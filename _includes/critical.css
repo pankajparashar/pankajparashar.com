@@ -84,6 +84,11 @@ pre, code {
     column-gap: 1em;
 }
 
+.row {
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+}
+
 ul {
     list-style-type: circle
 }
