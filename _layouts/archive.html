@@ -10,10 +10,9 @@ layout: home
 
 {% for post in page.posts %}
 <div class="grid">
-  <div>
-    </div>
+  <div style="border-bottom: none;"></div>
     {% if forloop.last %}
-    <div>
+    <div style="border-bottom: none;">
     {% else %}
     <div>
     {% endif %}
@@ -35,7 +34,7 @@ layout: home
 
 
 {% assign postsByYear = site.posts | group_by_exp:"post", "post.date | date: '%Y'" %}
-<div style="border: 1px solid #ddd;border-width:1px 0 0px 0">
+<div style="border-bottom: 1px solid #ddd;border-top: 1px solid #ddd;">
     <p>Archive: 
         {% for year in postsByYear offset:1 %}
             {% if year.name == currentYear %}
