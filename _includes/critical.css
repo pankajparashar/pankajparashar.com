@@ -1,11 +1,25 @@
-*, *:before, *:after { box-sizing: border-box;}
+:root {
+    --fore-color: #697076;
+    --back-color: #fff;
+    --primary-color: #21272a;
+    --bq-color: #FCF7F4;
+}
+
+.dark {
+    --fore-color: #ccc;
+    --back-color: #21272a;
+    --primary-color: #fff;
+    --bq-color: #37474f;
+}
+
+*, *:before, *:after { box-sizing: border-box;transition: color 0.1s ease;}
 
 body {
     font-family: "Sohne", -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
     line-height: 1.5;
     font-size: clamp(18px, 1.25vmax, 1.5em);
-    color: #697076;
-    background: #fff;
+    color: var(--fore-color);
+    background: var(--back-color);
     padding: 0em 1em 0 1em;
     width: 100%; max-width: 100%;
     margin: 0;
@@ -16,9 +30,9 @@ a[href*="//"]:not([href*="pankajparashar.com"]):after {
     content: '↗';
 }
 h1 {font-size: 1em;}
-h3 {font-size: 1em;color: #21272a;}
-h2 {font-size: 1em; border-bottom: 1px solid #ddd;color:#21272a}
-blockquote {background: #FCF7F4;margin: 0;border-left: 5px solid #f1dacc;}
+h3 {font-size: 1em;color: ;}
+h2 {font-size: 1em; border-bottom: 1px solid #ddd;color:}
+blockquote {background: var(--bq-color);margin: 0;border-left: 5px solid #f1dacc;}
 blockquote p {padding: 1em;}
 .highlighter-rouge {
     background: #FFE8F2;
@@ -52,13 +66,13 @@ ul {list-style-type: circle}
 
 
 a {
-    color: #21272A;
+    color: var( --primary-color);
     text-decoration-line: underline;
     text-decoration-color: #878E97;
     text-decoration-style: solid;
     transition: color 0.3s ease;
 }
-a:hover {text-decoration-color:#21272a}
+a:hover {text-decoration-color:var( --primary-color)}
 p, h1, h2, blockquote, pre, .highlighter-rouge {max-width: 800px;width: 100%;}
 
 /*body {

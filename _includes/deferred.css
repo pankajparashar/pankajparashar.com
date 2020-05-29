@@ -22,3 +22,10 @@
     font-weight: normal;
     font-style: normal;
 }
+
+/* switch to dark mode color */
+@media (prefers-color-scheme: dark) {
+    --fore-color: #ccc;
+    --back-color: #21272a;
+    --primary-color: #fff;
+}
