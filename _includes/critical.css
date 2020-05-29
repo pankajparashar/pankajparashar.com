@@ -1,45 +1,54 @@
 :root {
-    --fore-color: #697076;
-    --back-color: #fff;
-    --primary-color: #21272a;
-    --bq-color: #FCF7F4;
+    --bg-color: #fff;
+    --fg-color-text: #666;
+    --fg-color-head: #333;
+
+    --bq-color: whitesmoke;
+    --cc-color: whitesmoke;
 }
 
 .dark {
-    --fore-color: #ccc;
-    --back-color: #21272a;
-    --primary-color: #fff;
-    --bq-color: #37474f;
+    --bg-color: #151a1f;
+    --fg-color-text: #c2ccd6;
+    --fg-color-head: #f5f6f8;
+
+    --bq-color: #222b33;
+    --cc-color: #445566;
 }
 
-*, *:before, *:after { box-sizing: border-box;transition: color 0.1s ease;}
+*, *:before, *:after { 
+    box-sizing: border-box;
+    transition: color 0.1s ease;
+}
 
 body {
-    font-family: "Sohne", -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
+    font-family: sans, sans-serif;
     line-height: 1.5;
-    font-size: clamp(18px, 1.25vmax, 1.5em);
-    color: var(--fore-color);
-    background: var(--back-color);
-    padding: 0em 1em 0 1em;
-    width: 100%; max-width: 100%;
+    font-size: clamp( 18px, 1.25vmax, 1.5em );
+    color: var( --fg-color-text );
+    background-color: var( --bg-color );
+    padding: 0em 1em;
+    width: 100%; 
+    max-width: 100%;
     margin: 0;
 }
 
-/* shorter version! */
-a[href*="//"]:not([href*="pankajparashar.com"]):after {
-    content: '↗';
+h1, h2, h3 {
+    font-size: 1em;
+    color: var( --fg-color-head );
 }
-h1 {font-size: 1em;}
-h3 {font-size: 1em;color: ;}
-h2 {font-size: 1em; border-bottom: 1px solid #ddd;color:}
-blockquote {background: var(--bq-color);margin: 0;border-left: 5px solid #f1dacc;}
-blockquote p {padding: 1em;}
-.highlighter-rouge {
-    background: #FFE8F2;
-    padding: 0 5px;
-    color: #4c5461;
-    border-radius: 2px;
-    font-size: .8em;    
+
+h2 {
+    border-bottom: 1px solid #ddd;
+}
+
+blockquote {
+    background: var(--bq-color);
+    margin: 0;
+}
+
+blockquote p {
+    padding: 1em;
 }
 
 .grid > div:nth-child(odd) {
@@ -54,86 +63,44 @@ pre {
     word-wrap: break-word;       /* Internet Explorer 5.5+ */
 }
 
+pre, code {    
+    font-family: mono, monospace; 
+}
 
-pre, code {    font-family: mono, monospace; }
-img {width: 100%;max-width: 800px;}
+.highlighter-rouge {
+    background: var( --cc-color );
+    padding: 0 5px;
+    border-radius: 2px;
+    font-size: .8em;
+    color: var( --fg-color-head );    
+}
+
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
 }
 
-ul {list-style-type: circle}
-
+ul {
+    list-style-type: circle
+}
 
 a {
-    color: var( --primary-color);
+    color: var( --fg-color-head);
     text-decoration-line: underline;
     text-decoration-color: #878E97;
     text-decoration-style: solid;
     transition: color 0.3s ease;
 }
-a:hover {text-decoration-color:var( --primary-color)}
-p, h1, h2, blockquote, pre, .highlighter-rouge {max-width: 800px;width: 100%;}
 
-/*body {
-    color: rgb(68, 77, 86);
-    background-color:rgb(246, 248, 250);
-    font-weight: 400;
-    font-size: clamp(18px, 1.5vmax, 1.5em);
-    font-family: "Whitney", sans-serif;
-    margin: 0;
-    padding: 0;
-    line-height: 1.5;
-    width: 100%; max-width: 100%;
+a:hover {
+    text-decoration-color:var( --fg-color-head)
 }
 
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+a[href*="//"]:not([href*="pankajparashar.com"]):after {
+    content: '↗';
 }
 
-.grid > div {
-    padding: 1em;
-}
-
-.grid > div:nth-child(odd) { 
-    background-color: rgb(31, 36, 40);
-    color: rgb(250, 251, 252);
-    border-bottom: 1px solid #444d56;
-}
-
-.grid > div:nth-child(even) {
-    border-bottom: 1px solid rgb(225, 228, 232)
-}
-.grid > div:nth-child(odd) a { color: white;}
-.grid > div:nth-child(odd) pre,code { color: #333;}
-
-a { color: #005cc5; }
-a:hover { text-decoration: none; color: rgb(31, 36, 40)}
-h1 {margin-top: 0; line-height: 1.25;}
-h2 {border-bottom: 1px solid #ddd;}
-.light{color: #96a1ad;}
-
-pre, code {
-    font-family: 'Cascadia Mono Regular', monospace;
-    overflow:auto;
-}
-img {
+img, p, h1, h2, blockquote, pre, .highlighter-rouge {
+    max-width: 800px;
     width: 100%;
 }
-p, h1, h2, blockquote, pre, .highlighter-rouge {max-width: 800px;}
-.highlighter-rouge {
-    font-size: .75em;
-    background-color:antiquewhite;
-    padding: 0 5px;
-}
-blockquote {
-    margin: 0;
-    padding: 0 1em;
-    border-left: 5px solid #F59E47;
-}
-.highlighter-rouge {
-    background-color: whitesmoke;
-    outline: 1px dashed #F59E47;
-}
-*/

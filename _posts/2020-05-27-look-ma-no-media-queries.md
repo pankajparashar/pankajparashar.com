@@ -25,7 +25,6 @@ body {
 
 The site layout is designed using CSS Grids wherein we can use the `repeat()` function to specify the column template for the grid. `repeat` accepts `auto-fit` as one of the keywords to define how the grid should behave to fill the cells in the grid container.
 
-For example,
 ```
 .grid {
     display: grid;
