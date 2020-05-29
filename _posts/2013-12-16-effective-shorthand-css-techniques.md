@@ -1,11 +1,5 @@
 ---
 title: Effective shorthand CSS techniques
-layout: link
-excerpt_separator: <!--more-->
+link: https://gist.github.com/pankajparashar-zz/6752823
+author: Pankaj Parashar
 ---
-
-There is no official guide for each and every CSS shorthand property. So I wrote a gist to document all the shorthand declarations that we could ever write in CSS.
-
-<!--more-->
-
-[Read more](https://gist.github.com/pankajparashar/6752823)

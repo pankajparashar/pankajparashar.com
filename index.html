@@ -2,44 +2,45 @@
 layout: home
 ---
 
-{% assign postsByYear = paginator.posts | group_by_exp:"post", "post.date | date: '%Y'" %}
+{% assign postsByYear = site.posts | group_by_exp:"post", "post.date | date: '%Y'" %}
 
-{% for year in postsByYear %}
-  <div style="padding: 1em; background: white; border-bottom: 1px solid #ddd;">
-    <h1 style="margin-bottom: 0;">{{ year.name }}</h1>
+{% assign year = postsByYear[0] %}
+  <div style="border: 1px solid #ddd;border-width:0px 0 1px 0; width: 100%;">
+    <p>{{ year.name }} </p>
   </div>
 
   {% for post in year.items %}
     <div class="grid">
       <div>
-          <h1 style="margin-bottom: 0;">{{ post.date | date: "%b %d" }}</h1>
         </div>
+        {% if forloop.last %}
         <div>
-          <h1 style="margin-bottom: 0;">{{ post.title }}</h1>
-          <p>
-            {{ post.excerpt }}
+        {% else %}
+        <div style="border-bottom: 1px solid #ddd;">
+        {% endif %}
+              <p>
+            {% if post.link %}
+              <a target='_blank' href="{{post.link}}"><span style="font-weight:bold">{{ post.title }}</span></a>
+            {% else %}
+              <a href="{{post.url}}"><span style="font-weight:bold">{{ post.title }}</span></a>
+            {% endif %}
+            <br><span>{{ post.date | date: "%b %d" }}</span>
+            {% if post.link %}
+            ⋆ {{ post.author }}
+            {% endif %}
           </p>
-          <p>» <a href="{{ post.url }}">more</a></p>
+          <p>{{ post.excerpt }}</p>
         </div>
       </div>
   {% endfor %}
-{% endfor %}
 
-<div style="display: grid; background: white;grid-template-columns: 1fr 1fr;padding: 1em;border-bottom: 1px solid #ddd;">
-  <div>
-    <h1 style="margin-bottom: 0;">
-    {% if paginator.previous_page %}
-                      {% if paginator.previous_page == 1 %}
-                      ‹ <a href="/">prev</a>
-                      {% else %}
-                      ‹ <a href="{{ paginator.previous_page_path }}">prev</a>
-                      {% endif %}
-                  {% endif %}
-                </h1></div>
-
-  <div style="text-align: right;"><h1 style="margin-bottom:0;">
-                  {% if paginator.next_page %}
-                      <a href="{{ paginator.next_page_path }}">next</a> ›
-                  {% endif %}
-  </h1></div>
+<div style="border: 1px solid #ddd;border-width:1px 0 0px 0">
+  <p>Archive: 
+      {% for year in postsByYear offset:1 %}
+          <a href="/{{year.name}}">{{ year.name }}</a> 
+        {% if forloop.index != forloop.length %}
+          |
+        {% endif %}
+      {% endfor %}
+  </p>
 </div>

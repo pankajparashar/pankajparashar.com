@@ -13,9 +13,14 @@ highlighter: rouge
 permalink: "/posts/:title/"
 plugins:
   - jekyll-paginate
+  - jekyll-archives
 
-paginate: 15
-paginate_path: page/:num
+jekyll-archives:
+  enabled:
+    - year
+  layout: 'archive'
+  permalinks:
+    year: '/:year/'
 
 markdown: kramdown
 kramdown:

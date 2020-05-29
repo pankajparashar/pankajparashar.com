@@ -1,7 +1,5 @@
 ---
 title: Introducing Pandas
-date: 2015-11-08 00:00:00 Z
-layout: post
 layout: post
 excerpt: The intent of this post is to introduce you to the Pandas library by performing
   common tasks like reading, writing files and manipulating data.
@@ -24,7 +22,7 @@ the following command,
 u'0.17.0'
 ```
 
-- Construct a random Pandas dataframe (uses NumPy)
+1. Construct a random Pandas dataframe (uses NumPy)
    ```
    >>> import numpy as np
    >>> df = pd.DataFrame(np.random.randn(2,1), columns=['ColA'])
@@ -34,7 +32,7 @@ u'0.17.0'
    1 -1.387787
    ```
 
-- Construct a dataframe with a list of tuples
+2. Construct a dataframe with a list of tuples
 
    ```
    >>> data = [(1,2,3), (4,5,6),]
@@ -45,7 +43,7 @@ u'0.17.0'
    1     4     5     6
    ```
 
-- Construct a dataframe from a CSV file
+3. Construct a dataframe from a CSV file
 
    ```
    >>> df = pd.read_csv('file.csv')

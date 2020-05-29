@@ -1,0 +1,52 @@
+---
+layout: home
+---
+
+{% assign currentYear = page.date | date: "%Y" %}
+
+<div style="border: 1px solid #ddd;border-width:0px 0 1px 0">
+    <p>{{ page.date | date: "%Y" }}</p>
+</div>
+
+{% for post in page.posts %}
+<div class="grid">
+  <div>
+    </div>
+    {% if forloop.last %}
+    <div>
+    {% else %}
+    <div style="border-bottom: 1px solid #ddd;">
+    {% endif %}
+      <p>
+        {% if post.link %}
+          <a target='_blank' href="{{post.link}}"><span style="font-weight:bold">{{ post.title }}</span></a>
+        {% else %}
+          <a href="{{post.url}}"><span style="font-weight:bold">{{ post.title }}</span></a>
+        {% endif %}
+        <br><span>{{ post.date | date: "%b %d" }}</span>
+        {% if post.link %}
+        ⋆ {{ post.author }}
+        {% endif %}
+      </p>
+      <p>{{ post.excerpt }}</p>
+    </div>
+  </div>
+{% endfor %}
+
+
+{% assign postsByYear = site.posts | group_by_exp:"post", "post.date | date: '%Y'" %}
+<div style="border: 1px solid #ddd;border-width:1px 0 0px 0">
+    <p>Archive: 
+        {% for year in postsByYear offset:1 %}
+            {% if year.name == currentYear %}
+              {{ currentYear }}
+            {% else %}
+              <a href="/{{year.name}}">{{ year.name }}</a>
+            {% endif %} 
+          {% if forloop.index != forloop.length %}
+            |
+          {% endif %}
+        {% endfor %}
+    </p>
+  </div>
+  

@@ -7,7 +7,7 @@ excerpt: Randomly generating numbers in Sass is easy using the random() function
   colors as well.
 ---
 
-I have been working on a soon-to-be released project for which I needed a bunch of randomly generated colors. Ofcourse, I could have taken the JavaScript route to accomplish this, but I wanted to keep my setup light, as the project itself was completely CSS-based. This brought me to the idea of using Sass to randomly generate colors for the CSS. Ofcourse, I knew that we could use [Sass to randomly generate numbers](https://github.com/sass/sass/blob/master/doc-src/SASS_CHANGELOG.md#330-7-march-2014), I was keen to extend this concept for colors as well. 
+I have been working on a soon-to-be released project for which I needed a bunch of randomly generated colors. Ofcourse, I could have taken the JavaScript route to accomplish this, but I wanted to keep my setup light, as the project itself was completely CSS-based. This brought me to the idea of using Sass to randomly generate colors for the CSS. Ofcourse, I knew that we could use Sass to randomly generate numbers, I was keen to extend this concept for colors as well. 
 
 The idea is to randomly generate a number and assign it to each component of the color. For intuitiveness and simplicity, I used the RGB color model and randomly generated the red, green and the blue components of the color in Sass. Minimum and maximum range for each color component is 0 and 255. However, Sass random() starts from 1. We can tackle this problem in the following way,
 
@@ -119,4 +119,4 @@ Now, onto the crucial part of the code that will hook the requested color format
 }
 ```
 
-For the complete code, make sure you check out the [gist](https://gist.github.com/pankajparashar/413419cdbdd1b9d58de3) or the working example on [Sassmeister](http://sassmeister.com/gist/413419cdbdd1b9d58de3) to get you started.
+For the complete code, make sure you check out the [gist](https://gist.github.com/pankajparashar-zz/413419cdbdd1b9d58de3) or the working example on [Sassmeister](http://sassmeister.com/gist/413419cdbdd1b9d58de3) to get you started.

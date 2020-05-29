@@ -6,16 +6,12 @@ excerpt: Not-so long ago I remember writing about CSS Selectors Level 3. Fast-fo
   and enhance CSS3 by introducing wide-range of new selectors and pseudo-classes.
 ---
 
-> There's no such thing as CSS4, as pointed out by Tab Atkins on [his blog](http://www.xanthir.com/b4Ko0).
-
-CSS3 is the current **evolution** of CSS, in which the recommendations are split into modules that 
-can be progressed independently. Instead of there being a **CSS4**, the modules have levels, like Level 3, Level 4 etc.
+CSS3 is the current evolution of CSS, in which the recommendations are split into modules that 
+can be progressed independently. Instead of there being a CSS4, the modules have levels, like Level 3, Level 4 etc.
 
 The complete specification has a lot of new selectors, but a few of them run the risk of getting dropped before the 
 specification reaches [candidate recommendation](http://stackoverflow.com/questions/2864202/difference-between-the-proposed-recommendation-and-the-candidate-recommendati). 
 Following is the list of new selectors that I think, are going to be the most useful ones,
-
-<!-- more -->
 
 ## :has()
 
@@ -23,29 +19,14 @@ The relational pseudo class `:has()` accepts a list of selectors as an argument 
 atleast one element from the list.
 
 ```
-/**
- * Match <a> elements that contain an <img> tag as 
- * the direct child **/
- 
+/* Match <a> that has <img> as direct child */
 a:has(> img)
 
-/**
- * Match <dt> elements that are immediately followed 
- * by another <dt> element **/
-
+/* Match <dt> followed by another <dt> */
 dt:has(+ dt)
 
-/**
- * Match <section> elements that don’t contain any 
- * header elements **/
- 
+/* Match <section> not containing any header elements */
 section:not(:has(h1, h2, h3, h4, h5, h6))
-
-/**
- * Match <section> elements that contains anything that's 
- * not a header element **/
-
-section:has(:not(h1, h2, h3, h4, h5, h6))
 ```  
  
 ## Multiple attribute selectors
@@ -70,9 +51,9 @@ language ranges as its argument.
 ```
 :dir(ltr) # Matches all elements with 'dir' as 'ltr'
 
-/**
+/
  * Match elements with `lang` attribute defined either 
- * as French or German **/
+ * as French or German /
 
 :lang(fr, de) 
 ``` 
@@ -82,9 +63,9 @@ language ranges as its argument.
 The :empty pseudo-class represents an element that has no children at all.
 
 ```
-/**
+/
  * For instance, to target a paragragh tag that has no children 
- * at all [<p></p>], we could use **/
+ * at all [<p></p>], we could use /
 
 p:empty
 ``` 
@@ -95,9 +76,9 @@ The `:only-child` pseudo-class represents an element that has no siblings at all
 `:first-child:last-child` or `:nth-child(1):nth-last-child(1)`, but with a lower specificity.
 
 ```
-/** 
+/ 
  * Match if the element is the only child of its parent, 
- * like [<div><p></p></div>] **/
+ * like [<div><p></p></div>] /
 
 p:only-child
 ``` 
@@ -124,6 +105,6 @@ img:only-of-type
 
 The introduction of these selectors, gives us a lot more flexiblity while writing CSS, reduces dependencies 
 on JavaScript for trivial tasks and eventually makes CSS an extremely powerful language. If you want to keep an 
-eye on the progress of CSS Selectors Level 4 specification, then I would strongly recommend you to bookmark this link, 
+eye on the progress of CSS Selectors Level 4 specification, then I would strongly recommend you to bookmark this [link](http://dev.w3.org/csswg/selectors-4/).
 
-> [http://dev.w3.org/csswg/selectors-4/](http://dev.w3.org/csswg/selectors-4/)
+> There's no such thing as CSS4, as pointed out by Tab Atkins on [his blog](http://www.xanthir.com/b4Ko0).

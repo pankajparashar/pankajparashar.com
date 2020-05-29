@@ -1,21 +1,5 @@
 ---
 title: Codelab IO
-layout: link
-excerpt_separator: <!--more-->
+link: https://codelab-io.herokuapp.com
+author: Pankaj Parashar
 ---
-
-Over the weekend, I dished out a realtime in-browser code editor, perfect for
-collaborating online with other developers. It can also be used as a whiteboard
-to interview candidates distanced by geographical location. 
-
-<!--more-->
-
-As far as the technology stack is concerned
-
-- [Node.js](https://nodejs.org/en/) is the backend.
-- [Socket.io](http://socket.io/) is used to establish real-time communication across users.
-- HTML5, CSS3 and JavaScript constitutes the front-end.
-
-![](https://res.cloudinary.com/dw9fem4ki/image/upload/c_scale,w_800/v1452432134/codelab_xrkofo.png)
-
-[Read more](https://codelab-io.herokuapp.com/)

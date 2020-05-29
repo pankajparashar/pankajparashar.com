@@ -3,30 +3,29 @@ layout: home
 ---
 
 <div class="grid">
-    <div>
-        <h1>{{ page.title }}</h1>
-        <p>Published on {{ page.date | date: "%b %d, %Y" }}</p>
-    </div>
-    <div>
-      {{content}}
-    </div>
+  <div>
+      <p><span style="color:#21272A;font-weight:bold">{{ page.title }}</span></p>
+      <p>Published on {{ page.date | date: "%b %d, %Y" }}</p>
   </div>
-  
-  <div class="grid">
-    <div>
-      <p>
-        {% if page.previous.url %}
-          ‹ <a href="{{page.previous.url}}" style="color: white;">Previous</a>
-          <h1>{{page.previous.title}}</h1>
-        {% endif %}    
-      </p>  
-    </div>
-    <div>
-      <p style="text-align: right;">
-        {% if page.next.url %}
-          <a href="{{page.next.url}}">Next</a> ›
-          <h1 style="text-align: right;">{{page.next.title}}</h1>
-        {% endif %}    
-      </p>  
-    </div>
+  <div>
+    {{content}}
   </div>
+</div>
+
+<div class="grid" style="border-top: 1px solid #ddd;">
+  <div>
+    <p>
+      {% if page.previous.url %}
+      Previous<br><a href="{{page.previous.url}}">{{page.previous.title}}</a>
+      {% endif %}    
+    </p>  
+  </div>
+  <div>
+    <p style="text-align: right;">
+      {% if page.next.url %}
+      Next<br><a href="{{page.next.url}}">
+        {{page.next.title}}</a>
+      {% endif %}    
+    </p>  
+  </div>
+</div>
