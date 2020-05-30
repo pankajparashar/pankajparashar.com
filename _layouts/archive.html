@@ -3,40 +3,19 @@ layout: home
 ---
 
 {% assign currentYear = page.date | date: "%Y" %}
-
-<div>
-    <p>{{ page.date | date: "%Y" }}</p>
+<div class="bb">
+  <p>{{ page.date | date: "%Y" }}</p>
 </div>
 
 {% for post in page.posts %}
-<div class="grid">
-  <div style="border-bottom: none;"></div>
-    {% if forloop.last %}
-    <div style="border-bottom: none;">
-    {% else %}
-    <div>
-    {% endif %}
-      <p>
-        {% if post.link %}
-          <a target='_blank' rel="noreferrer" href="{{post.link}}"><span style="font-weight:bold">{{ post.title }}</span></a>
-        {% else %}
-          <a href="{{post.url}}"><span style="font-weight:bold">{{ post.title }}</span></a>
-        {% endif %}
-        <br><span>{{ post.date | date: "%b %d" }}</span>
-        {% if post.link %}
-        ⋆ {{ post.author }}
-        {% endif %}
-      </p>
-      <p>{{ post.excerpt }}</p>
-    </div>
-  </div>
+  {% include posts.html %}
 {% endfor %}
 
 
 {% assign postsByYear = site.posts | group_by_exp:"post", "post.date | date: '%Y'" %}
-<div style="border-bottom: 1px solid #ddd;border-top: 1px solid #ddd;">
-    <p>Archive: 
-        {% for year in postsByYear offset:1 %}
+<div class="bb bt">
+  <p style="text-align:center;max-width:100%">
+    {% for year in postsByYear offset:1 %}
             {% if year.name == currentYear %}
               {{ currentYear }}
             {% else %}

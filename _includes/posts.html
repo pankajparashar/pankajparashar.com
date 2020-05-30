@@ -1,0 +1,19 @@
+<div class="grid">
+    <div></div>
+    <div {% if forloop.index != forloop.length %} class="bb" {% endif %}>
+      <p>
+        {% if post.link %}
+          <a rel="noreferrer" href="{{post.link}}">
+            <h1>{{post.title}}</h1>
+          </a>
+        {% else %}
+          <a href="{{post.url}}">
+            <h1>{{post.title}}</h1>
+          </a>
+        {% endif %}
+        <span>{{ post.date | date: "%b %d" }}</span>{% if post.author %} ⋆ {{post.author}}{% endif %}
+      </p>
+      <p>{{post.excerpt}}</p>
+    </div>
+  </div>
+  
