@@ -106,6 +106,7 @@ a:hover {
 
 a[href*="//"]:not([href*="pankajparashar.com"]):after {
     content: '↗';
+    font-family: sans-serif;
 }
 
 img, p, h1, h2, blockquote, pre, .highlighter-rouge {
