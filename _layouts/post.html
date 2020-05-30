@@ -3,18 +3,18 @@ layout: home
 ---
 
 <div class="grid">
-  <div>
+  <div class="bb">
       <h1>{{ page.title }}</h1>
       <p>{{ page.excerpt }}</p>
       <p>Published on {{ page.date | date: "%b %d, %Y" }}</p>
   </div>
-  <div>
+  <div class="bb">
     {{content}}
   </div>
 </div>
 
 <div class="grid">
-  <div>
+  <div class="bb">
     <p>
       {% if page.previous.url %}
       Previous<br>
@@ -26,12 +26,13 @@ layout: home
       {% endif %}    
     </p>  
   </div>
-  <div>
-    <p style="text-align: right;">
+  <div class="bb">
       {% if page.next.url %}
+      <p style="text-align: right;">
       Next<br><a href="{{page.next.url}}">
         {{page.next.title}}</a>
+      </p>
       {% endif %}    
-    </p>  
+    
   </div>
 </div>

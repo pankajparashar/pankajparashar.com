@@ -24,7 +24,7 @@
 body {
     font-family: sans, sans-serif;
     line-height: 1.5;
-    font-size: 1em; /*clamp( 18px, 1.25vmax, 1.5em );*/
+    font-size: clamp( 1em, 1.25vmax, 1.5em );
     color: var( --fg-color-text );
     background-color: var( --bg-color );
     padding: 0em 1em;
