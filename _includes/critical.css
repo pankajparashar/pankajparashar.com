@@ -104,6 +104,10 @@ a:hover {
     text-decoration-color:var( --fg-color-head)
 }
 
+a[href*="//"]:not([href*="pankajparashar.com"]):after {
+    content: '↗';
+}
+
 img, p, h1, h2, blockquote, pre, .highlighter-rouge {
     max-width: 800px;
     width: 100%;
