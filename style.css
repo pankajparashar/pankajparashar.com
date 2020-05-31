@@ -1,7 +1,7 @@
 :root {
     --bg-color: #fff;
     --fg-color-text: #666;
-    --fg-color-head: #333;
+    --fg-color-head: #000;
 
     --bq-color: whitesmoke;
     --cc-color: whitesmoke;
@@ -95,7 +95,7 @@ ul {
 a {
     color: var( --fg-color-head);
     text-decoration-line: underline;
-    text-decoration-color: #878E97;
+    text-decoration-color: #999;
     text-decoration-style: solid;
     transition: color 0.3s ease;
 }

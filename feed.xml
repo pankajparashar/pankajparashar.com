@@ -42,7 +42,7 @@
     </author>
   {% endif %}
 
-  {% assign posts = site.posts | where_exp: "post", "post.draft != true" | sort: "date" | reverse %}
+  {% assign posts = site.posts | where_exp: "post", "post.layout == 'post'" | sort: "date" | reverse %}
   {% if page.category %}
     {% assign posts = posts | where: "category",page.category %}
   {% endif %}
