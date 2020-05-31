@@ -12,7 +12,6 @@ github_username:  pankajparashar
 highlighter: rouge
 permalink: "/posts/:title/"
 plugins:
-  - jekyll-paginate
   - jekyll-archives
 
 jekyll-archives:
