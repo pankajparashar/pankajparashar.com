@@ -22,7 +22,9 @@
 }
 
 body {
-    font-family: sans, sans-serif;
+    font-family: sans, -apple-system, system-ui, BlinkMacSystemFont, 
+    'Segoe UI', Roboto, 'Helvetica Neue', 
+    Ubuntu, Arial, sans-serif;
     line-height: 1.5;
     font-size: clamp( 1.1em, 1.25vmax, 1.5em );
     color: var( --fg-color-text );
