@@ -8,12 +8,12 @@
 }
 
 .dark {
-    --bg-color: #151a1f;
-    --fg-color-text: #c2ccd6;
-    --fg-color-head: #f5f6f8;
+    --bg-color: #000;
+    --fg-color-text: #999;
+    --fg-color-head: #fff;
 
     --bq-color: #222b33;
-    --cc-color: #445566;
+    --cc-color: #333;
 }
 
 *, *:before, *:after { 
