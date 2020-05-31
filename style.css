@@ -114,3 +114,7 @@ img, p, h1, h2, blockquote, pre, .highlighter-rouge {
     max-width: 800px;
     width: 100%;
 }
+
+.highlight {
+    margin-bottom: 1em;
+}
