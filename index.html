@@ -5,7 +5,7 @@ layout: home
 {% assign posts = site.posts | group_by_exp: "post", "post.date | date: '%Y'" %}
 
 {% for year in posts %}
-  <div class="bb" style="padding: 1em;background-color: whitesmoke;">
+  <div class="bb bl" style="padding: 1em;background-color:var(--cc-color)">
     <p>{{year.name}}</p>
   </div>
 
