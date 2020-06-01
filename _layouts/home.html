@@ -7,12 +7,20 @@ layout: compress
     <head>
         {% include head.html %}
     </head>
-    <body>
-        {% include header.html %}
-        {{ content }}
-        {% include footer.html %}
+    <body data-barba="wrapper">
+        <div class="grid">
+            <div style="position: static;">
+                {% include header.html %}
+            </div>
+            <div>
+                <main data-barba="container" data-barba-namespace="home">
+                    {{ content }}
+                </main>
+                {% include footer.html %}        
+            </div>
+        </div>
         <style>
             {% include deferred.css %}
-        </style>        
+        </style>
     </body>
 </html>

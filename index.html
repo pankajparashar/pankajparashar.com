@@ -3,20 +3,14 @@ layout: home
 ---
 
 {% assign posts = site.posts | group_by_exp: "post", "post.date | date: '%Y'" %}
-{% assign year = posts[0] %}
 
-<div class="bb">
-  <p>{{year.name}}</p>
-</div>
+{% for year in posts %}
+  <div class="bb" style="padding: 1em;background-color: whitesmoke;">
+    <p>{{year.name}}</p>
+  </div>
 
-{% for post in year.items %}
-  {% include posts.html %}
+  {% for post in year.items %}
+    {% include posts.html %}
+  {% endfor %}
+
 {% endfor %}
-
-<div class="bb bt">
-  <p style="text-align:center;max-width:100%">
-      {% for year in posts offset:1 %}
-        <a href="/{{year.name}}">{{year.name}}</a>{% if forloop.index != forloop.length %} | {% endif %}
-      {% endfor %}
-    </p>  
-</div>

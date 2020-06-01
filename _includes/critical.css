@@ -19,17 +19,20 @@
 *, *:before, *:after { 
     box-sizing: border-box;
     transition: color 0.1s ease;
+    outline: 0px solid red;
+    margin:0;padding: 0;
 }
+p {margin-top: 0;}
 
 body {
-    font-family: sans, -apple-system, system-ui, BlinkMacSystemFont, 
+    font-family: 'Livvic', -apple-system, system-ui, BlinkMacSystemFont, 
     'Segoe UI', Roboto, 'Helvetica Neue', 
     Ubuntu, Arial, sans-serif;
     line-height: 1.5;
-    font-size: clamp( 1.1em, 1.25vmax, 1.5em );
+    font-size: 1em; /*clamp( 1em, 1.5vmax, 1.5em );*/
     color: var( --fg-color-text );
     background-color: var( --bg-color );
-    padding: 0em 1em;
+    padding: 1em;
     width: 100%; 
     max-width: 100%;
     margin: 0;
@@ -38,14 +41,21 @@ body {
 h1, h2, h3 {
     font-size: 1em;
     color: var( --fg-color-head );
-    margin-bottom: 0;
+    margin-bottom: 1em;
 }
-
+h1 {
+    margin-bottom: 1em;
+    font-size: 1.3em;
+}
+h2 {font-size: 1.2em;}
+blockquote code {background-color: white;}
+p, pre {margin-bottom: 1.5em;}
+p:last-child {margin-bottom: 0;}
 h2, h3 {
     border-bottom: 1px solid #ddd;
 }
 
-
+.grid, .grid > div {outline: 0px solid;}
 .grid > div:empty {
     border-top-width: 0;
     border-bottom-width: 0;
@@ -53,30 +63,36 @@ h2, h3 {
 
 blockquote {
     background: var(--bq-color);
-    margin: 0;
-}
-
-blockquote p {
+    margin: 0 0 1.5em 0;
     padding: 1em;
 }
 
-.grid > div:nth-child(odd) {
-    padding-right: 1em;
-}
-
 pre {
-    margin: 0;
+    margin: 0 0 1.5em 0;
+    padding: 1em;
 }
 
 pre, code {    
-    font-family: mono, monospace; 
+    background: var( --cc-color );
+    font-family: 'SFMono', monospace; 
 }
 
-.highlighter-rouge {
-    background: var( --cc-color );
-    padding: 0 5px;
-    border-radius: 2px;
+.mono {
+    font-family: 'SFMono', monospace; 
+}
+
+code {
+    padding: 2px 5px;
     font-size: .8em;
+}
+
+pre > code {
+    padding: 0;
+}
+
+
+.highlighter-rouge {
+    border-radius: 2px;
     color: var( --fg-color-head );    
     overflow-x: auto;
 }
@@ -87,13 +103,19 @@ pre, code {
     column-gap: 1em;
 }
 
-ul {
-    list-style-type: circle
+ul, ol {
+    list-style-type: square;
+    margin-left:1.5em;
+    line-height: 1.5;
+    margin-bottom: 1.5em;
 }
-
-.bb {border-bottom: 1px solid #ddd;}
+li {line-height: 1.5;}
+.bl {border-left: 1px solid #eee;}
+.bb {border-bottom: 1px solid #eee;}
 .bt {border-top: 1px solid #ddd;}
-
+.link:hover {
+    background-color: whitesmoke;
+}
 a {
     color: var( --fg-color-head);
     text-decoration-line: underline;
@@ -103,14 +125,11 @@ a {
 }
 
 a:hover {
-    text-decoration-color:var( --fg-color-head)
+    text-decoration-color:var( --fg-color-head);
+    text-decoration-line: underline;
 }
 
 img, p, h1, h2, blockquote, pre, .highlighter-rouge {
     max-width: 800px;
     width: 100%;
-}
-
-.highlight {
-    margin-bottom: 1em;
 }
