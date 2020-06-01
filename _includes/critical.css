@@ -42,6 +42,7 @@ h1, h2, h3 {
     font-size: 1em;
     color: var( --fg-color-head );
     margin-bottom: 1em;
+    font-weight: bold;
 }
 h1 {
     margin-bottom: 1em;
