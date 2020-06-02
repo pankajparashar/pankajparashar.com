@@ -56,10 +56,8 @@ h2, h3 {
     border-bottom: 1px solid #ddd;
 }
 
-.grid, .grid > div {outline: 0px solid;}
-.grid > div:empty {
-    border-top-width: 0;
-    border-bottom-width: 0;
+.grid > div {
+    max-width: 800px;
 }
 
 blockquote {
