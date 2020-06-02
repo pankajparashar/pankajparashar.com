@@ -11,16 +11,3 @@ github_username:  pankajparashar
 # Build settings
 highlighter: rouge
 permalink: "/posts/:title/"
-plugins:
-  - jekyll-archives
-
-jekyll-archives:
-  enabled:
-    - year
-  layout: 'archive'
-  permalinks:
-    year: '/:year/'
-
-markdown: kramdown
-kramdown:
-  input: GFM

@@ -134,3 +134,26 @@ img, p, h1, h2, blockquote, pre, .highlighter-rouge {
     max-width: 800px;
     width: 100%;
 }
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg-color: #000;
+        --fg-color-text: #999;
+        --fg-color-head: #fff;
+    
+        --bq-color: #333;
+        --cc-color: #333;
+    
+    }
+    }
+  
+  @media (prefers-color-scheme: light) {
+    :root {
+        --bg-color: #fff;
+        --fg-color-text: #666;
+        --fg-color-head: #000;
+    
+        --bq-color: whitesmoke;
+        --cc-color: whitesmoke;
+    }
+      }
