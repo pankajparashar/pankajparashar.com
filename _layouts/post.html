@@ -6,36 +6,36 @@ layout: home
   <h1>{{ page.title }}</h1>
   <p>{{ page.excerpt }}</p>
 </div>
+
 <div class="bb" style="padding: 1em;padding-left: 0;">
   <p>Published on {{ page.date | date: "%b %d, %Y" }}</p>
 </div>
+
 <div class="bb" style="padding: 1em 0">
   {{content}}
 </div>
 
-
-
-
-
-<div>
+{% if page.previous.url %}
   <div class="bb link" style="padding: 1em;padding-left: 0;">
-    <p>
-      {% if page.previous.url %}
-      Previous<br>
+    <p>Previous<br>
         {% if page.previous.link %}
             <a href="{{page.previous.link}}">{{page.previous.title}}</a>
         {% else %}
             <a href="{{page.previous.url}}">{{page.previous.title}}</a>
         {% endif %}
-      {% endif %}    
     </p>  
   </div>
+{% endif %}    
+  
+{% if page.next.url %}
   <div class="bb link" style="padding: 1em;">
-    {% if page.next.url %}
-      <p style="text-align: right;">
-      Next<br><a href="{{page.next.url}}">
-        {{page.next.title}}</a>
-      </p>
-      {% endif %}    
+    <p style="text-align: right;">
+      Next<br>
+      {% if page.next.link %}
+        <a href="{{page.next.link}}">{{page.next.title}}</a>
+      {% else %}
+      <a href="{{page.next.url}}">{{page.next.title}}</a>
+        {% endif %}
+    </p>
   </div>
-</div>
+{% endif %}    
