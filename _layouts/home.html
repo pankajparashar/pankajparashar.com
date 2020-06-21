@@ -8,13 +8,11 @@ layout: compress
         {% include head.html %}
     </head>
     <body>
-        <div class="grid">
-            {% include header.html %}
-            <div>
-                {{ content }}
-                {% include footer.html %}        
-            </div>
-        </div>
+        {% include header.html %}
+        <main  class="grid gg">
+            {{ content }}
+            {% include footer.html %}
+        </main>
         <style>
             {% include deferred.css %}
         </style>

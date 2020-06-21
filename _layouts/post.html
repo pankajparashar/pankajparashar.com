@@ -2,21 +2,18 @@
 layout: home
 ---
 
-<div class="bb" style="padding: 1em;background-color:var(--cc-color)">
+<div class="list-container">
   <h1>{{ page.title }}</h1>
   <p>{{ page.excerpt }}</p>
-</div>
-
-<div class="bb" style="padding: 1em;padding-left: 0;">
   <p>Published on {{ page.date | date: "%b %d, %Y" }}</p>
 </div>
 
-<div class="bb" style="padding: 1em 0">
+<div class="list-container">
   {{content}}
 </div>
 
 {% if page.previous.url %}
-  <div class="bb link" style="padding: 1em;padding-left: 0;">
+  <div class="list-container style="padding: 1em;padding-left: 0;">
     <p>Previous<br>
         {% if page.previous.link %}
             <a href="{{page.previous.link}}">{{page.previous.title}}</a>
@@ -28,7 +25,7 @@ layout: home
 {% endif %}    
   
 {% if page.next.url %}
-  <div class="bb link" style="padding: 1em;">
+  <div class="list-container" style="padding: 1em;">
     <p style="text-align: right;">
       Next<br>
       {% if page.next.link %}

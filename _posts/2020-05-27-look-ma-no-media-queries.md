@@ -1,11 +1,9 @@
 ---
 title: Look Ma! No Media Queries
 layout: post
-excerpt: If you look under the hood of this website, you will not find any Media
-  queries. That doesn't mean this website isn't responsive. It means it is practically
-  possible to design modern websites with no media queries. Continue reading this article
-  to know how.
 ---
+
+If you look under the hood of this website, you will not find any Media queries. That doesn't mean this website isn't responsive. It means it is practically possible to design modern websites with no media queries.
 
 I'll focus on two basic elements that changes as screen size changes which typically warrants
 using media queries in CSS.

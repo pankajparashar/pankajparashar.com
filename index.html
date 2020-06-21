@@ -5,12 +5,12 @@ layout: home
 {% assign posts = site.posts | group_by_exp: "post", "post.date | date: '%Y'" %}
 
 {% for year in posts %}
-  <div class="bb bl" style="padding: 1em;background-color:var(--cc-color)">
-    <p>{{year.name}}</p>
-  </div>
-
+<div>
+  <p style="font-weight: bold;">{{year.name}}</p>
+  <ul>
   {% for post in year.items %}
-    {% include posts.html %}
+    <li {% if post.author %}class="star"{% endif %}><a href="{{post.url}}">{{ post.title }}</a></li>
   {% endfor %}
-
+  </ul>
+</div>
 {% endfor %}
