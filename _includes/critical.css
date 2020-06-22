@@ -1,6 +1,16 @@
 :root {
     --gap: 1em;
     --border: #eee;
+
+    --fore-color: #333;
+    --back-color: #fff;
+    --code-color: #eee;
+}
+
+.dark {
+    --fore-color: #fff;
+    --back-color: #000;
+    --code-color: #333;
 }
 
 img {max-width:100%}
@@ -9,9 +19,19 @@ body {
     font-family: 'Circular', monospace;
     line-height: 1.5;
     width: 100%;
+    color: var(--fore-color);
+    background-color: var(--back-color);
 }
 
-li {list-style-type: none;position:relative}
+ol li {list-style-type: none;position:relative}
+ol li:hover::before {
+    content:'-';
+    position:absolute;
+    left: -1em;
+}
+
+ul {margin-bottom: 1.5em;margin-left: 1em;padding-left: 1em;}
+
 h1, h2, h3 {font-weight:900}
 h1, h2 {margin-bottom:1.5em}
 .star::before {
@@ -19,12 +39,6 @@ h1, h2 {margin-bottom:1.5em}
     position:absolute;
     left: -1em;
     color:salmon;
-}
-li:hover::before {
-    content:'-';
-    position:absolute;
-    left: -1em;
-
 }
 @font-face {
     font-family: "Circular";
@@ -81,12 +95,33 @@ p:not(:last-child) { margin-bottom: 1em;}
 }
 strong {font-weight: bold;}
 a { color:#999;}
-a:hover {color:#333; text-decoration-color: #2f363d;}
+a:hover {
+    color: var(--fore-color); 
+}
 a:visited {text-decoration:line-through}
 h2 {border-bottom:1px solid #eee;}
-pre, code {font-family:'SFMono', monospace; background-color: whitesmoke;}
+pre, code {
+    font-family:'SFMono', monospace; 
+    background-color: var(--code-color);
+}
+
 code {font-size:.8em}
 pre {
     margin:0 0 1.5em 0;
     padding:.5em
+}
+
+blockquote {
+    border-left: 1px solid currentColor;
+    padding-left: 1em;
+    margin-bottom: 1.5em;
+}
+
+@media (prefers-color-scheme: dark) {
+    .root {
+        --fore-color: #fff;
+        --back-color: #000;
+        --code-color: #333;
+    }
+    
 }

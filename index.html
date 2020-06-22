@@ -7,10 +7,10 @@ layout: home
 {% for year in posts %}
 <div>
   <p style="font-weight: bold;">{{year.name}}</p>
-  <ul>
+  <ol>
   {% for post in year.items %}
     <li {% if post.author %}class="star"{% endif %}><a href="{{post.url}}">{{ post.title }}</a></li>
   {% endfor %}
-  </ul>
+  </ol>
 </div>
 {% endfor %}
