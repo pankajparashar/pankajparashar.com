@@ -124,10 +124,17 @@ blockquote {
 }
 
 @media (prefers-color-scheme: dark) {
-    .root {
+    :root {
         --fore-color: #fff;
         --back-color: #000;
-        --code-color: #333;
+        --code-color: #333;    
     }
-    
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        --fore-color: #333;
+        --back-color: #fff;
+        --code-color: #eee;
+    }
 }
