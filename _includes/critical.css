@@ -16,7 +16,7 @@
 img {max-width:100%}
 body {
     font-size: 1em;
-    font-family: 'Circular', monospace;
+    font-family: 'Circular', sans-serif;
     line-height: 1.5;
     width: 100%;
     color: var(--fore-color);
@@ -25,21 +25,23 @@ body {
 
 ol li {list-style-type: none;position:relative}
 ol li:hover::before {
-    content:'-';
+    content:'';
     position:absolute;
-    left: -1em;
+    left: -.5em;
 }
 
 ul {margin-bottom: 1.5em;margin-left: 1em;padding-left: 1em;}
-
+.author {
+    font-size: .8em;
+    /* padding: .1em .5em;
+    border-radius: 3px;
+    border-left: 1px solid; */
+    font-weight: bold;
+    _background-color: var(--code-color);
+    _margin-left: .5em;
+}
 h1, h2, h3 {font-weight:900}
 h1, h2 {margin-bottom:1.5em}
-.star::before {
-    content:'⋆';
-    position:absolute;
-    left: -1em;
-    color:salmon;
-}
 @font-face {
     font-family: "Circular";
     src: url("/font/CircularStd-Book_grayscale.woff") format("woff");
@@ -63,14 +65,13 @@ h1, h2 {margin-bottom:1.5em}
     grid-gap: 2em;
     width: 100%;
 	max-width: 100em;
-	margin: auto;
+    margin: auto;
 }
-
+div {    outline:0px dashed var(--code-color);}
 .grid > div {
-    outline:0px solid red;
-        padding: var(--gap);
+        _padding: var(--gap);
 }
-
+pp {text-align: justify;}
 
 p:not(:last-child) { margin-bottom: 1em;}
 
@@ -103,6 +104,11 @@ h2 {border-bottom:1px solid #eee;}
 pre, code {
     font-family:'SFMono', monospace; 
     background-color: var(--code-color);
+}
+
+a[href*="//"]:not([href*="pankajparashar.com"]):after {
+    content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='0.8em' height='0.8em' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round' fill='none' shape-rendering='geometricPrecision' style='color:red;'%3E%3Cpath d='M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6'%3E%3C/path%3E%3Cpath d='M15 3h6v6'%3E%3C/path%3E%3Cpath d='M10 14L21 3'%3E%3C/path%3E%3C/svg%3E");
+    margin-left: 3px;
 }
 
 code {font-size:.8em}

@@ -9,7 +9,7 @@ layout: home
   <p style="font-weight: bold;">{{year.name}}</p>
   <ol>
   {% for post in year.items %}
-    <li {% if post.author %}class="star"{% endif %}><a href="{{post.url}}">{{ post.title }}</a></li>
+    <li><a href="{{ post.link | default: post.url }}">{{ post.title }}</a></li>
   {% endfor %}
   </ol>
 </div>

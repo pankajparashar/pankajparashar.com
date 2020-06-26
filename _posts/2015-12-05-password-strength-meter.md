@@ -1,5 +1,4 @@
 ---
 title: Password strength meter
-link: https://css-tricks.com/password-strength-meter/
-author: CSS-Tricks
+link: https://css-tricks.com/password-strength-meter
 ---

@@ -2,37 +2,35 @@
 layout: home
 ---
 
-<div class="list-container">
+<div>
   <h1>{{ page.title }}</h1>
-  <p>{{ page.excerpt }}</p>
+  <p style="color:#999">{{ page.excerpt }}</p>
   <p>Published on {{ page.date | date: "%b %d, %Y" }}</p>
 </div>
 
-<div class="list-container">
+<div>
   {{content}}
 </div>
 
-{% if page.previous.url %}
-  <div class="list-container style="padding: 1em;padding-left: 0;">
-    <p>Previous<br>
-        {% if page.previous.link %}
-            <a href="{{page.previous.link}}">{{page.previous.title}}</a>
-        {% else %}
-            <a href="{{page.previous.url}}">{{page.previous.title}}</a>
-        {% endif %}
-    </p>  
-  </div>
-{% endif %}    
-  
-{% if page.next.url %}
-  <div>
-    <p>
-      Next<br>
-      {% if page.next.link %}
-        <a href="{{page.next.link}}">{{page.next.title}}</a>
+<div>
+  {% if page.next.url %}
+  <p>
+    Next<br>
+    {% if page.next.link %}
+      <a href="{{page.next.link}}">{{page.next.title}}</a>
+    {% else %}
+    <a href="{{page.next.url}}">{{page.next.title}}</a>
+      {% endif %}
+  </p>
+  {% endif %}
+
+  {% if page.previous.url %}
+  <p>Previous<br>
+      {% if page.previous.link %}
+          <a href="{{page.previous.link}}">{{page.previous.title}}</a>
       {% else %}
-      <a href="{{page.next.url}}">{{page.next.title}}</a>
-        {% endif %}
-    </p>
-  </div>
-{% endif %}    
+          <a href="{{page.previous.url}}">{{page.previous.title}}</a>
+      {% endif %}
+  </p>  
+  {% endif %}    
+</div>
