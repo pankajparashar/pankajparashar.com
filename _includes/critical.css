@@ -2,72 +2,18 @@
     --gap: 1em;
     --border: #eee;
 
-    --fore-color: #333;
+    --fore-color-primary:   #000;
+    --fore-color-secondary: #666;
     --back-color: #fff;
     --code-color: #eee;
 }
 
 .dark {
-    --fore-color: #fff;
+    --fore-color-primary: #fff;
+    --fore-color-secondary: #999;
     --back-color: #000;
     --code-color: #333;
 }
-
-img {
-    max-width:100%
-}
-
-body {
-    font-size: 1em;
-    font-family: 'CircularStd', -apple-system, system-ui, BlinkMacSystemFont, 
-    'Segoe UI', Roboto, 'Helvetica Neue', 
-    Ubuntu, Arial, sans-serif;
-    line-height: 1.5;
-    width: 100%;
-    color: var(--fore-color);
-    background-color: var(--back-color);
-}
-
-ol li {list-style-type: none;position:relative}
-ol li:hover::before {
-    content:'';
-    position:absolute;
-    left: -.5em;
-}
-
-ul {margin-bottom: 1.5em;margin-left: 1em;padding-left: 1em;}
-.author {
-    font-size: .8em;
-    /* padding: .1em .5em;
-    border-radius: 3px;
-    border-left: 1px solid; */
-    font-weight: bold;
-    _background-color: var(--code-color);
-    _margin-left: .5em;
-}
-h1, h2, h3 {font-weight:900}
-h1, h2 {margin-bottom:1.5em}
-
-.highlight {overflow-x: auto;}
-.grid {
-	padding: var(--gap);
-	display: grid;
-	grid-template-columns: repeat(auto-fill, minmax(20em,1fr));
-    grid-gap: 2em;
-    width: 100%;
-	max-width: 100em;
-    margin: auto;
-}
-div {    outline:0px dashed var(--code-color);}
-.grid > div {
-        _padding: var(--gap);
-}
-pp {text-align: justify;}
-
-p:not(:last-child) { margin-bottom: 1em;}
-
-
-
 
 *, *::before, *::after {
     box-sizing: border-box;
@@ -85,12 +31,52 @@ p:not(:last-child) { margin-bottom: 1em;}
     -moz-osx-font-smoothing: grayscale;
     font-feature-settings: 'calt' 1, 'liga' 1, 'ss01' 1, 'ss03' 1, 'case' 1
 }
-strong {font-weight: bold;}
-a { color:#999;}
-a:hover {
-    color: var(--fore-color); 
+
+img {
+    max-width:100%
 }
-a:visited {text-decoration:line-through}
+
+body {
+    font-size: 1em;
+    font-family: 'CircularStd', -apple-system, system-ui, BlinkMacSystemFont, 
+    'Segoe UI', Roboto, 'Helvetica Neue', 
+    Ubuntu, Arial, sans-serif;
+    line-height: 1.5;
+    width: 100%;
+    color: var(--fore-color-primary);
+    background-color: var(--back-color);
+}
+
+
+ol, ul {margin-bottom: 1.5em;margin-left: 1.5em;}
+h1, h2, h3 {font-weight:900}
+h1, h2 {margin-bottom:1.5em}
+
+.highlight {overflow-x: auto;}
+.grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(20em,1fr));
+    grid-gap: 2em;
+    width: 100%;
+	max-width: 100em;
+    margin: auto;
+}
+.grid > div {padding: clamp(1em, 2vw, 2em);outline: 0px dashed;}
+p:not(:last-child) { margin-bottom: 1em;}
+
+strong {font-weight: bold;}
+a { 
+    color: var(--fore-color-secondary);
+    text-decoration: none;
+}
+a:hover {
+    color: var(--fore-color-primary); 
+    text-decoration: underline;
+}
+a:visited {
+    text-decoration: line-through dashed;
+}
+
 h2 {border-bottom:1px solid #eee;}
 pre, code {
     font-family:'SFMono', monospace; 
@@ -112,19 +98,22 @@ blockquote {
     border-left: 1px solid currentColor;
     padding-left: 1em;
     margin-bottom: 1.5em;
+    color: var(--fore-color-secondary);    
 }
 
 @media (prefers-color-scheme: dark) {
     :root {
-        --fore-color: #fff;
+        --fore-color-primary: #fff;
+        --fore-color-secondary: #999;
         --back-color: #000;
-        --code-color: #333;    
+        --code-color: #333;
     }
 }
 
 @media (prefers-color-scheme: light) {
     :root {
-        --fore-color: #333;
+        --fore-color-primary:   #000;
+        --fore-color-secondary: #666;
         --back-color: #fff;
         --code-color: #eee;
     }

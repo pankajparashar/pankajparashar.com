@@ -6,11 +6,9 @@ layout: home
 
 {% for year in posts %}
 <div>
-  <p style="font-weight: bold;">{{year.name}}</p>
-  <ol>
+  <h2>{{year.name}}</h2>
   {% for post in year.items %}
-    <li><a href="{{ post.link | default: post.url }}">{{ post.title }}</a></li>
+    <a href="{{ post.link | default: post.url }}">{{ post.title }}</a><br>
   {% endfor %}
-  </ol>
 </div>
 {% endfor %}

@@ -1,10 +1,9 @@
 ---
 title: How 11 lines of JavaScript broke the Internet?
 layout: post
+excerpt: Roughly around 1430 hours Pacific time on Tuesday, March 22nd, 2016, @npmjs observed  
+   hundreds of failures per minute for missing dependencies requesting for the now-unpublished package, left-pad. 
 ---
-
-Roughly around 1430 hours Pacific time on Tuesday, March 22nd, 2016, @npmjs observed hundreds of failures per minute for missing dependencies requesting for the now-unpublished package, left-pad. 
-  
   
 Notably popular open source libraries like Babel, React etc stopped working as this package was enlisted as one of the dependencies in the package.json file.  
 

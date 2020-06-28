@@ -11,7 +11,11 @@ Assuming, you have completed the development work on the frontend of your next w
 The typical build process of a project follows,
 
 ```
-Compilation > Linting > Concatenation > Compression > Miscellaneous
+Compilation 
+> Linting 
+> Concatenation 
+> Compression 
+> Miscellaneous
 ```
 
 Hence, I have divided the build task into the following categories,
@@ -79,5 +83,3 @@ Some of the tasks that do not belong to any of the aforementioned categories are
 ## Grulp Project
 
 I understand that no build tool would ever be able to meet the outrageous demands of the list above. However, I started with a [project on Github](https://github.com/pankajparashar/grulp) to compile a list of ready-to-use grunt/gulp plugins that accomplishes most of the tasks.
-
-![](http://res.cloudinary.com/dw9fem4ki/image/upload/v1391875671/Grulp_d1t3u6.png)
