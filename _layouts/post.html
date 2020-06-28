@@ -13,25 +13,23 @@ layout: home
 </div>
 
 <div>
-  {% if page.next.url %}
   <p>
-    Next<br>
-    {% if page.next.link %}
-      <a href="{{page.next.link}}">{{page.next.title}}</a>
-    {% else %}
-    <a href="{{page.next.url}}">{{page.next.title}}</a>
-      {% endif %}
+    Feel free to 
+    <a href="https://twitter.com/intent/tweet?url={{ page.url | prepend: site.url }}&via={{site.twitter_username }}&text={{ page.title }}&hashtags={{ page.tags }}">send me a tweet</a> or 
+    <a href="https://github.com/pankajparashar/pankajparashar.com/issues/new?title={{ page.title }}&body=via {{ page.url | prepend: site.url }}">open an issue</a> on Github to add your comments.
   </p>
+</div>
+
+<div>
+  {% if page.next.url %}
+    <p>Next<br><a href="{{ page.next.link | default: page.next.url }}">{{page.next.title}}</a></p>
   {% else %}
-  <p>Next<br><a>Upcoming...</a></p>
+    <p>Next<br><a>Upcoming...</a></p>
   {% endif %}
+
   {% if page.previous.url %}
-  <p>Previous<br>
-      {% if page.previous.link %}
-          <a href="{{page.previous.link}}">{{page.previous.title}}</a>
-      {% else %}
-          <a href="{{page.previous.url}}">{{page.previous.title}}</a>
-      {% endif %}
-  </p>  
+    <p>Previous<br><a href="{{ page.previous.link | default: page.previous.url }}">{{page.previous.title}}</a></p>
+    {% else %}
+    <p>Previous<br><a>The End</a></p>
   {% endif %}    
 </div>
