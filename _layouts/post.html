@@ -3,9 +3,9 @@ layout: home
 ---
 
 <div>
-  <h1>{{ page.title }}</h1>
-  <p class="excerpt">{{ page.excerpt }}</p>
-  <p>Published on {{ page.date | date: "%b %d, %Y" }}</p>
+  <h2>{{ page.title }}</h2>
+  <p>{{ page.excerpt }}</p>
+  <p>{{ page.date | date: "%b %d, %Y" }}</p>
 </div>
 
 <div>
@@ -22,8 +22,9 @@ layout: home
     <a href="{{page.next.url}}">{{page.next.title}}</a>
       {% endif %}
   </p>
+  {% else %}
+  <p>Next<br><a>Upcoming...</a></p>
   {% endif %}
-
   {% if page.previous.url %}
   <p>Previous<br>
       {% if page.previous.link %}
