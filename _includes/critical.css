@@ -11,7 +11,7 @@
 .dark {
     --fore-color-primary: #fff;
     --fore-color-secondary: #868e96;
-    --back-color: #212529;
+    --back-color: #000;
     --code-color: #343a40;
 }
 
@@ -110,7 +110,7 @@ blockquote {
     :root {
         --fore-color-primary: #fff;
         --fore-color-secondary: #868e96;
-        --back-color: #212529;
+        --back-color: #000;
         --code-color: #343a40;
     }
 }
