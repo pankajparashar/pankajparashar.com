@@ -10,9 +10,9 @@
 
 .dark {
     --fore-color-primary: #fff;
-    --fore-color-secondary: #999;
-    --back-color: #000;
-    --code-color: #333;
+    --fore-color-secondary: #868e96;
+    --back-color: #212529;
+    --code-color: #343a40;
 }
 
 *, *::before, *::after {
@@ -109,9 +109,9 @@ blockquote {
 @media (prefers-color-scheme: dark) {
     :root {
         --fore-color-primary: #fff;
-        --fore-color-secondary: #999;
-        --back-color: #000;
-        --code-color: #333;
+        --fore-color-secondary: #868e96;
+        --back-color: #212529;
+        --code-color: #343a40;
     }
 }
 
