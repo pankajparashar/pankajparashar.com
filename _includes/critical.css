@@ -61,12 +61,12 @@ h1, h2 {margin-bottom:1.5em}
         1fr
       )
     );
-    column-gap: 2em;
+    gap: 2em;
     width: 100%;
 	max-width: 100em;
     margin: auto;
 }
-.grid > div {padding: clamp(1em, 2vw, 2em);outline: 0px dashed;}
+.grid > div {padding: clamp(1em, 2vw, 2em);outline: 1px dashed;}
 p:not(:last-child) { margin-bottom: 1em;}
 
 strong {font-weight: bold;}
