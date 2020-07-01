@@ -38,16 +38,17 @@ img {
 
 body {
     font-size: 1em;
-    font-family: 'CircularStd', -apple-system, system-ui, BlinkMacSystemFont, 
+    font-family: 'FreightTextProBook','Sentinel SSm A', 'CircularStd', -apple-system, system-ui, BlinkMacSystemFont, 
     'Segoe UI', Roboto, 'Helvetica Neue', 
     Ubuntu, Arial, sans-serif;
     line-height: 1.5;
     width: 100%;
     color: var(--fore-color-primary);
     background-color: var(--back-color);
+    font-feature-settings: 'kern', 'liga', 'dlig', 'hlig', 'cswh';
 }
 ol, ul {margin-bottom: 1.5em;margin-left: 1.75em;}
-h1, h2, h3 {font-weight:900}
+h1, h2, h3 {font-weight:900;}
 h1, h2 {margin-bottom:1.5em}
 
 .highlight {overflow-x: auto;}
