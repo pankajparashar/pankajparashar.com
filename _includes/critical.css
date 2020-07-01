@@ -93,18 +93,22 @@ a[href*="//"]:not([href*="pankajparashar.com"]):after {
     margin-left: 3px;
 }
 
-code {font-size:.8em}
+code {font-size:.8em; padding: 0 5px;}
 pre {
     margin:0 0 1.5em 0;
     padding:.5em
 }
+pre code {padding: 0;}
 
 blockquote {
+    font-style: italic;
     border-left: 1px solid currentColor;
     padding-left: 1em;
     margin-bottom: 1.5em;
     color: var(--fore-color-secondary);    
 }
+
+blockquote code {font-style: normal;}
 
 @media (prefers-color-scheme: dark) {
     :root {
