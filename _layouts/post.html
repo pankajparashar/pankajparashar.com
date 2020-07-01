@@ -13,10 +13,9 @@ layout: home
 </div>
 
 <div>
-  <p>
-    Feel free to 
-    <a href="https://twitter.com/intent/tweet?url={{ page.url | prepend: site.url }}&via={{site.twitter_username }}&text={{ page.title }}&hashtags={{ page.tags }}">send me a tweet</a> or 
-    <a href="https://github.com/pankajparashar/pankajparashar.com/issues/new?title={{ page.title }}&body=via {{ page.url | prepend: site.url }}">open an issue</a> on Github to add your comments.
+  <p>Did you enjoy reading this artice? I'd love to hear your thoughts. Feel free to 
+    <a href="https://twitter.com/intent/tweet?url={{ page.url | prepend: site.url | uri_escape }}&via={{site.twitter_username }}&text={{ page.title }}&hashtags={{ page.tags }}">send me a tweet</a> or 
+    <a href="https://github.com/pankajparashar/pankajparashar.com/issues/new?title={{ page.title }}&body=via {{ page.url | prepend: site.url | uri_escape }}">open an issue</a> on Github to add your comments.
   </p>
 </div>
 
