@@ -22,13 +22,13 @@ layout: home
 
 <div>
   {% if page.next.url %}
-    <p>Next<br><a href="{{ page.next.link | default: page.next.url }}">{{page.next.title}}</a></p>
+    <p><strong>Next</strong><br><a href="{{ page.next.link | default: page.next.url }}">{{page.next.title}}</a></p>
   {% else %}
     <p>Next<br><a>Upcoming...</a></p>
   {% endif %}
 
   {% if page.previous.url %}
-    <p>Previous<br><a href="{{ page.previous.link | default: page.previous.url }}">{{page.previous.title}}</a></p>
+    <p><strong>Previous</strong><br><a href="{{ page.previous.link | default: page.previous.url }}">{{page.previous.title}}</a></p>
     {% else %}
     <p>Previous<br><a>The End</a></p>
   {% endif %}    
