@@ -20,12 +20,13 @@ layout: home
 </div>
 
 <div>
+  <p><strong>Next</strong><br>
   {% if page.next.url %}
-    <p><strong>Next</strong><br><a href="{{ page.next.link | default: page.next.url }}">{{page.next.title}}</a></p>
+    <a href="{{ page.next.link | default: page.next.url }}">{{page.next.title}}
   {% else %}
-    <p>Next<br><a>Upcoming...</a></p>
+    <a>Upcoming...
   {% endif %}
-
+  </a></p>
   {% if page.previous.url %}
     <p><strong>Previous</strong><br><a href="{{ page.previous.link | default: page.previous.url }}">{{page.previous.title}}</a></p>
     {% else %}

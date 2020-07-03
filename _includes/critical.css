@@ -1,3 +1,5 @@
+/* Serif: Volklorn, Eczar, 
+*/
 :root {
     --gap: 1em;
     --border: #eee;
@@ -38,7 +40,7 @@ img {
 
 body {
     font-size: 1em;
-    font-family: 'CircularStd', -apple-system, system-ui, BlinkMacSystemFont, 
+    font-family: 'Scala Sans','CircularStd', -apple-system, system-ui, BlinkMacSystemFont, 
     'Segoe UI', Roboto, 'Helvetica Neue', 
     Ubuntu, Arial, sans-serif;
     line-height: 1.5;
@@ -47,7 +49,7 @@ body {
     background-color: var(--back-color);
 }
 ol, ul {margin-bottom: 1.5em;margin-left: 1.75em;}
-h1, h2, h3 {font-weight:900;}
+h1, h2, h3 {font-weight:900; }
 h1, h2 {margin-bottom:1.5em}
 
 .highlight {overflow-x: auto;}
@@ -107,8 +109,6 @@ blockquote {
     margin-bottom: 1.5em;
     color: var(--fore-color-secondary);    
 }
-
-blockquote code {font-style: normal;}
 
 @media (prefers-color-scheme: dark) {
     :root {
