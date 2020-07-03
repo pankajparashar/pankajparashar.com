@@ -105,7 +105,7 @@ pre code {padding: 0;}
 
 blockquote {
     font-style: italic;
-    border-left: 1px solid currentColor;
+    border-left: 1px solid var(--fore-color-secondary);
     padding-left: 1em;
     margin-bottom: 1.5em;
     color: var(--fore-color-secondary);    
