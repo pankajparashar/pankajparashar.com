@@ -1,7 +1,7 @@
 <div>
   <p>2012-2020
     <br>
-    <a href="/" role="button" onclick="document.body.classList.toggle('dark');return false">Light/Dark</a>
+    <a href="/" class="btn-toggle" role="button">Light/Dark</a>
   </p>
 </div>
 <div>
@@ -9,3 +9,31 @@
     <a role="button" onClick="document.body.scrollIntoView({behavior:'smooth'})" href="javascript:void(0)">Back to Top</a>
   </p>
 </div>
+
+<script>
+  const btn = document.querySelector(".btn-toggle");
+  const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
+
+  const currentTheme = localStorage.getItem("theme");
+  if (currentTheme == "dark") {
+    document.body.classList.toggle("dark");
+  } else if (currentTheme == "light") {
+  document.body.classList.toggle("light");
+  }
+
+  btn.addEventListener("click", function(e) {
+    if (prefersDarkScheme.matches) {
+      document.body.classList.toggle("light");
+      var theme = document.body.classList.contains("light")
+      ? "light"
+      : "dark";
+    } else {
+    document.body.classList.toggle("dark");
+    var theme = document.body.classList.contains("dark")
+      ? "dark"
+      : "light";
+    }
+    localStorage.setItem("theme", theme);
+    e.preventDefault()
+  });
+</script>
