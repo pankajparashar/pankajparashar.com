@@ -48,6 +48,11 @@ body {
     width: 100%;
     color: var(--fore-color-primary);
     background-color: var(--back-color);
+    font-variant-numeric: lining-nums;     /* high-level property          */
+-moz-font-feature-settings: 'lnum';    /* low-level (old Firefox)      */
+-webkit-font-feature-settings: 'lnum'; /* low-level (old Webkit)       */
+font-feature-settings: 'lnum' on;      /* low-level (all new browsers) */
+
 }
 ol, ul {margin-bottom: 1.5em;margin-left: 1.75em;}
 h1, h2, h3 {font-weight:900; }
