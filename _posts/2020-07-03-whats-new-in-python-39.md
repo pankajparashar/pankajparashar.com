@@ -42,3 +42,46 @@ The builtin `str` class now adds two new methods `str.removeprefix( prefix )`, `
 >>> text.removeprefix( 'Mr. ' ).removesuffix( ' Jr' )
 'John Doe'
 ```
+
+## Str replace behavior
+
+Serhiy Storchaka first reported [about this bug](https://bugs.python.org/issue28029). In the latest release, `"".replace("", s, n)` now returns `s` instead of an empty string for all non-zero `n`. It is now consistent with `"".replace("", s)`.
+
+```
+>>> "".replace( "", "|")
+"|"
+>>> "".replace( "", "|",0)
+""
+>>> "".replace( "", "|",1)
+"|"
+>>> "".replace( "", "|",2)
+"|"
+```
+
+## New module: zoneinfo
+
+The `zoneinfo` module brings support for the IANA time zone database to the standard library. It adds `zoneinfo.ZoneInfo`, a concrete datetime.tzinfo implementation backed by the system’s time zone data.
+
+```
+>>> from zoneinfo import ZoneInfo
+>>> from datetime import datetime, timedelta
+
+# Daylight saving time
+>>> dt = datetime(2020, 10, 31, 12, tzinfo=ZoneInfo("America/Los_Angeles"))
+>>> print(dt)
+2020-10-31 12:00:00-07:00
+>>> dt.tzname()
+'PDT'
+
+# Standard time
+>>> dt += timedelta(days=7)
+>>> print(dt)
+2020-11-07 12:00:00-08:00
+>>> print(dt.tzname())
+PST
+```
+
+## Miscellaneous
+
+1. The isocalendar() of datetime.date and isocalendar() of datetime.datetime methods now returns a namedtuple() instead of a tuple. (Contributed by Dong-hee Na in [bpo-24416](https://bugs.python.org/issue24416).)
+2. __import__() now raises ImportError instead of ValueError, which used to occur when a relative import went past its top-level package. (Contributed by Ngalim Siregar in [bpo-37444](https://bugs.python.org/issue37444).)
