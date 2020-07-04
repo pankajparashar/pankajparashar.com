@@ -84,4 +84,4 @@ PST
 ## Miscellaneous
 
 1. The isocalendar() of datetime.date and isocalendar() of datetime.datetime methods now returns a namedtuple() instead of a tuple. (Contributed by Dong-hee Na in [bpo-24416](https://bugs.python.org/issue24416).)
-2. __import__() now raises ImportError instead of ValueError, which used to occur when a relative import went past its top-level package. (Contributed by Ngalim Siregar in [bpo-37444](https://bugs.python.org/issue37444).)
+2. `__import__()` now raises ImportError instead of ValueError, which used to occur when a relative import went past its top-level package. (Contributed by Ngalim Siregar in [bpo-37444](https://bugs.python.org/issue37444).)
