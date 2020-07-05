@@ -54,8 +54,7 @@ img {
     max-width:100%
 }
 body {
-    _text-shadow: 0 1px var(--back-color);
-    font-size: calc(1em+1vw);
+    font-size: 1em;
     font-family: apple-system, system-ui, BlinkMacSystemFont, 
     'Segoe UI', Roboto, 'Helvetica Neue', 
     Ubuntu, Arial, sans-serif;
