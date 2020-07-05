@@ -1,6 +1,6 @@
 <title>{{ page.title | default: site.title }}</title>
 <meta charset="utf-8">
-<meta name="description" content="{{ page.excerpt | default: site.description }}">
+<meta name="description" property="og:description" content="{{ page.excerpt | default: site.description }}">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <style>
     {% include critical.css %}
@@ -8,6 +8,7 @@
 
 <!-- Primary Meta Tags -->
 <meta name="title" content="{{ page.title | default: site.title }}">
+<meta name="author" content="Pankaj Parashar">
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
