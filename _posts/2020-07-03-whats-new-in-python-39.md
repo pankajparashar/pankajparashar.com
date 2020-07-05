@@ -2,8 +2,10 @@
 title: What's new in Python 3.9
 layout: post
 excerpt: Python 3.9 will release today. This article serves as a preview for the new features
-  that will be introduced in the final release. Bear in mind at the time of writing, the official specification is still in the draft mode. Although it is unlikely to change in the last moment, it could still happen. Hence, it is worthwhile to revisit this article for future updates.
+  that will be introduced in the final release.
 ---
+
+Bear in mind at the time of writing, the official specification is still in the draft mode. Although it is unlikely to change in the last moment, it could still happen. Hence, it is worthwhile to revisit this article for future updates.
 
 ## Dict union operator
 
