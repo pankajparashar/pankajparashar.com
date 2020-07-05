@@ -89,7 +89,7 @@ a:visited {
     text-decoration: line-through dashed;
 }
 
-h2 {border-bottom:1px solid #eee;}
+h2 {border-bottom:1px solid var(--code-color);}
 pre, code {
     font-family:'mono',monospace; 
     background-color: var(--code-color);
