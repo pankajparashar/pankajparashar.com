@@ -73,7 +73,7 @@ h1, h2 {margin-bottom:1.5em}
 	max-width: 100em;
     margin: auto;
 }
-.grid > div {padding: clamp(1em, 2.5vw, 2em);outline: 0px solid var(--code-color);}
+.grid > div {padding: clamp(1em, 2.5vw, 2.5em);outline: 0px solid var(--code-color);}
 p:not(:last-child) { margin-bottom: 1em;}
 
 strong {font-weight: bold;}
