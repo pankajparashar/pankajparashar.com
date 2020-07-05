@@ -90,7 +90,6 @@ h2 {line-height:2;margin-bottom: 1.5em;border-bottom: 1px solid var(--level-0);}
 }
 .grid > div {padding: clamp(1em, 2.5vw, 2.5em);background: var(--level-1);border-bottom: 1px solid var(--level-0);}
 p:not(:last-child) { margin-bottom: 1em;}
-* {outline: 0px solid var(--code-color);}
 strong {font-weight: bold;}
 a { 
     color: var(--text-2);
@@ -123,28 +122,34 @@ pre code {padding: 0;}
 
 blockquote {
     font-style: italic;
-    border-left: .1em solid var(--fore-color-secondary);
+    border-left: .1em solid var(--level-2);
     padding-left: 1em;
     margin-bottom: 1.5em;
-    color: var(--fore-color-secondary);    
+    color: var(--text-1);    
 }
 
 blockquote code {font-family: inherit;background: unset; font-size: inherit;;padding: unset;}
 
 @media (prefers-color-scheme: dark) {
     :root {
-        --fore-color-primary: #fff;
-        --fore-color-secondary: #868e96;
-        --back-color: #000;
-        --code-color: #343a40;
+        --level-0: #111;
+        --level-1: #222;
+        --level-2: #333;
+    
+        --text-0: #fff;
+        --text-1: #ccc;
+        --text-2: #999;
     }
 }
 
 @media (prefers-color-scheme: light) {
     :root {
-        --fore-color-primary:   #000;
-        --fore-color-secondary: #666;
-        --back-color: #fff;
-        --code-color: #eee;
+        --level-0: #fff;
+        --level-1: #eee;
+        --level-2: #ddd;
+    
+        --text-0: #000;
+        --text-1: #333;
+        --text-2: #666;
     }
 }
