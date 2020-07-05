@@ -38,8 +38,10 @@ The builtin `str` class now adds two new methods `str.removeprefix( prefix )`, `
 
 ```
 >>> text = 'Mr. John Doe Jr'
->>> text.removeprefix( 'Mr. ' ).removesuffix( ' Jr' )
-'John Doe'
+>>> text.removeprefix( 'Mr. ' )
+'John Doe Jr'
+>>> text.removesuffix( ' Jr' )
+'Mr. John Doe'
 ```
 
 ## Str replace behavior
