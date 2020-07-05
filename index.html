@@ -7,8 +7,10 @@ layout: home
 {% for year in posts %}
 <div>
   <h2>{{year.name}}</h2>
+  <p>
   {% for post in year.items %}
     <a href="{{ post.link | default: post.url }}">{{ post.title }}</a><br>
   {% endfor %}
+  </p>
 </div>
 {% endfor %}

@@ -8,6 +8,14 @@
     --fore-color-secondary: #607D8B;
     --back-color: #fff;
     --code-color: #E0E0E0;
+
+    --level-0: #fff;
+    --level-1: #eee;
+    --level-2: #ddd;
+
+    --text-0: #000;
+    --text-1: #333;
+    --text-2: #666;
 }
 
 .dark {
@@ -15,6 +23,10 @@
     --fore-color-secondary: #7a7a8c;
     --back-color: #000;
     --code-color: #212121;
+
+    --level-0: #111;
+    --level-1: #222;
+    --level-2: #333;
 }
 
 *, *::before, *::after {
@@ -37,17 +49,17 @@
 img {
     max-width:100%
 }
-
 body {
-    text-shadow: 0 1px var(--back-color);
+    _text-shadow: 0 1px var(--back-color);
     font-size: calc(1em+1vw);
     font-family: apple-system, system-ui, BlinkMacSystemFont, 
     'Segoe UI', Roboto, 'Helvetica Neue', 
     Ubuntu, Arial, sans-serif;
     line-height: 1.5;
     width: 100%;
-    color: var(--fore-color-primary);
-    background-color: var(--back-color);
+    background: var(--level-0);
+    color: var(--text-0);
+
     font-variant-numeric: lining-nums;     /* high-level property          */
 -moz-font-feature-settings: 'lnum';    /* low-level (old Firefox)      */
 -webkit-font-feature-settings: 'lnum'; /* low-level (old Webkit)       */
@@ -55,8 +67,8 @@ font-feature-settings: 'lnum' on;      /* low-level (all new browsers) */
 }
 ol, ul {margin-bottom: 1.5em;margin-left: 1.75em;}
 h1, h2, h3 {font-weight:900; }
-h1, h2 {margin-bottom:1.5em}
-
+h1{margin-bottom:1.5em}
+h2 {margin-bottom: 0em;}
 .highlight {overflow-x: auto;}
 .grid {
 	display: grid;
@@ -73,13 +85,13 @@ h1, h2 {margin-bottom:1.5em}
 	max-width: 100em;
     margin: auto;
 }
-.grid > div {padding: clamp(1em, 2.5vw, 2.5em);}
+.grid > div {padding: clamp(1em, 2.5vw, 2.5em);background: var(--level-1);border-bottom: 1px solid var(--level-0);}
 p:not(:last-child) { margin-bottom: 1em;}
 * {outline: 0px solid var(--code-color);}
 strong {font-weight: bold;}
 a { 
-    color: var(--fore-color-secondary);
-    text-decoration: none;
+    color: var(--text-2);
+    text-decoration: dashed none;
 }
 a:hover {
     color: var(--fore-color-primary); 
@@ -89,19 +101,18 @@ a:visited {
     text-decoration: line-through dashed;
 }
 
-h2 {border-bottom: 1px solid;}
+h2 {border: 0px solid;}
 pre, code {
     font-family:'mono',monospace; 
-    _background-color: var(--code-color);
+    background-color: var(--level-2);
 }
-pre.highlight {border: 1px solid;}
 
 a[href*="//"]:not([href*="pankajparashar.com"]):after {
-    content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='0.8em' height='0.8em' stroke='currentColor' style='color:crimson' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round' fill='none' shape-rendering='geometricPrecision'%3E%3Cpath d='M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6'%3E%3C/path%3E%3Cpath d='M15 3h6v6'%3E%3C/path%3E%3Cpath d='M10 14L21 3'%3E%3C/path%3E%3C/svg%3E");
+    content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='0.8em' height='0.8em' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round' fill='none' shape-rendering='geometricPrecision'%3E%3Cpath d='M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6'%3E%3C/path%3E%3Cpath d='M15 3h6v6'%3E%3C/path%3E%3Cpath d='M10 14L21 3'%3E%3C/path%3E%3C/svg%3E");
     margin-left: 3px;
 }
 strong {font-weight: 900;}
-code {font-size:.8em;color: crimson;}
+code {font-size:.8em;}
 pre {
     margin:0 0 1.5em 0;
     padding:0 .5em .5em .5em;
