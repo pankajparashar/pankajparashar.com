@@ -40,7 +40,7 @@ img {
 
 body {
     text-shadow: 0 1px var(--back-color);
-    font-size: 1em;
+    font-size: calc(1em+1vw);
     font-family: apple-system, system-ui, BlinkMacSystemFont, 
     'Segoe UI', Roboto, 'Helvetica Neue', 
     Ubuntu, Arial, sans-serif;
@@ -52,7 +52,6 @@ body {
 -moz-font-feature-settings: 'lnum';    /* low-level (old Firefox)      */
 -webkit-font-feature-settings: 'lnum'; /* low-level (old Webkit)       */
 font-feature-settings: 'lnum' on;      /* low-level (all new browsers) */
-
 }
 ol, ul {margin-bottom: 1.5em;margin-left: 1.75em;}
 h1, h2, h3 {font-weight:900; }
@@ -74,7 +73,7 @@ h1, h2 {margin-bottom:1.5em}
 	max-width: 100em;
     margin: auto;
 }
-.grid > div {padding: clamp(1em, 2vw, 2em);outline: 1px dashed var(--code-color);}
+.grid > div {padding: clamp(1em, 2.5vw, 2em);outline: 0px solid var(--code-color);}
 p:not(:last-child) { margin-bottom: 1em;}
 
 strong {font-weight: bold;}
@@ -110,7 +109,7 @@ pre code {padding: 0;}
 
 blockquote {
     font-style: italic;
-    border-left: 1px solid var(--fore-color-secondary);
+    border-left: .1em solid var(--fore-color-secondary);
     padding-left: 1em;
     margin-bottom: 1.5em;
     color: var(--fore-color-secondary);    

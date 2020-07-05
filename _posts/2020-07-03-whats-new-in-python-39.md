@@ -2,25 +2,24 @@
 title: What's new in Python 3.9
 layout: post
 excerpt: Python 3.9 will release today. This article serves as a preview for the new features
-  that will be introduced in the final release.
+  that will be introduced in the final release. Bear in mind at the time of writing, the official specification is still in the draft mode. Although it is unlikely to change in the last moment, it could still happen. Hence, it is worthwhile to revisit this article for future updates.
 ---
-
-> Bear in mind at the time of writing, the official specification is still in the draft mode. Although it is unlikely to change in the last moment, it could still happen. Hence, it is worthwhile to revisit this article for future updates.
 
 ## Dict union operator
 
 Two dictionaries can now be combined with the pipe (`|`) operator. It also supports augmented assignment (`|=`) expression.
 
 ```
->>> d = {'spam': 1, 'eggs': 2, 'cheese': 3}
->>> e = {'cheese': 'cheddar', 'aardvark': 'Ethel'}
+>>> d = { 'a':0, 'b':1 }
+>>> e = { 'c':2 }
+
 >>> d | e
-{'spam': 1, 'eggs': 2, 'cheese': 'cheddar', 'aardvark': 'Ethel'}
+{ 'a':0, 'b':1, 'c':2 }
 >>> e | d
-{'aardvark': 'Ethel', 'spam': 1, 'eggs': 2, 'cheese': 3}
+{ 'c':2, 'a':0, 'b':1 }
 >>> d |= e
 >>> d
-{'spam': 1, 'eggs': 2, 'cheese': 'cheddar', 'aardvark': 'Ethel'}
+{ 'a':0, 'b':1, 'c':2 }
 ```
 
 ## Improved support for built-ins
@@ -67,9 +66,8 @@ The `zoneinfo` module brings support for the IANA time zone database to the stan
 >>> from datetime import datetime, timedelta
 
 # Daylight saving time
->>> dt = datetime(2020, 10, 31, 12, tzinfo=ZoneInfo("America/Los_Angeles"))
->>> print(dt)
-2020-10-31 12:00:00-07:00
+>>> dt = datetime(2020, 10, 31, 12, 
+                  tzinfo=ZoneInfo("America/Los_Angeles"))
 >>> dt.tzname()
 'PDT'
 
