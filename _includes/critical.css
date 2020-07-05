@@ -95,10 +95,10 @@ p:not(:last-child) { margin-bottom: 1em;}
 strong {font-weight: bold;}
 a { 
     color: var(--text-2);
-    text-decoration: dashed none;
+    text-decoration: none;
 }
 a:hover {
-    color: var(--fore-color-primary); 
+    color: var(--text-0); 
     text-decoration: underline;
 }
 a:visited {
