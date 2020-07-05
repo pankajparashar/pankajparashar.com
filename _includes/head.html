@@ -11,14 +11,14 @@
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://pankajparashar.com/">
-<meta property="og:title" content="Pankaj Parashar - Designer. Developer. Writer.">
-<meta property="og:description" content="I'm a Designer, Developer and Writer from Mumbai India. I write code to make a living and write about them on my blog here.">
+<meta property="og:url" content="{{ page.url | default: site.url }}">
+<meta property="og:title" content="{{ page.title | default: site.title }}">
+<meta property="og:description" content="{{ page.excerpt | default: site.description }}">
 <meta property="og:image" content="https://res.cloudinary.com/dw9fem4ki/image/upload/v1589698533/smartmockups_kaap7h6b_ynjusv.jpg">
 
 <!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image">
-<meta property="twitter:url" content="https://pankajparashar.com/">
-<meta property="twitter:title" content="Pankaj Parashar - Designer. Developer. Writer.">
-<meta property="twitter:description" content="I'm a Designer, Developer and Writer from Mumbai India. I write code to make a living and write about them on my blog here.">
+<meta property="twitter:url" content="{{ page.url | default: site.url }}">
+<meta property="twitter:title" content="{{ page.title | default: site.title }}">
+<meta property="twitter:description" content="{{ page.excerpt | default: site.description }}">
 <meta property="twitter:image" content="https://res.cloudinary.com/dw9fem4ki/image/upload/v1589698533/smartmockups_kaap7h6b_ynjusv.jpg">
