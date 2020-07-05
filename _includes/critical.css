@@ -5,16 +5,16 @@
     --border: #eee;
 
     --fore-color-primary:   #000;
-    --fore-color-secondary: #666;
+    --fore-color-secondary: #607D8B;
     --back-color: #fff;
-    --code-color: #eee;
+    --code-color: #E0E0E0;
 }
 
 .dark {
     --fore-color-primary: #fff;
-    --fore-color-secondary: #868e96;
-    --back-color: #000;
-    --code-color: #343a40;
+    --fore-color-secondary: #90A4AE;
+    --back-color: #121212;
+    --code-color: #1e1e1e;
 }
 
 *, *::before, *::after {
