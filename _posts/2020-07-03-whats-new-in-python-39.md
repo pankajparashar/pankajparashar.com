@@ -12,16 +12,16 @@ Bear in mind at the time of writing, the official specification is still in the 
 Two dictionaries can now be combined with the pipe (`|`) operator. It also supports augmented assignment (`|=`) expression.
 
 ```
->>> d = { 'a':0, 'b':1 }
->>> e = { 'c':2 }
+>>> d = { 'foo':'bar', 'spam':'eggs' }
+>>> e = { 'hello':'world' }
 
 >>> d | e
-{ 'a':0, 'b':1, 'c':2 }
+{ 'foo':'bar', 'spam':'eggs', 'hello':'world' }
 >>> e | d
-{ 'c':2, 'a':0, 'b':1 }
+{ 'hello':'world', 'foo':'bar', 'spam':'eggs' }
 >>> d |= e
 >>> d
-{ 'a':0, 'b':1, 'c':2 }
+{ 'foo':'bar', 'spam':'eggs', 'hello':'world' }
 ```
 
 ## Improved support for built-ins
