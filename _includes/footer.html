@@ -14,26 +14,20 @@
   const btn = document.querySelector(".btn-toggle");
   const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
 
-  const currentTheme = localStorage.getItem("theme");
-  if (currentTheme == "dark") {
-    document.body.classList.toggle("dark");
-  } else if (currentTheme == "light") {
-  document.body.classList.toggle("light");
+  if(sessionStorage.getItem("theme") != null){
+    document.body.className = sessionStorage.getItem("theme")
   }
-
-  btn.addEventListener("click", function(e) {
-    if (prefersDarkScheme.matches) {
-      document.body.classList.toggle("light");
-      var theme = document.body.classList.contains("light")
-      ? "light"
-      : "dark";
-    } else {
-    document.body.classList.toggle("dark");
-    var theme = document.body.classList.contains("dark")
-      ? "dark"
-      : "light";
+  
+  btn.addEventListener("click", function(e){
+    if (prefersDarkScheme.matches || document.body.className=="dark"){
+      document.body.className="light";
+      sessionStorage.setItem("theme","light");      
     }
-    localStorage.setItem("theme", theme);
-    e.preventDefault()
+    else {
+      document.body.className="dark";
+      sessionStorage.setItem("theme","dark");
+    }
+    e.preventDefault();
+    return false;
   });
 </script>

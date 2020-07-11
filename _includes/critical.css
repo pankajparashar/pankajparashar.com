@@ -1,14 +1,14 @@
-/* Serif: Volklorn, Eczar, 
-*/
 :root {
-    --gap: 1em;
-    --border: #eee;
+    --level-0: #fff;
+    --level-1: #eee;
+    --level-2: #ddd;
 
-    --fore-color-primary:   #000;
-    --fore-color-secondary: #607D8B;
-    --back-color: #fff;
-    --code-color: #E0E0E0;
+    --text-0: #000;
+    --text-1: #333;
+    --text-2: #666;
+}
 
+.light {
     --level-0: #fff;
     --level-1: #eee;
     --level-2: #ddd;
@@ -19,11 +19,6 @@
 }
 
 .dark {
-    --fore-color-primary: #fff;
-    --fore-color-secondary: #7a7a8c;
-    --back-color: #000;
-    --code-color: #212121;
-
     --level-0: #111;
     --level-1: #222;
     --level-2: #333;
@@ -54,6 +49,7 @@ img {
     max-width:100%
 }
 body {
+    text-shadow: 0 1px var(--level-0);
     font-size: 1em;
     font-family: apple-system, system-ui, BlinkMacSystemFont, 
     'Segoe UI', Roboto, 'Helvetica Neue', 
@@ -97,7 +93,13 @@ a {
 }
 a:hover {
     color: var(--text-0); 
-    text-decoration: underline;
+    text-decoration: none;
+    background-image: linear-gradient(currentColor,currentColor);
+    background-repeat: no-repeat;
+    background-size: 100% 1px;
+    background-position: center bottom 10%;
+    background-origin: padding-box;
+    text-shadow: 3px 0 var(--level-1), 2px 0 var(--level-1), 1px 0 var(--level-1), -1px 0 var(--level-1), -2px 0 var(--level-1), -3px 0 var(--level-1);
 }
 a:visited {
     text-decoration: line-through dashed;
@@ -131,25 +133,17 @@ blockquote {
 blockquote code {font-family: inherit;background: unset; font-size: inherit;;padding: unset;}
 
 @media (prefers-color-scheme: dark) {
-    :root {
-        --level-0: #111;
-        --level-1: #222;
-        --level-2: #333;
-    
-        --text-0: #fff;
-        --text-1: #ccc;
-        --text-2: #999;
-    }
+  :root {
+    --level-0: #111;  --text-0: #fff;
+    --level-1: #222;  --text-1: #ccc;
+    --level-2: #333;  --text-2: #999;
+  }
 }
 
 @media (prefers-color-scheme: light) {
-    :root {
-        --level-0: #fff;
-        --level-1: #eee;
-        --level-2: #ddd;
-    
-        --text-0: #000;
-        --text-1: #333;
-        --text-2: #666;
-    }
+  :root {
+    --level-0: #fff;  --text-0: #000;
+    --level-1: #eee;  --text-1: #333;
+    --level-2: #ddd;  --text-2: #666;
+  }
 }
