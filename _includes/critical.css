@@ -91,6 +91,11 @@ a {
     color: var(--text-2);
     text-decoration: none;
 }
+::selection {
+    background-color: var(--text-0);
+    color: var(--level-0);
+    text-shadow: none;
+  }
 a:hover {
     color: var(--text-0); 
     text-decoration: none;
