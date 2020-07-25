@@ -1,7 +1,5 @@
 ---
 title: Building a Todo app with React.js
-date: 2015-03-06T00:00:00.000+00:00
-layout: post
 layout: post
 excerpt: This is my first attempt with React.js to build a basic Todo app. React has
   gained massive traction as a JavaScript library for building user interfaces largely
@@ -9,177 +7,162 @@ excerpt: This is my first attempt with React.js to build a basic Todo app. React
   best practice for separation of concerns
 ---
 
-In this article, we'll build an extremely simple app using Facebook's [react.js](http://facebook.github.io/react/). If you are
-unfamiliar with this library, then I would strongly recommend reading the complete tutorial on building a [Comment system](http://facebook.github.io/react/docs/tutorial.html) using React.
+> This article has now been updated to use the modern version of React as of 2020. The new version uses [React Hooks](https://reactjs.org/docs/hooks-intro.html) and the [React Context API](https://reactjs.org/docs/context.html) to build the Todo app.
 
-> This article has been updated several times in the past few months, to prevent it
-> from becoming obsolete.
-
-<!-- more -->
+In this article, we'll build an extremely simple app using Facebook's [react.js](http://facebook.github.io/react/). If you are unfamiliar with this library, then I would strongly recommend reading a [basic tutorial](http://facebook.github.io/react/docs/tutorial.html) using React.
 
 ## Thinking in components
 
-The fundamental way of building a React.js app is to break down your app into bunch of useful components and then work your
-way backwards to build them separately. Once the individual components are ready, we can wire them up to exchange data
-between the components. For instance, our Todo app can be decomposed into the following components and hierarchies,
+The fundamental way of building a React.js app is to break down your app into bunch of useful components and then work your way backwards to build them separately. Once the individual components are ready, we can wire them up to exchange data between the components. For instance, our Todo app can be decomposed into the following components and hierarchies,
 
 ```
 TODO APP
-	TODO BANNER
-	TODO LIST
-		TODO LIST ITEM #1
-		TODO LIST ITEM #2
-		...
-		TODO LIST ITEM #N
-	TODO FORM
+  TODO HEADER
+  TODO CONTAINER
+    TODO LIST ITEM #1
+    TODO LIST ITEM #2
+    ...
+    TODO LIST ITEM #N => TODO FORM
 ```
 
 ## Wiring dependencies
 
-React ofcourse needs the `react.js` library and the JSX Transformer for sugar syntax. Before, we proceed we'll add these dependencies
-into the `head` of our document.
+React ofcourse needs the `react.js` library and the JSX Transformer for sugar syntax. Before, we proceed we'll add these dependencies to our document.
 
 ```
-<head>
-<script src="https://fb.me/react-0.12.2.min.js"></script>
-<script src="https://fb.me/JSXTransformer-0.12.2.js"></script>
-</head>
-<body>
-<script type="text/jsx">
--- This is where your code will live -
-</script>
-</body>
+<script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
 ```
 
 ## Basic Skeleton
 
-```
-/* [TODO APP] */
-var TodoApp = React.createClass({ ... });
+In React hooks, components are written using Functions. We need two child components `TodoHeader` and `TodoContainer`, which will be composed in the parent component `TodoApp` and mount this component in the document node.
 
-    /* [TODO BANNER] && [TODO LIST] */
-    var TodoBanner = React.createClass({ ... });
-    var TodoList = React.createClass({ ... });
-    
-    	/* [TODO LIST ITEM] */
-    	var TodoListItem = React.createClass({ ... });
-    
-    /* [TODO FORM] */
-    var TodoForm = React.createClass({ ... });
+```
+function TodoHeader(){}
+function TodoContainer(){}
+
+function TodoApp(){
+  return (
+    <div>
+      <TodoHeader/>
+      <TodoContainer/>
+    </div>
+  );
+}
 
 React.render(<TodoApp/>, document.body);
 ```
 
-## Component 1 - TodoApp
+## Setting up React Context
 
-This component will hold a list of todo items that will be shared by its child components in various forms. The initial state
-of `items` will be a blank list. The list will be updated as soon as a new item is added via the `TodoForm` component.
-
-```
-/* [TODO APP] */
-var TodoApp = React.createClass({
-	getInitialState: function(){
-		return {items: []};
-	},
-	updateItems: function(newItem){
-		var allItems = this.state.items.concat([newItem]);
-		this.setState({items: allItems});
-	},
-	render: function(){
-		return (
-			<div>
-				<TodoBanner/>
-				<TodoList items={this.state.items}/>
-				<TodoForm onFormSubmit={this.updateItems}/>
-			</div>
-		);
-	}
-});
-```
-
-## Component 2 - TodoBanner
-
-It simply contains a heading tag. Nothing fancy here!
+We'll create an empty context and use this context inside the components, pass the value using `<Context>.Provider` to its child components.
 
 ```
-/* [TODO BANNER] */
-var TodoBanner = React.createClass({
-	render: function(){
-		return (
-			<h3>TODO</h3>
-		);
-	}
-});
+const TodoContext = React.createContext();
+
+function TodoApp(){
+  const todoList = React.useState([
+    {content: 'Todo item #1', isCompleted: true},
+    {content: 'Todo item #2', isCompleted: false},		
+  ]);	
+
+  return (
+    <TodoContext.Provider value={todoList}>
+      <TodoHeader/>
+      <TodoContainer/>
+    </TodoContext.Provider>
+  );
+}
 ```
 
-## Component 3 - TodoList
+## Setting up React Consumer
 
-It accepts a list of items and wraps each item around a `TodoListItem` component. The final result is then wrapped with `<ul>` tag.
-
-```
-/* [TODO LIST] */
-var TodoList = React.createClass({
-	render: function() {
-		var createItem = function(itemText) {
-			return (
-				<TodoListItem>{itemText}</TodoListItem>
-			);
-		};
-		return <ul>{this.props.items.map(createItem)}</ul>;
-	}
-});
-```
-
-## Component 4 - TodoListItem
-
-It wraps list elements with `<li>` so that it renders as a list block in the final HTML. `this.props.children` predictably contains
-all the descendents passed to the `TodoListItem` tag from its parent component.
+We can read the value passed from the parent component using `React.useContext`. Since, the value passed is a React hook, we can destructure the array in the same line. Additionally, our `TodoContainer` also defines its own utility methods to add, remove or update the Todo item in the Todo list. 
 
 ```
-/* [TODO LISTITEM] */
-var TodoListItem = React.createClass({
-	render: function(){
-		return (
-			<li>{this.props.children}</li>
-		);
-	}
-});
+function TodoContainer(){
+  const [todos, setTodos] = React.useContext(TodoContext);
+  const [value, setValue] = React.useState('');
+
+  const addTodoItem = (e) => {}
+  const removeTodoItem = (i) => {}
+  const updateTodoItem = (e, i) => {}
+
+  return (
+    <form>
+      <ul>
+        {todos.map((todo, i) => (
+          <li key={i}>
+            <input type="checkbox" 
+                   checked={todo.isCompleted} 
+                   onClick={e => updateTodoItem(e, i)}/>
+            <input type="text" 
+                   value={todo.content} 
+                   disabled={todo.isCompleted} 
+                   onChange={e => updateTodoItem(e, i)}/>
+            <button onClick={() => removeTodoItem(i)}>-</button>
+          </li>
+        ))}
+        <li>
+          <input type="checkbox" disabled/>
+          <input type="text" 
+                 placeholder="New todo + press enter" 
+                 onKeyDown={e => addTodoItem(e)} 
+                 onChange={(e) => {setValue(e.target.value)}}/>
+          <button type="submit">+</button>
+        </li>
+      </ul>
+    </form>
+  );
+}
 ```
 
-## Component 5 - TodoForm
+## Add Todo Item
 
-It contains a text field followed by a button to trigger the addition of item in the Todo list. This component will hold the
-current `item` entered in the textfield and both of them are kept in sync using the `onChange` event. As soon as the submit
-button is pressed, the `item` is passed to its parent component and the focus is returned back to the textfield.
+Our todo app allows user to add a new todo into the list either by pressing the enter button on the keyboard or by clicking the `+` button in the form. Additionally, we need to reset the form on each successful addition of todo. We should also do some validation to ensure empty todos are not added into the list.
 
 ```
-/* [TODO FORM] */
-var TodoForm = React.createClass({
-	getInitialState: function() {
-		return {item: ''};
-	},
-	handleSubmit: function(e){
-		e.preventDefault();
-		this.props.onFormSubmit(this.state.item);
-		this.setState({item: ''});
-		React.findDOMNode(this.refs.item).focus();
-		return;
-	},
-	onChange: function(e){
-		this.setState({
-			item: e.target.value
-		});
-	},
-	render: function(){
-		return (
-			<form onSubmit={this.handleSubmit}>
-				<input type='text' ref='item' onChange={this.onChange} value={this.state.item}/>
-				<input type='submit' value='Add'/>
-			</form>
-		);
-	}
-});
+const addTodoItem = (e) => {
+  if((e.type=="submit" || e.key=="Enter")){
+    e.preventDefault();	
+    if(value!=""){
+      setTodos([...todos, {content:value, isCompleted:false}]);
+      setValue("");
+    }
+    if(e.key=="Enter"){ e.target.value=""; }
+    if(e.type=="submit"){ e.target.reset(); }			
+  }
+};
 ```
 
-The complete working demo can be found [here](http://codepen.io/pankajparashar/full/MYzgyW/) on Codepen. Ofcourse there's lot
-to improve but the code is modular enough to handle any kind of enhancement.
+## Remove Todo Item
+
+When the user clicks on the `-` button, we pass the index of the todo item to the event handler and then remove the element from the todo array.
+
+```
+const removeTodoItem = (i) => {
+  const newTodos = [...todos];
+  newTodos.splice(i,1);
+  setTodos(newTodos);
+};
+```
+
+## Update Todo item
+
+As long as the todo item is not marked as completed, we can allow the user to simply update the text for the todo item. If the user clicks on the checkbox, we toggle the status of `isCompleted` accordingly.
+
+```
+const updateTodoItem = (e, i) => {
+  const newTodos = [...todos];
+  if(e.target.type == 'text'){
+    newTodos[i].content = e.target.value;
+  }
+  else if(e.target.type == 'checkbox'){
+    newTodos[i].isCompleted = !newTodos[i].isCompleted;
+  }
+  setTodos(newTodos);		
+};
+```
+
+The complete working demo can be found [here](https://codepen.io/pankajparashar/full/abdKReN) on Codepen. Ofcourse there's lot to improve but the code is modular enough to handle any kind of enhancement.

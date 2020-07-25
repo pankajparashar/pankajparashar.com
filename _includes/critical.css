@@ -49,7 +49,6 @@ img {
     max-width:100%
 }
 body {
-    text-shadow: 0 1px var(--level-0);
     font-size: 1em;
     font-family: apple-system, system-ui, BlinkMacSystemFont, 
     'Segoe UI', Roboto, 'Helvetica Neue', 
@@ -94,7 +93,6 @@ a {
 ::selection {
     background-color: var(--text-0);
     color: var(--level-0);
-    text-shadow: none;
   }
 a:hover {
     color: var(--text-0); 
@@ -104,7 +102,6 @@ a:hover {
     background-size: 100% 1px;
     background-position: center bottom 10%;
     background-origin: padding-box;
-    text-shadow: 3px 0 var(--level-1), 2px 0 var(--level-1), 1px 0 var(--level-1), -1px 0 var(--level-1), -2px 0 var(--level-1), -3px 0 var(--level-1);
 }
 a:visited {
     text-decoration: line-through dashed;
