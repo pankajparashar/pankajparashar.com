@@ -89,6 +89,7 @@ strong {font-weight: bold;}
 a { 
     color: var(--text-2);
     text-decoration: none;
+    text-shadow: 3px 0 var(--level-1), 2px 0 var(--level-1), 1px 0 var(--level-1), -1px 0 var(--level-1), -2px 0 var(--level-1), -3px 0 var(--level-1);
 }
 ::selection {
     background-color: var(--text-0);
