@@ -160,13 +160,13 @@ Similarly, we have assert methods like, `assertGreater`, `assertGreaterEqual`, `
 
 Python 3.1 introduces new assert methods to compare native object types directly. The name of the methods are self-explanatory.
 
-|**Method**   	|**Used to compare**   	|
-|---	      |---	              |
-|assertMultiLineEqual(a, b)|strings|
-|assertMultiLiassertSequenceEqualneEqual(a, b)|sequences|
-|assertListEqual(a, b)|lists|
-|assertTupleEqual(a, b)|tuples|
-|assertSetEqual(a, b)|sets or frozensets|
-|assertDictEqual(a, b)|dicts|
+|**Method**   	              |&nbsp;&nbsp;&nbsp; |**Used to compare**   	|
+|:--	                        |---                |---	                  |
+|`assertMultiLineEqual(a, b)` |                   |strings                |
+|`assertSequenceEqual(a, b)`  |                   |sequences              |
+|`assertListEqual(a, b)`      |                   |lists                  |
+|`assertTupleEqual(a, b)`     |                   |tuples                 |
+|`assertSetEqual(a, b)`       |                   |sets or frozensets     |
+|`assertDictEqual(a, b)`      |                   |dicts                  |
 
 This by no means is a comprehensive overview of all the available assert methods, but however, serves as a catalogue for the most commonly used test assertions in a python unit test script.
