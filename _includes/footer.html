@@ -17,13 +17,16 @@
   if(sessionStorage.getItem("theme") != null){
     document.body.className = sessionStorage.getItem("theme")
   }
+  else if(prefersDarkScheme.matches){
+    document.body.className="dark";
+  }
   
   btn.addEventListener("click", function(e){
-    if(prefersDarkScheme.matches && document.body.className!="light"){
+    if(document.body.className=="dark"){
       document.body.className="light";
       sessionStorage.setItem("theme","light");      
     }
-    else {
+    else{
       document.body.className="dark";
       sessionStorage.setItem("theme","dark");
     }
