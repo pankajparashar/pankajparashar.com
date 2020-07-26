@@ -2,10 +2,18 @@
 layout: home
 ---
 
+{% assign reading_time = content | strip_html | number_of_words | plus:91 | divided_by:180 %}
+
+{% if reading_time <= 1 %}
+  {% assign reading_time = '1' | append:' min read' %}
+{% else %}
+  {% assign reading_time = reading_time | append:' min read' %}
+{% endif %}
+
 <div>
   <h1>{{ page.title }}</h1>
   <p>{{ page.excerpt }}</p>
-  <p>{{ page.date | date: "%b %d, %Y" }}</p>
+  <p>{{ page.date | date: "%b %d, %Y" }} // {{ reading_time }}</p>
 </div>
 
 <div>
