@@ -122,4 +122,6 @@ blockquote {
     color: var(--text-1);    
 }
 
+table {max-width: 100%;}
+
 blockquote code {font-family: inherit;background: unset; font-size: inherit;padding: unset;}
