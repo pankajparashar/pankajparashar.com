@@ -30,14 +30,14 @@ layout: home
 <div>
   <p><strong>Next</strong><br>
   {% if page.next.url %}
-    <a href="{{ page.next.link | default: page.next.url }}">{{page.next.title}}
+    <a href="{{ page.next.link | default: page.next.url }}">{{page.next.title}}</a>
   {% else %}
-    <a>Upcoming...
+    Upcoming...
   {% endif %}
-  </a></p>
+  </p>
   {% if page.previous.url %}
     <p><strong>Previous</strong><br><a href="{{ page.previous.link | default: page.previous.url }}">{{page.previous.title}}</a></p>
     {% else %}
-    <p>Previous<br><a>The End</a></p>
+    <p>Previous<br>The End</p>
   {% endif %}    
 </div>
