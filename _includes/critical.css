@@ -41,7 +41,7 @@ img {
     max-width:100%
 }
 body {
-    font-size: min(1vw, 1em);
+    font-size: 1em;
     font-family: 'Recursive',apple-system, serif;
     font-weight: 350;
     font-variation-settings: 'MONO' 0, 'CASL' 1, 'CRSV' 1, 'slnt' 0;
