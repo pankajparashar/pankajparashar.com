@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Recursive:slnt,wght,CASL,CRSV,MONO@-15..0,300..1000,0..1,0..1,0..1&display=swap');
+
 .light {
     --level-0: #fff;
     --level-1: #eee;
@@ -39,8 +41,10 @@ img {
     max-width:100%
 }
 body {
-    font-size: 1em;
-    font-family: apple-system, serif;
+    font-size: min(1vw, 1em);
+    font-family: 'Recursive',apple-system, serif;
+    font-weight: 350;
+    font-variation-settings: 'MONO' 0, 'CASL' 1, 'CRSV' 1, 'slnt' 0;
     line-height: 1.5;
     width: 100%;
     background: var(--level-0);
@@ -98,7 +102,8 @@ a:visited {
 }
 
 pre, code {
-    font-family:'mono',monospace; 
+    font-family:'Recursive',monospace;
+    font-variation-settings: 'MONO' 1, 'CASL' 1;
     background-color: var(--level-2);
 }
 
@@ -107,7 +112,7 @@ a[href*="//"]:not([href*="pankajparashar.com"]):after {
     margin-left: 3px;
 }
 strong {font-weight: 900;}
-code {font-size:.8em;}
+code {font-size:.9em;}
 pre {
     margin:0 0 1.5em 0;
     padding:0 .5em .5em .5em;
@@ -115,8 +120,8 @@ pre {
 pre code {padding: 0;}
 
 blockquote {
-    font-style: italic;
-    border-left: .1em solid var(--level-2);
+    _font-style: italic;
+    border-left: .1em solid var(--level-0);
     padding-left: 1em;
     margin-bottom: 1.5em;
     color: var(--text-1);    
@@ -124,4 +129,4 @@ blockquote {
 
 table {max-width: 100%;margin-bottom: 1.5em;}
 
-blockquote code {font-family: inherit;background: unset; font-size: inherit;padding: unset;}
+blockquote code {font-family: inherit; }
