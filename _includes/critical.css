@@ -110,7 +110,7 @@ a[href*="//"]:not([href*="pankajparashar.com"]):after {
     margin-left: 3px;
 }
 strong {font-weight: 900;}
-code {font-size:.9em;}
+code {font-size:.8em;}
 pre {
     margin:0 0 1.5em 0;
     padding:0 .5em .5em .5em;
