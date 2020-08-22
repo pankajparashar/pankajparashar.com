@@ -118,6 +118,7 @@ pre {
 pre code {padding: 0;}
 
 blockquote {
+    font-style: italic;
     border-left: .1em solid var(--level-0);
     padding-left: 1em;
     margin-bottom: 1.5em;
