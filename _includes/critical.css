@@ -86,7 +86,7 @@ a {
     color: var(--level-0);
     text-shadow: none;
   }
-a:hover {
+a[href]:hover {
     color: var(--text-0); 
     text-decoration: none;
     background-image: linear-gradient(currentColor,currentColor);

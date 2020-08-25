@@ -14,7 +14,10 @@ layout: home
   <h1>{{ page.title }}</h1>
   <p>{{ page.excerpt }}</p>
   <p>
-    {{ page.date | date: "%B %d, %Y" }} &nbsp;×&nbsp; {{ reading_time }}</p>
+    {{ page.date | date: "%B %d, %Y" }} &nbsp;×&nbsp; {{ reading_time }}
+    <br>
+    Filed under: <a href="/" style="font-style: italic;">#{{ page.categories }}</a>
+  </p>
 </div>
 
 <div>
@@ -33,7 +36,7 @@ layout: home
   {% if page.next.url %}
     <a href="{{ page.next.link | default: page.next.url }}">{{page.next.title}}</a>
   {% else %}
-    Upcoming...
+    <a style="font-style: italic;">Upcoming...</a>
   {% endif %}
   </p>
   {% if page.previous.url %}
