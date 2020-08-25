@@ -5,15 +5,18 @@ layout: home
 {% assign reading_time = content | strip_html | number_of_words | plus:91 | divided_by:180 %}
 
 {% if reading_time <= 1 %}
-  {% assign reading_time = '1' | append:' min read' %}
+  {% assign reading_time = '1' | append:' min' %}
 {% else %}
-  {% assign reading_time = reading_time | append:' mins read' %}
+  {% assign reading_time = reading_time | append:' mins' %}
 {% endif %}
 
 <div>
   <h1>{{ page.title }}</h1>
   <p>{{ page.excerpt }}</p>
-  <p>{{ page.date | date: "%b %d, %Y" }} // {{ reading_time }}</p>
+  <p>
+    Published on {{ page.date | date: "%b %d, %Y" }}
+    <br>
+    Reading time: {{ reading_time }}</p>
 </div>
 
 <div>
