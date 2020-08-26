@@ -128,3 +128,19 @@ blockquote {
 table {max-width: 100%;margin-bottom: 1.5em;}
 
 blockquote code {font-family: inherit; }
+
+.ea-content {
+    margin: 0 !important;
+    max-width: 30em;
+}
+.ea-callout {
+    max-width: 30em;
+    margin-bottom: 0 !important;
+}
+[data-ea-publisher].loaded, [data-ea-type].loaded {
+    font-family: inherit !important;
+    border-radius: 0 !important;
+}
+[data-ea-publisher].loaded .ea-callout a, [data-ea-type].loaded .ea-callout a {
+    font-size: 1em !important;
+}
