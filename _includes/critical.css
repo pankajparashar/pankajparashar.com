@@ -129,12 +129,37 @@ table {max-width: 100%;margin-bottom: 1.5em;}
 
 blockquote code {font-family: inherit; }
 
+
+
+[data-ea-type="text"].loaded {
+    font-size: inherit !important;
+    outline: 0px solid;
+    max-width: 25em;
+}
+[data-ea-type="text"].loaded .ea-callout {
+    padding-right: 0 !important;
+    margin-right: 0 !important;
+}
+[data-ea-publisher].loaded .ea-content, [data-ea-type].loaded .ea-content {
+    background: var(--level-2) !important;
+    color: inherit !important;
+}
 .ea-content {
     margin: 0 !important;
-    max-width: 30em;
+}
+.ea-content a {
+    text-shadow: none;
+}
+.ea-text {
+    line-height: 1.5;
+}
+[data-ea-publisher].loaded.flat .ea-content, [data-ea-type].loaded.flat .ea-content {
+    border-radius: 0 !important;
+}
+.ea-content a::after {
+    content: none !important;
 }
 .ea-callout {
-    max-width: 30em;
     margin-bottom: 0 !important;
 }
 [data-ea-publisher].loaded, [data-ea-type].loaded {
