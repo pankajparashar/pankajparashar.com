@@ -142,7 +142,15 @@ blockquote code {font-family: inherit; }
 }
 [data-ea-publisher].loaded .ea-content, [data-ea-type].loaded .ea-content {
     background: var(--level-2) !important;
-    color: inherit !important;
+    color: var(--text-0);
+}
+[data-ea-publisher].loaded .ea-content a:visited, [data-ea-type].loaded .ea-content a:visited,
+[data-ea-publisher].loaded .ea-content a:visited, [data-ea-type].loaded .ea-content a:link {
+    color: var(--text-2) !important;
+}
+[data-ea-publisher].loaded .ea-content a:hover, [data-ea-type].loaded .ea-content a:hover,
+[data-ea-publisher].loaded .ea-content a:hover, [data-ea-type].loaded .ea-content a:hover {
+    color: var(--text-0) !important;
 }
 .ea-content {
     margin: 0 !important;
