@@ -1,5 +1,6 @@
 ---
 title: Introducing Atomize IO
+date: 2016-03-26 00:00:00 Z
 layout: post
 excerpt: Over the weekend, I pushed out a new update to the Atomize IO app and this
   post is all about, explaining how those numbers are calculated.

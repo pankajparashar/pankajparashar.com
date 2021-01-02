@@ -1,5 +1,6 @@
 ---
 title: Frontend build tool wishlist
+date: 2013-12-21 00:00:00 Z
 layout: post
 excerpt: For quite a long time now, I have been toying around an idea of a perfect
   build tool to deploy front-end projects. This article is all about my wishlist from

@@ -1,6 +1,6 @@
 ---
 title: Lighthouse Audit Report
-date: 2020-05-14 18:30:00 +0000
+date: 2020-05-14 18:30:00 Z
 layout: post
 excerpt: I deployed the latest version of my website (v9.0) and was quite keen to
   run the Lighthouse Audit report. Admittedly this is such a small website that getting

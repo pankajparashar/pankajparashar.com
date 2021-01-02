@@ -1,13 +1,19 @@
-title: "Pankaj Parashar - Designer. Developer. Writer."
+---
+title: Pankaj Parashar - Designer. Developer. Writer.
+timezone: UTC
+collections:
+  posts:
+    title: Posts
+    output: true
+  uploads:
+    title: Uploads
+    output: true
 email: email@pankajparashar.com
-description: >- # this means to ignore newlines until "baseurl:"
-  Hello. I'm Pankaj Parashar, 30yo Designer, Developer and Writer from Mumbai India. 
-  I write code to make a living and write about them on my blog here.
-baseurl: "/" # the subpath of your site, e.g. /blog
-url: "https://pankajparashar.com" # the base hostname & protocol for your site, e.g. http://example.com
+description: Hello. I'm Pankaj Parashar, 30yo Designer, Developer and Writer from
+  Mumbai India.  I write code to make a living and write about them on my blog here.
+baseurl: "/"
+url: https://pankajparashar.com
 twitter_username: pankajparashar
-github_username:  pankajparashar
-
-# Build settings
+github_username: pankajparashar
 highlighter: rouge
 permalink: "/posts/:title/"

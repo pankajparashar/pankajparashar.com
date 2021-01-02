@@ -1,5 +1,6 @@
 ---
 title: Unix file permissions
+date: 2014-02-16 00:00:00 Z
 layout: post
 excerpt: I have used Unix for the major portion of my professional career, yet I have
   always failed to understand the intricacies surrounding the file permissioning system.

@@ -1,5 +1,6 @@
 ---
 title: JavaScript Classes
+date: 2014-12-15 00:00:00 Z
 layout: post
 excerpt: It shouldn't come as surprise that JavaScript doesn't have classes! However,
   the language is potent enough to match any OO-language and has the ammunition to

@@ -1,7 +1,10 @@
 ---
 title: The Walrus operator
+date: 2020-08-02 00:00:00 Z
 layout: post
-excerpt: The walrus operator (:=) is perhaps the most controversial operator in the history of Python. Guido was so unhappy with the proposal that he even stepped down permanently from his BDFL role after he accepted this operator as part of PEP 572. 
+excerpt: The walrus operator (:=) is perhaps the most controversial operator in the
+  history of Python. Guido was so unhappy with the proposal that he even stepped down
+  permanently from his BDFL role after he accepted this operator as part of PEP 572.
 ---
 
 As the name suggests, the walrus operator inherits its name from the two eyes and the teeth represented by the colon (`:`) and the equal (`=`) operators in conjunction. It is a higher order form of assignment expression designed to do two things at once,

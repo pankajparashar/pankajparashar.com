@@ -1,5 +1,6 @@
 ---
 title: Github pages with custom domain
+date: 2014-02-08 00:00:00 Z
 layout: post
 excerpt: Setup custom domain on the user page and then all the project pages of Github
   repositories will automatically appear under the same url.

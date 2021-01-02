@@ -1,5 +1,6 @@
 ---
 title: Download the web with WGET
+date: 2014-03-30 00:00:00 Z
 layout: post
 excerpt: Having recently discovered the power of wget command, I have written this
   article to remind myself the various ways we could use this command to download

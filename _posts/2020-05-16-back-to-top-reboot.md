@@ -1,5 +1,6 @@
 ---
 title: Back to Top reboot
+date: 2020-05-16 00:00:00 Z
 layout: post
 excerpt: The Back To Top button has been a holy grail along with the hamburger menu.
   Historically, jQuery was used to animate the jump from the bottom of the page to

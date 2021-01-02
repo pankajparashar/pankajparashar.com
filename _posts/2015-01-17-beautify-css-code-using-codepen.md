@@ -1,5 +1,6 @@
 ---
 title: Beautify CSS code using Codepen
+date: 2015-01-17 00:00:00 Z
 layout: post
 excerpt: Few would argue that Codepen has been an indispensable tool for the Frontend
   developer community. Although, I have been using Codepen for a long time, only recently,

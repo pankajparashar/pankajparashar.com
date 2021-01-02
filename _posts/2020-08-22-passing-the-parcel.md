@@ -1,9 +1,13 @@
 ---
 title: Passing the parcel
+date: 2020-08-22 00:00:00 Z
+categories:
+- python
 layout: post
-categories: python
-excerpt: In many ways Python's approach to handle references is quite different to other
-  programming languages but I find it remarkably intuitive if you understand the idea of how everything in Python is an object and how objects are supposed to behave when passed as arguments to a function.
+excerpt: In many ways Python's approach to handle references is quite different to
+  other programming languages but I find it remarkably intuitive if you understand
+  the idea of how everything in Python is an object and how objects are supposed to
+  behave when passed as arguments to a function.
 ---
 
 Lets start with a simplest example,

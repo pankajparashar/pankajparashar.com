@@ -1,5 +1,6 @@
 ---
 title: The HeartBleed Bug
+date: 2014-04-12 00:00:00 Z
 layout: post
 excerpt: The encryption flaw that punctured the heart of the Internet and has left
   almost two-thirds of the world's websites vulnerable to attack by hackers.

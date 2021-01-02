@@ -1,5 +1,6 @@
 ---
 title: Introducing Pandas
+date: 2015-11-08 00:00:00 Z
 layout: post
 excerpt: The intent of this post is to introduce you to the Pandas library by performing
   common tasks like reading, writing files and manipulating data.

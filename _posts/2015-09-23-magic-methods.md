@@ -1,5 +1,6 @@
 ---
 title: Magic methods
+date: 2015-09-23 00:00:00 Z
 layout: post
 excerpt: Python's got a bunch of very useful magic methods that most of us do not
   use in day-to-day practice. This article is all about the dunder methods that can

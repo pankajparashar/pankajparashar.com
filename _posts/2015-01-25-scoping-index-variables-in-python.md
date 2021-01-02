@@ -1,6 +1,6 @@
 ---
 title: Scoping of index variables in Python
-layout: post
+date: 2015-01-25 00:00:00 Z
 layout: post
 excerpt: The way scoping of index variables work in Python might surprise a few! This
   article is all about dealing with them by considering few scenarios and understanding

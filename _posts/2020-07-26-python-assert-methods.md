@@ -1,7 +1,9 @@
 ---
 title: Python Assert Methods
+date: 2020-07-26 00:00:00 Z
 layout: post
-excerpt: This post is about using the different assert methods available in the unittest framework. It is however, has no resemblance with the python assert statements.
+excerpt: This post is about using the different assert methods available in the unittest
+  framework. It is however, has no resemblance with the python assert statements.
 ---
 
 Python's `unittest` framework hosts a bunch of useful assert methods that we can use to validate the behaviour of our tests. Before, we begin, it is essential to add the unittest framework to our code and setup the test class.
