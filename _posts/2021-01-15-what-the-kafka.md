@@ -1,6 +1,8 @@
 ---
-title: 2021 01 15 What The Kafka
-date: 2021-01-15 00:00:00 Z
+title: What The Kafka
+layout: post
+excerpt: In this article, we'll explore some of the basic concepts of Apache Kafka with hand drawn illustrations and cover all the
+  commonly used terminologies in relation to Kafka.
 ---
 
 A typical messaging system sends a message point-to-point from the sender to the receiver.
