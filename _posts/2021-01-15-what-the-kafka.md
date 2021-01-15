@@ -1,5 +1,5 @@
 ---
-title: What The Kafka
+title: What The Kafka!
 layout: post
 excerpt: In this article, we'll explore some of the basic concepts of Apache Kafka with hand drawn illustrations and cover all the
   commonly used terminologies in relation to Kafka.
