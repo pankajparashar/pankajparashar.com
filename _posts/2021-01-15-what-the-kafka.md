@@ -1,8 +1,9 @@
 ---
 title: What the Kafka!
+date: 2021-01-15 00:00:00 Z
 layout: post
-excerpt: This article explores the basic concepts of Apache Kafka with hand draw illustrations and explanations for some of the  
-  commonly used terminologies for Kafka.
+excerpt: This article explores the basic concepts of Apache Kafka with hand draw illustrations
+  and explanations for some of the commonly used terminologies for Kafka.
 ---
 
 A typical messaging system sends a message point-to-point from the sender to the receiver.
