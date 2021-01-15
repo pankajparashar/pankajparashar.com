@@ -1,5 +1,6 @@
 ---
 title: 2021 01 15 What The Kafka
+date: 2021-01-15 00:00:00 Z
 ---
 
 A typical messaging system sends a message point-to-point from the sender to the receiver.
